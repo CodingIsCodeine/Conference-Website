@@ -79,14 +79,14 @@ const Index = () => {
           <div className="pt-2">
             <ImageCarousel
               images={[
-                "/public/images/svnit-3.jpg",
-                "/public/images/svnit-5.jpg",
-                "/public/images/svnit-7.jpg",
-                "/public/images/svnit-8.jpg",
-                "/public/images/svnit-9.jpg",
-                "/public/images/svnit-10.jpg",
-                "/public/images/svnit-6.jpg",
-                "/public/images/svnit-11.jpg",
+                "/images/svnit-3.jpg",
+                "/images/svnit-5.jpg",
+                "/images/svnit-7.jpg",
+                "/images/svnit-8.jpg",
+                "/images/svnit-9.jpg",
+                "/images/svnit-10.jpg",
+                "/images/svnit-6.jpg",
+                "/images/svnit-11.jpg",
                 // add more if available
               ]}
               interval={3500} // milliseconds; change to taste
