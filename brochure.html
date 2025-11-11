@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GCESDIP 2.0 — Tri-fold Brochure (Printable)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Color Palette --- */
+    :root{
+      --primary:#1b5e20;      /* deep green */
+      --accent:#d4af37;       /* muted gold */
+      --bg:#fdfdfb;           /* off-white */
+      --soft:#eaf4ec;         /* light green tint */
+      --text:#222;            /* charcoal */
+      --panel-border: rgba(0,0,0,0.08);
+    }
+
+    /* Basic Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background: #f3f3f3; color:var(--text); font-family: 'Lato', Arial, sans-serif; -webkit-print-color-adjust: exact;}
+
+    /* Sheet representing one A4 landscape page */
+    .sheet {
+      width: 297mm;          /* A4 landscape width */
+      height: 210mm;         /* A4 height */
+      margin: 18px auto;
+      background: var(--bg);
+      display: flex;
+      flex-direction: row;
+      border: 0.5mm solid transparent;
+      overflow: hidden;
+    }
+
+    /* Panel / column */
+    .panel {
+      width: calc(100% / 3);
+      padding: 10mm;
+      border-left: 0.5mm dashed var(--panel-border);
+      border-right: 0.5mm dashed var(--panel-border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* small adjustments so printed edges aren't clipped */
+    .sheet .panel:first-child { padding-left: 12mm; }
+    .sheet .panel:last-child { padding-right: 12mm; }
+
+    /* Header styles */
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--primary);
+      line-height: 1.05;
+      margin: 0 0 6px 0;
+    }
+    .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10.5px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 12px 0;
+    }
+
+    /* Section heading */
+    .section-heading {
+      background: var(--soft);
+      border-left: 6px solid var(--primary);
+      padding: 6px 8px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    p { margin: 6px 0; font-size: 10.25px; line-height: 1.25; }
+    .small { font-size: 9px; color: #333; }
+    .muted { color: #444; }
+
+    /* logos placeholder */
+    .logos {
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      margin: 10px 0 6px;
+    }
+    .logo-slot {
+      width: 68px;
+      height: 54px;
+      border: 1px dashed rgba(0,0,0,0.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:10px;
+      color:#222;
+      background: white;
+    }
+
+    /* contact box */
+    .contact {
+      border: 1px solid rgba(0,0,0,0.06);
+      padding: 8px;
+      font-size: 10px;
+      background: #fff;
+    }
+
+    /* sponsor boxes */
+    .sponsor {
+      border-radius: 6px;
+      padding: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(250,250,250,0.7));
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      font-size: 10px;
+    }
+    .sponsor .tier { font-weight:700; font-family: 'Montserrat', sans-serif; font-size:12px; color:var(--primary); }
+    .sponsor .benefits { font-size: 9.25px; margin-top:6px; color:#333; }
+
+    /* Important dates box */
+    .dates {
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .date-box {
+      border-left: 4px solid var(--accent);
+      padding:6px 8px;
+      background: #fff;
+      font-size: 10px;
+    }
+
+    /* committees and lists */
+    .list { margin:0; padding-left: 16px; }
+    .list li { margin-bottom: 4px; font-size: 10px; line-height:1.2; }
+
+    /* table-like registration */
+    .reg-table { width:100%; border-collapse: collapse; font-size:10px; }
+    .reg-table th, .reg-table td { padding:6px 6px; border: 1px solid rgba(0,0,0,0.06); text-align:left; vertical-align:top; }
+
+    /* fold guides visible on-screen */
+    .fold-guide { position:absolute; top:0; bottom:0; width:0.5mm; border-left: 0.5mm dashed rgba(0,0,0,0.06); pointer-events:none; }
+    .fold-guide.left { left: 99mm; }
+    .fold-guide.right { left: 198mm; }
+
+    /* Print rules */
+    @media print {
+      body { background: white; }
+      .sheet { margin: 0; box-shadow: none; }
+      .fold-guide { display:none; }
+      .logo-slot { border: 1px solid rgba(0,0,0,0.04); }
+      @page { size: A4 landscape; margin: 12mm; }
+    }
+
+    /* Screen preview tweaks */
+    @media screen {
+      .sheet { margin: 18px auto 30px auto; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+      .panel { min-height: 180mm; }
+    }
+
+    /* Footer note for print */
+    .print-note { font-size: 9px; color:#555; margin-top:8px; text-align:center; }
+
+  </style>
+</head>
+<body>
+
+  <!-- ---------- PAGE 1: OUTER SIDE (Front) ---------- -->
+  <div class="sheet" role="region" aria-label="Brochure outer side">
+    <div class="fold-guide left" aria-hidden="true"></div>
+    <div class="fold-guide right" aria-hidden="true"></div>
+
+    <!-- PANEL 1 (Left fold - when folded this becomes back flap) -->
+    <div class="panel" id="outer-left">
+      <div class="section-heading">About SVNIT</div>
+
+      <p>
+Sardar Vallabhbhai National Institute of Technology, Surat is an engineering institute of higher education established by Parliament of India in 1961 and was granted the status of “Institute of National Importance” from 2007. At present, the Institute is offering 11 UG Programmes, 21 PG Programmes, 3 M.Sc. Five Years Integrated Program, five years dual degree B. Tech. + MBA program, five years dual degree B.Tech. + M. Tech program, PG programs by research, and Ph.D. programs in all disciplines of engineering and applied sciences. Special attention is being given to interdisciplinary and collaborative research. Many eminent scientists and engineers have graduated from the institute. The institute has an excellent placement record with a number of top-ranking companies visiting the campus every year.
+      </p>
+
+      <div class="section-heading">About the Department of Chemical Engineering</div>
+      <p>
+Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers  programmes  leading to Bachelor’s, Master’s, and Ph.D. Degree in Chemical Engineering. The department has built a comprehensive research infrastructure with some top-notch facilities for carrying out cutting-edge research. The department strives to provide a conducive environment for creative and dynamic research work. The faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc., and have high-quality research publications and patents. Currently, the Department has 19 faculty members with expertise in various domains of chemical engineering .
+      </p>
+
+      <div class="section-heading">About Surat</div>
+      <p>
+Surat, one of the India’s most dynamic cities on the banks of River Tapi, is renowned worldwide as the “Diamond city” and the “Textile Hub of India.” A thriving center for trade, chemicals, petrochemicals, and emerging technologies, the city seamlessly blends rich heritage with modern infrastructure. Equally famous for its vibrant street food and diverse culinary traditions, Surat offers visitors a unique cultural and professional experience. Its progressive outlook and welcoming spirit make it an inspiring destination for global academic and industrial collaborations .
+      </p>
+
+      <div style="flex:1"></div>
+
+      <div class="small muted">Designed for A4 landscape printing — fold into tri-fold brochure.</div>
+    </div>
+
+    <!-- PANEL 2 (Center panel - front cover when folded) -->
+    <div class="panel" id="outer-center" style="align-items:center; text-align:center; gap:6px;">
+      <div style="max-width:100%;">
+
+        <div class="subtitle">2 nd  International Conference on</div>
+        <h1 class="title">“Green Chemistry and Engineering towards Sustainable Development – An Industrial Perspective”</h1>
+
+        <p style="margin-top:6px; font-weight:700; font-size:11px;">17 th   – 18 th   April 2026</p>
+
+        <div style="margin-top:10px;">
+          <div class="logos" role="img" aria-label="Logos placeholders">
+            <div class="logo-slot">[Insert SVNIT Logo]</div>
+            <div class="logo-slot">[Insert ICT Mumbai Logo]</div>
+            <div class="logo-slot">[Insert IIT Jammu Logo]</div>
+          </div>
+          <div class="small muted">Organized By Department of Chemical Engineering, SVNIT Surat in association with ICT Mumbai and IIT Jammu</div>
+        </div>
+
+        <div style="margin-top:12px; text-align:left;">
+          <div class="section-heading">Contact Details</div>
+          <div class="contact">
+            <strong>Chairperson/Organizing Secretary GCESDIP</strong><br>
+            Department of Chemical Engineering, SVNIT, Surat-395007, Gujarat, India.<br>
+            Email :  gcesdip2026@gmail.com ;  Phone :  0261-220 1649/1657/1658
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PANEL 3 (Right fold - inner most front/back depending fold) -->
+    <div class="panel" id="outer-right">
+      <div class="section-heading">Sponsorship Tiers & Benefits</div>
+
+      <div class="sponsor">
+        <div class="tier">Platinum  Rs. 5 lacs</div>
+        <div class="benefits">
+          Logo on the Backdrop  Logo on the Entrance Gate 20 mins Speaker Slot 07 Delegate Passes  Stall for Exhibition Logo on each & every Banner, Poster, and  Registration kits Guest of  Honour  will be given at the Inaugural / Valedictory Function
+        </div>
+      </div>
+
+      <div style="height:8px"></div>
+
+      <div class="sponsor">
+        <div class="tier">Diamond Rs. 3 lacs</div>
+        <div class="benefits">
+          Logo on the Backdrop  Logo on the Entrance Gate 15 mins Speaker Slot 04  Delegate  Passes  Stall for Exhibition Logo on each & every Banner, Poster, and  Registration kits
+        </div>
+      </div>
+
+      <div style="height:8px"></div>
+
+      <div class="sponsor">
+        <div class="tier">Gold Rs. 2 lacs</div>
+        <div class="benefits">
+          Logo on the Backdrop  Logo on the Entrance Gate One Banner Standee at the Entrance 07 mins Speaker Slot 03 Delegate Passes  Stall for Exhibition
+        </div>
+      </div>
+
+      <div style="height:8px"></div>
+
+      <div class="sponsor">
+        <div class="tier">Silver  Rs. 1 lac</div>
+        <div class="benefits">
+          Logo on the Backdrop  Logo on the Entrance Gate 02 Delegate Passes  Stall for Exhibition
+        </div>
+      </div>
+
+      <div style="flex:1"></div>
+
+      <div class="section-heading">Registration & Bank Details</div>
+      <p class="small">
+        Registration link:  https://forms.gle/nyukodwozKf7Jsam6<br>
+        Abstract submission link:  https://forms.gle/X1tYqAxGc11LnKpZ8
+      </p>
+      <div class="contact small">
+        <strong>Account Name :</strong> Director, SVNIT-CCE<br>
+        <strong>Account Number :</strong> 37030749143<br>
+        <strong>Bank :</strong> State Bank of India (SVRCET Branch, Surat)<br>
+        <strong>IFSC code :</strong> SBIN0003320  &nbsp; <strong>MICR code :</strong> 395002012  &nbsp; <strong>SWIFT code :</strong> SBININBB260
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ---------- PAGE 2: INNER SIDE (Back) ---------- -->
+  <div class="sheet" role="region" aria-label="Brochure inner side">
+    <div class="fold-guide left" aria-hidden="true"></div>
+    <div class="fold-guide right" aria-hidden="true"></div>
+
+    <!-- PANEL 1 (Left) -->
+    <div class="panel" id="inner-left">
+      <div class="section-heading">About the Conference</div>
+
+      <p>
+The 2030 Agenda for Sustainable Development, adopted by all United Nations Member States in 2015, provides a shared blueprint for peace and prosperity for people and the planet, now and into the future. At its heart are the 17 Sustainable Development Goals (SDGs), which are an urgent call for action by all countries - developed and developing – in a global partnership. Out of 17 SDGs, Good health and well-being, Clean water and sanitation, Affordable and clean energy, Industry, innovation and infrastructure, Sustainable cities and communities, Responsible consumption and production, Climate action, Life below water, Life on land require focus on greener aspects as the final outcome must be attained using the zero or minimum environmental impact, energy efficiency, benign chemicals (raw materials, solvents, and products) with economic feasibility. For this, concepts of Green Chemistry and Green Engineering have to be imbibed in any process/product/system in order to share the idea/ work/ collaboration and ultimately to achieve the goal of sustainable development through greener route a common platform. The conference is one of the global events to share an insight into the latest developments in Green Chemistry and Engineering. The conference will bring together all the stakeholders from academia, research, industry, and society to exchange ideas in the following thrust areas:
+      </p>
+
+      <div class="section-heading">Thrust Areas</div>
+      <ul class="list">
+        <li>Process Intensification Techniques</li>
+        <li>Sustainable approaches in Pharmaceutical and Chemical Industries</li>
+        <li>Catalysis</li>
+        <li>Novel Separation Methods</li>
+        <li>Green Solvents</li>
+        <li>Functional Foods and Nutraceuticals</li>
+        <li>Green and Sustainable Chemistry in the Environment</li>
+        <li>Green Nanotechnology</li>
+        <li>Waste to Wealth</li>
+        <li>Renewable Energy and Clean Energy</li>
+        <li>Energy Storage</li>
+        <li>Process Modelling and CFD</li>
+        <li>Future Trends in Green Chemistry and Engineering</li>
+        <li>Any other area relevant to the theme of the conference</li>
+      </ul>
+    </div>
+
+    <!-- PANEL 2 (Center) -->
+    <div class="panel" id="inner-center">
+      <div class="section-heading">Committees</div>
+
+      <p><strong>Chief Patron</strong><br>
+Prof. (Dr.) Anupam Shukla, Director, SVNIT, Surat</p>
+
+      <p><strong>Patron</strong><br>
+Prof. (Dr.) A. B Pandit, VC, ICT Mumbai<br>
+Prof. (Dr.) Manoj Singh Gaur, Director, IIT Jammu<br>
+Dr. V. N. Lad, Professor & Head, DoChE, SVNIT, Surat</p>
+
+      <p><strong>Chairman</strong><br>
+Dr. Jigisha K. Parikh, Professor, DoChE, SVNIT, Surat  Dr. Meghal A. Desai, Professor, DoChE, SVNIT, Surat</p>
+
+      <p><strong>Organizing Secretary</strong><br>
+Dr. Sanjaykumar R. Patel, Professor, DoChE, SVNIT, Surat  Dr. G. C. Jadeja, Associate Professor, DoChE, SVNIT, Surat  Dr. Sarita Kalla, Assistant Professor, DoChE, SVNIT, Surat  Dr. Sundar S. K., Assistant Professor, DoChE, SVNIT, Surat Dr. Yogesh M.  Nimdeo , Assistant Professor, DoChE, IIT Jammu</p>
+
+      <p><strong>Student Coordinators</strong><br>
+Mr. Miraj Savani, PhD Student, DoChE, SVNIT, Surat  Ms. Rashmi Pathania, PhD Student, DoChE, SVNIT, Surat  Ms. Khushbu Bhavsar, PhD Student, DoChE, SVNIT, Surat Mr.  Purusottam  Tripathy, PhD Student, DoChE, SVNIT, Surat  Ms. Priya Sharma, PhD Student, DoChE, SVNIT, Surat Mr. Aamir  Vhora , PhD Student, DoChE, SVNIT, Surat  Ms. Shalinee Gupta, PhD Student, DoChE, SVNIT, Surat  Mr. Sachin Thorat, PhD Student, DoChE, SVNIT, Surat</p>
+
+      <div style="height:8px"></div>
+
+      <div class="section-heading">Organizing Committee</div>
+      <p class="small">
+Shri Rajesh Shah, Worley Oman Engineering LLC Muscat, Oman<br>
+Prof. Dr. Benu Adhikari, RMIT University, Australia<br>
+Prof. Dr. Mahfud  Mahfud ,  Institut   Teknologi   Sepuluh   Nopember  (ITS), Surabaya, Indonesia<br>
+Prof. Dr. Zoltan Nagy, Purdue University, Indiana<br>
+Prof. Dr. Anet Resek  Jambrak , University of Zagreb, Croatia<br>
+Prof. Dr. Neeraj Rai, Mississippi University, USA<br>
+Prof. Dr. Sandeep Kumar, Director Biomass Research Laboratory & Old Dominion University, Virginia, USA<br>
+Prof. Dr. Beom Soo Kim,  Chungbuk  National University, The Republic of Korea<br>
+Prof. Dr.  Muthupandian  Ashokkumar, University of Melbourne, Australia<br>
+Prof. Dr. Oishi Sanyal, West Virginia University, USA<br>
+Prof. Dr.  Yaqiang  Xie, Xiamen University, China<br>
+Mr. Nalin Maniya, Bioanalytical Scientist, Elanco, USA<br>
+Prof. Dr. Ajay K Dalai, University of Saskatchewan, Canada<br>
+Prof. Dr.  Meenesh  R. Singh, UIC Catalyst (CAT) Centre,<br>
+Prof. Dr. Ram Gupta, Virginia Commonwealth University, Virginia, USA
+      </p>
+
+      <div style="height:8px"></div>
+
+      <div class="section-heading">National Advisory Committee</div>
+      <p class="small">
+Prof. Dr. K. K. Pant, Director, IIT Roorkee<br>
+Prof. Dr. N V Chaudhary, IICT Hyderabad<br>
+Prof. Dr. Sachin Mandavgane, VNIT Nagpur<br>
+Prof. Dr. Yogendra Shastri, IIT Bombay<br>
+Mr. Thummapudi Subrahmanyam, Portfolio Engineering Manager, ExxonMobil<br>
+Prof. Dr. P. K. Rout, Senior Principal Scientist, CSIR- CIMAP<br>
+Dr. Ami Raval, Sahajanand Medical Technologies, Surat<br>
+Prof. Dr. S. Sridhar, Chief Scientist, CSIR-IICT<br>
+Prof. Dr. Kailash Singh, MNIT Jaipur<br>
+Prof. Dr. P. K. Mishra, Professor, IIT BHU<br>
+Prof. Dr. Gaurav Sharma, Associate Professor, IIT Roorkee<br>
+Prof. Dr. Susmita Das, NIT Calicut<br>
+Prof. Dr. Shirish Sonawane, NIT Warangal<br>
+Prof. Dr. Bharat  Modhera , MANIT Bhopal<br>
+Prof. Dr.  Debapriya  Mandal, IIT Jammu<br>
+Prof. Dr.  Parameswar  K Iyer, IIT Guwahati
+      </p>
+
+    </div>
+
+    <!-- PANEL 3 (Right) -->
+    <div class="panel" id="inner-right">
+      <div class="section-heading">Targeted Participants</div>
+      <p>
+The conference welcomes faculty members, undergraduate and postgraduate students from engineering, science, and allied disciplines, as well as participants from research organizations and industry worldwide . The presenter can showcase their work through poster presentation/ Oral presentation.
+      </p>
+
+      <div class="section-heading">Important Dates</div>
+      <div class="dates">
+        <div class="date-box"><strong>Last date of Abstract submission:</strong> 01 st  March 2026</div>
+        <div class="date-box"><strong>Intimation of acceptance:</strong> 16 th  March 2026</div>
+        <div class="date-box"><strong>Full paper submission:</strong> 31 st  March 2026</div>
+        <div class="date-box"><strong>Last Day of Registration:</strong> 10 th  April 2026</div>
+      </div>
+
+      <div style="height:8px"></div>
+
+      <div class="section-heading">Registration / Publication Notes</div>
+      <p class="small">
+The registration fee is non-refundable and should be paid  ONLINE  to the following account. Account Name : Director, SVNIT-CCE Account Number : 37030749143 Bank : State Bank of India (SVRCET Branch, Surat) IFSC code : SBIN0003320  MICR code : 395002012  SWIFT code : SBININBB260
+      </p>
+
+      <p class="small">
+All the participants registered for the conference will receive a certificate One of the authors of the paper must complete the registration and present the paper. Abstract will be published in the proceedings with an ISSN number. Selected full-length papers will be considered for publication as a special issue in journals of repute (SCI/Scopus/Web of Science indexed), adopting a regular peer review process as per the norms of the concerned journal. The originality of the research contribution is vested with the authors. The best presentation will be awarded per session.
+      </p>
+
+      <div style="flex:1"></div>
+
+      <div class="small muted" style="text-align:center;">
+        For queries: gcesdip2026@gmail.com | Phone : 0261-220 1649/1657/1658
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="max-width: 900px; margin: 10px auto 30px; text-align:center;">
+    <div class="print-note">Tip: Open Print dialog → Paper size: A4 → Orientation: Landscape → Scale: 100% → Print both pages. Fold along vertical thirds to form tri-fold brochure.</div>
+  </div>
+
+</body>
+</html>
