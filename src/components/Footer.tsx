@@ -105,7 +105,7 @@ const Footer = () => {
           <p className="text-sm text-white/70">
             Organised by{" "}
             <span className="text-primary font-semibold">
-              Sardar Vallabhbhai National Institute of Technology, Surat
+              Department of Chemical Engineering, SVNIT, Surat
             </span>
           </p>
         </div>

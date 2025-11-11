@@ -17,7 +17,7 @@ const Index = () => {
 
   const aboutSections = [
     {
-      title: "About Conference",
+      title: "Conference",
       icon: FileText,
       description: (
         <div className="space-y-3">
@@ -55,7 +55,7 @@ const Index = () => {
       ),
     },
     {
-      title: "About SVNIT",
+      title: "SVNIT",
       icon: Award,
       description: (
         <div className="space-y-4">
@@ -97,7 +97,7 @@ const Index = () => {
       ),
     },
     {
-    title: "About Department",
+    title: "Dept. of Chemical Engineering",
     icon: Users,
     description: (
       <div className="space-y-4">

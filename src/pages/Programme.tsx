@@ -39,11 +39,11 @@ const Programme = () => {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
-                    <span>Keynote addresses by distinguished speakers</span>
+                    <span>Plenary sessions on green chemistry innovations</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
-                    <span>Plenary sessions on green chemistry innovations</span>
+                    <span>Keynote addresses by distinguished speakers</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
