@@ -13,7 +13,7 @@ interface Member {
 
 const Committee = () => {
   const internationalAdvisory: Member[] = [
-    { name: "Shri Rajesh Shah", title: "Professor, MIT, USA", initials: "JS", image: "/public/images/dignitaries/rajesh shah.jpg" },
+    { name: "Shri Rajesh Shah", title: "Professor, MIT, USA", initials: "JS", image: "/images/dignitaries/rajesh shah.jpg" },
     { name: "Prof. Dr. Benu Adhikari", title: "Research Director, Cambridge, UK", initials: "MG", image: "https://placehold.co/160x160?text=MG" },
     { name: "Prof. Dr. Muthupandian Ashokkumar", title: "Dean, Tsinghua University, China", initials: "LW", image: "https://placehold.co/160x160?text=LW" },
     { name: "Dr. Hans Mueller", title: "Head of Department, TU Munich, Germany", initials: "HM", image: "https://placehold.co/160x160?text=HM" },
