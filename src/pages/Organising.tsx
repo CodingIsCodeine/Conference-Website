@@ -8,6 +8,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import React from "react";
 
 type Person = {
   name: string;
@@ -121,10 +122,22 @@ const Organising = () => {
     );
   };
 
-  const renderScholar = (person: Person) => (
+const renderScholar = (person: Person) => {
+  const [open, setOpen] = React.useState(false);
+
+  // Detect mobile screen width
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+  return (
     <TooltipProvider delayDuration={150} skipDelayDuration={0} key={person.name}>
-      <Tooltip>
-        <TooltipTrigger asChild>
+      <Tooltip open={isMobile ? open : undefined} onOpenChange={setOpen}>
+        <TooltipTrigger
+          asChild
+          onClick={() => {
+            // Toggle tooltip manually on tap for mobile
+            if (isMobile) setOpen((prev) => !prev);
+          }}
+        >
           <Card className="shadow-card hover:shadow-hover transition-smooth cursor-pointer hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] duration-300">
             <CardContent className="p-6 text-center">
               <Avatar className="h-20 w-20 mx-auto mb-3 border-2 border-primary">
@@ -138,12 +151,13 @@ const Organising = () => {
             </CardContent>
           </Card>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent side="top" className="text-sm text-center">
           <p className="max-w-xs">{person.description ?? "Student/Scholar — short bio or role."}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
+};
 
   return (
     <div className="min-h-screen flex flex-col">
