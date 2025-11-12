@@ -323,11 +323,8 @@ const SuratImageCarousel = () => {
 /* ✅ Previous Edition Carousel (same style as Surat) */
 const PreviousEditionCarousel = () => {
   const images = [
-    { src: "/images/prev1.jpg", caption: "🌿 Inauguration Ceremony of GCESDIP 1.0" },
-    { src: "/images/prev2.jpg", caption: "🎤 Keynote Session by Industry Experts" },
-    { src: "/images/prev3.jpg", caption: "🧪 Poster Presentations by Researchers" },
-    { src: "/images/prev4.jpg", caption: "🤝 Networking & Collaborative Discussions" },
-    { src: "/images/prev5.jpg", caption: "🏆 Valedictory Ceremony & Awards" },
+    { src: "/images/conference-1.png", caption: "📃 Papers from GCESDIP 1.0" },
+    { src: "/images/conference-2.png", caption: "📃 Papers from GCESDIP 1.0" },
   ];
 
   return <AutoCarousel images={images} />;
