@@ -7,18 +7,18 @@ import { CheckCircle2 } from "lucide-react";
 
 const Registration = () => {
   const registrationFees = [
-    { category: "UG Students", regular: "₹3,540" },
-    { category: "PG/PhD/Postdoc/Research Fellows", regular: "₹7,050" },
-    { category: "Academicians/Scientists/Researchers", regular: "₹9,440" },
-    { category: "Industry Delegate", regular: "₹11,800" },
-    { category: "Attendees", regular: "₹3,540" },
-    { category: "Foreign Students", regular: "$118" },
-    { category: "Foreign Academicians/Delegates", regular: "$147" },
+    { category: "UG Students", regular: "Rs. 3,540" },
+    { category: "PG/PhD/Postdoc/Research Fellows", regular: "Rs. 7,050" },
+    { category: "Academicians/Scientists/Researchers", regular: "Rs. 9,440" },
+    { category: "Industry Delegate", regular: "Rs. 11,800" },
+    { category: "Attendees", regular: "Rs. 3,540" },
+    { category: "Foreign Students", regular: "118 USD" },
+    { category: "Foreign Academicians/Delegates", regular: "147 USD" },
   ];
 
   const includes = [
     "Access to all technical sessions",
-    "Conference kit and proceedings",
+    "Conference kit",
     "Breakfast, lunch, and refreshments",
     "Conference certificate",
     "Networking opportunities",
@@ -43,7 +43,7 @@ const Registration = () => {
             </CardHeader>
             <CardContent className="flex justify-center">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeL--0f225-_T4cFpwBfiiZlxMU5HIsVmgKGpY_lOzlONkr_g/viewform"
                 target="_blank"
                 rel="noopener noreferrer"
               >

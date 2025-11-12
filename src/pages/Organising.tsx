@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,39 +27,48 @@ const Organising = () => {
     { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: true, cvLink: "/assets/cvs/csn.pdf", imageSrc: "" },
   ];
 
-  const patron: Person = { name: "Prof.(Dr.) V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: true, cvLink: "http://svnit.ac.in/facup/homepage__vnl/web%20page%204.htm", imageSrc: "/images/dignitaries/laad.png" };
+  const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: true, cvLink: "http://svnit.ac.in/facup/homepage__vnl/web%20page%204.htm", imageSrc: "/images/dignitaries/laad.png" };
 
   const chairmen: Person[] = [
-    { name: "Prof.(Dr.) Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/dignitaries/jigisha.png" },
-    { name: "Prof.(Dr.) Meghal A. Desai", title: "Professor, DoChE, SVNIT, Surat ", initials: "MAD", hasCv: true, cvLink: "https://svnit.ac.in/facup/CV_Meghal_Website_July2025.pdf", imageSrc: "/images/dignitaries/desai.png" },
+    { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/dignitaries/jigisha.png" },
+    { name: "Dr. Meghal A. Desai", title: "Professor, DoChE, SVNIT, Surat ", initials: "MAD", hasCv: true, cvLink: "https://svnit.ac.in/facup/CV_Meghal_Website_July2025.pdf", imageSrc: "/images/dignitaries/desai.png" },
   ];
 
   const organisingSecretaries: Person[] = [
-    { name: "Prof.(Dr.) Sanjaykumar R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/sanjay.png" },
-    { name: "Prof.(Dr.) G. C. Jadeja", title: "Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
-    { name: "Prof.(Dr.) Sarita Kalla", title: "Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
-    { name: "Prof.(Dr.) Sundar S. K.", title: "Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
-    { name: "Prof.(Dr.) Yogesh Nimdeo", title: "Professor, DoChE, SVNIT, Surat ", initials: "YN", hasCv: true, cvLink: "", imageSrc: "/images/dignitaries/nimdeo.png" },
+    { name: "Dr. Sanjaykumar R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/sanjay.png" },
+    { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
+    { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
+    { name: "Dr. Sundar S. K.", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
+    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, IIT Jammu", initials: "YN", hasCv: true, cvLink: "", imageSrc: "/images/dignitaries/nimdeo.png" },
   ];
 
-  const scholars: Person[] = [
+  const phdScholars: Person[] = [
     { name: "Mr. Miraj Savani", title: "PhD Scholar", initials: "MS", imageSrc: "/images/dignitaries/miraj.png", description: "Drug Delivery, Emulation, Thermoresponsive polymers, Advance materials" },
     { name: "Ms. Rashmi Pathania", title: "PhD Scholar", initials: "RP", imageSrc: "/images/dignitaries/rashmi.png", description: "Development of hydrophobic nano coating on different substrates"},
     { name: "Ms. Khushbu Bhavsar", title: "Research Scholar", initials: "KB", imageSrc: "/images/dignitaries/khushbu.png", description: "Valorization of biomass through chemo-catalytic routes, Carbon capture"},
-    { name: "Mr. Purusottam Tripathy", title: "Research Scholar", initials: "PT", imageSrc: "/images/dignitaries/purusottam.png", description: " Membrane Technology, Wastewater treatment, Water purification, Advanced oxidation processes"},
-    { name: "Ms. Priya Sharma", title: "MTech Student", initials: "PS", imageSrc: "/images/dignitaries/priya.png", description: "Valorization of lignin to develop sustainable functional materials for diverse applications in material science"},
-    { name: "Mr. Aamir Vhora", title: "MTech Student", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description: "Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
-    { name: "Ms. Shalinee Gupta", title: "PhD Scholar", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
-    { name: "Ms. Sachin Thorat", title: "Research Scholar", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
-    { name: "Mr. Hriday K. Samdani", title: "BTech Student", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student"},
-    { name: "Vikash Patil", title: "MTech Student", initials: "VP", imageSrc: "/images/dignitaries/vikash.png" },
-    { name: "Ritu Menon", title: "PhD Scholar", initials: "RMN", imageSrc: "" },
-    { name: "Sanjay Kulkarni", title: "Research Scholar", initials: "SKU", imageSrc: "" },
-    { name: "Nisha Gupta", title: "MTech Student", initials: "NG", imageSrc: "" },
+    { name: "Mr. Purusottam Tripathy", title: "Research Scholar", initials: "PT", imageSrc: "/images/dignitaries/purusottam.png", description: "Membrane Technology, Wastewater treatment, Water purification, Advanced oxidation processes"},
+    { name: "Ms. Priya Sharma", title: "PhD Scholar", initials: "PS", imageSrc: "/images/dignitaries/priya.png", description: "Valorization of lignin to develop sustainable functional materials for diverse applications in material science"},
+    { name: "Mr. Aamir Vhora", title: "PhD Scholar", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
+    { name: "Ms. Shalinee Gupta", title: "Research Scholar", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
+    { name: "Ms. Sachin Thorat", title: "PhD Scholar", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
+  ];
+
+  const mtechStudents: Person[] = [
+    { name: "Ms. Jemish Dattani", title: "MTech Student", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
+    { name: "Mr. Kishan Patel", title: "MTech Student", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
+    { name: "Mr. Harshil", title: "MTech Student", initials: "H", imageSrc: "/images/dignitaries/harshil.png" },
+    { name: "Mr. Anshul", title: "MTech Student", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
+  ];
+
+  const btechStudents: Person[] = [
+    { name: "Mr. Hriday K. Samdani", title: "BTech Student", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student" },
+    { name: "Student 2", title: "BTech Student", initials: "S2", imageSrc: "" },
+    { name: "Student 3", title: "BTech Student", initials: "S3", imageSrc: "" },
+    { name: "Student 4", title: "BTech Student", initials: "S4", imageSrc: "" },
   ];
 
   // --- RENDER HELPERS ---
-  const renderAuthority = (person: Person, size: "large" | "medium" = "large") => {
+  const renderAuthority = (person: Person, size: "large" | "medium" = "large", showOverlay: boolean = true) => {
     const avatarSize = size === "large" ? "h-32 w-32" : "h-24 w-24";
     const cardClasses =
       size === "large"
@@ -69,24 +77,20 @@ const Organising = () => {
 
     const avatarInner = (
       <div className="relative inline-flex items-center justify-center mx-auto mb-4">
-        {/* Outer glow ring */}
         <div
           className={`relative ${avatarSize} rounded-full p-[4px] bg-gradient-to-b from-primary/90 to-primary overflow-visible transition-all duration-300 group-hover:scale-105`}
         >
-          {/* Circular image container */}
           <div className="w-full h-full rounded-full overflow-hidden bg-secondary flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.02]">
             <Avatar className="w-full h-full rounded-none">
               <AvatarImage src={person.imageSrc} alt={person.name} className="object-cover w-full h-full" />
               <AvatarFallback
-                className={`text-secondary-foreground ${
-                  size === "large" ? "text-2xl" : "text-lg"
-                }`}
+                className={`text-secondary-foreground ${size === "large" ? "text-2xl" : "text-lg"}`}
               >
                 {person.initials}
               </AvatarFallback>
             </Avatar>
 
-            {person.hasCv && (
+            {person.hasCv && showOverlay && (
               <div
                 className="absolute inset-0 flex items-center justify-center bg-black/45 opacity-0 group-hover:opacity-100 transition-all duration-250 ease-out rounded-full"
               >
@@ -156,7 +160,7 @@ const Organising = () => {
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chief Patrons</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {chiefPatrons.map((p) => renderAuthority(p, "medium"))}
+              {chiefPatrons.map((p) => renderAuthority(p, "medium", false))}
             </div>
           </section>
 
@@ -168,7 +172,7 @@ const Organising = () => {
 
           {/* Chairmen */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chairmen</h2>
+            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chairpersons</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {chairmen.map((person) => renderAuthority(person, "medium"))}
             </div>
@@ -182,14 +186,34 @@ const Organising = () => {
             </div>
           </section>
 
-          {/* Scholars */}
+          {/* Student Coordinators */}
           <section>
-            <h2 className="text-2xl font-bold text-center mb-6 text-primary">
-              Research Scholars & Student Volunteers
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {scholars.map(renderScholar)}
+            <h2 className="text-2xl font-bold text-center mb-10 text-primary">Student Coordinators</h2>
+
+            {/* PhD Research Scholars */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-center mb-6">PhD Research Scholars</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {phdScholars.map(renderScholar)}
+              </div>
             </div>
+
+            {/* MTech Students */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-center mb-6">M.Tech Students</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {mtechStudents.map(renderScholar)}
+              </div>
+            </div>
+
+            {/* BTech Students */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-center mb-6">B.Tech Students</h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {btechStudents.map(renderScholar)}
+              </div>
+            </div>
+
             <p className="text-center text-sm text-muted-foreground mt-6">
               Hover over photos to see research interests
             </p>

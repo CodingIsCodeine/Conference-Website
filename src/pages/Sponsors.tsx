@@ -29,9 +29,7 @@ const Sponsors = () => {
         "15 mins Speaker Slot",
         "04 Delegate Passes",
         "Stall for Exhibition",
-        "",
-        "Half-page advertisement in proceedings",
-        "Logo on conference website",
+        "Logo on each & every Banner, Poster, and Registration Kit",
       ],
     },
     {
@@ -39,11 +37,11 @@ const Sponsors = () => {
       amount: "₹2,00,000",
       color: "bg-gradient-to-r from-yellow-100 to-amber-100",
       benefits: [
-        "Logo on select materials",
-        "Exhibition stall",
-        "2 complimentary registrations",
-        "Quarter-page advertisement in proceedings",
-        "Logo on conference website",
+        "Logo on the backdrop",
+        "Logo on the Entrance Gate",
+        "07 mins Speaker Slot",
+        "03 Delegate Passes",
+        "Stall for Exhibition",
       ],
     },
     {
@@ -51,20 +49,36 @@ const Sponsors = () => {
       amount: "₹1,00,000",
       color: "bg-gradient-to-r from-gray-100 to-slate-100",
       benefits: [
-        "Logo on conference materials",
-        "1 complimentary registration",
-        "Logo on conference website",
+        "Logo on the backdrop",
+        "Logo on the Entrance Gate",
+        "02 Delegate Passes",
+        "Stall for Exhibition",
       ],
     },
   ];
 
   const supportPartners = [
-    { name: "Associate Partner", amount: "₹75,000" },
-    { name: "Exhibition Stall", amount: "₹50,000" },
-    { name: "Lunch Sponsorship", amount: "₹1,00,000 per day" },
-    { name: "Dinner Sponsorship", amount: "₹1,50,000 per day" },
-    { name: "Cultural Programme", amount: "₹2,00,000" },
-    { name: "Keynote/Plenary Lecture", amount: "₹50,000 per session" },
+    {
+      name: "Associate Partner",
+      amount: "₹75,000",
+      benefits: [
+        "Logo on the backdrop",
+        "Logo on the Entrance Gate",
+        "02 Delegate Passes",
+      ],
+    },
+    {
+      name: "Exhibition Stall",
+      amount: "₹50,000",
+      benefits: [
+        "3m x 3m area",
+        "*Offer: Rs 35,000 each stall cost on booking 2 stalls",
+      ],
+    },
+    { name: "Lunch Sponsorship", amount: "₹60,000/- (02 days)" },
+    { name: "Dinner Sponsorship", amount: "₹60,000/- (02 days)" },
+    { name: "Cultural Programme", amount: "₹50,000/- (02 days)" },
+    { name: "Keynote/Plenary Lectures' Sponsorship", amount: "₹20,000/-" },
   ];
 
   return (
@@ -123,11 +137,22 @@ const Sponsors = () => {
                     <CardTitle className="text-lg">{partner.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-3">
                       <Badge variant="outline" className="text-base px-3 py-1">
                         {partner.amount}
                       </Badge>
                     </div>
+                    {/* Show benefits only if they exist */}
+                    {partner.benefits && (
+                      <ul className="space-y-1">
+                        {partner.benefits.map((benefit, idx) => (
+                          <li key={idx} className="flex items-start text-sm">
+                            <span className="text-primary mr-2 mt-1">✓</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </CardContent>
                 </Card>
               ))}

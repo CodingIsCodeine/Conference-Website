@@ -1,6 +1,7 @@
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, FileText, Award, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -8,10 +9,10 @@ import ImageCarousel from "@/components/ui/ImageCarousel";
 
 const Index = () => {
   const deadlines = [
-    { title: "Abstract submission", date: "1 March 2026" },
-    { title: "Intimation of acceptance", date: "16 March 2026" },
-    { title: "Full paper submission", date: "31 March 2026" },
-    { title: "Last day of registration", date: "10 April 2026" },
+    { title: "Last date of Abstract submission", date: <>1<sup>st</sup> March 2026</> },
+    { title: "Intimation of acceptance", date: <>16<sup>th</sup> March 2026</> },
+    { title: "Last date of registration", date: <>10<sup>th</sup> April 2026</> },
+    { title: "Full paper submission", date: "Will be announced soon" },
   ];
 
   const aboutSections = [
@@ -30,9 +31,7 @@ const Index = () => {
           <p>
             This conference serves as a global platform to advance Green Chemistry and
             Green Engineering, fostering collaboration among academia, industry, research
-            organizations, and policymakers. The conference will bring together all
-            stakeholders from academia, research, industry, and society to exchange ideas
-            in the following thrust areas:
+            organizations, and policymakers, to exchange ideas in the following thrust areas:
           </p>
           <ul className="list-disc list-inside space-y-1 pl-3 text-left">
             <li>Process Intensification Techniques</li>
@@ -108,9 +107,7 @@ const Index = () => {
           <p>
             The department strives to provide a conducive environment for creative and dynamic research work.
             Faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc.,
-            and have high-quality research publications and patents. The department actively conducts faculty
-            development programmes, short-term training programmes, and workshops for engineering faculty and
-            industry personnel.
+            and have high-quality research publications and patents. 
           </p>
 
           <p>
@@ -120,9 +117,9 @@ const Index = () => {
           <div className="pt-2">
             <ImageCarousel
               images={[
-                "/images/chemdept-1.jpg",
-                "/images/chemdept-2.jpg",
-                "/images/chemdept-3.jpg",
+                "/images/dept-6.jpg",
+                "/images/dept-4.jpg",
+                "/images/dept-8.jpg",
               ]}
               interval={3500}
               className="mt-4"
@@ -208,41 +205,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Previous Edition */}
+        {/* ✅ About Surat Section */}
         <section className="py-16 bg-muted">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              Previous Edition Highlights
-            </h2>
-            <div className="max-w-4xl mx-auto">
-              <Card className="shadow-card">
-                <CardContent className="p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-8">
-                    <div>
-                      <p className="text-4xl font-bold text-primary mb-2">150+</p>
-                      <p className="text-muted-foreground">Participants</p>
-                    </div>
-                    <div>
-                      <p className="text-4xl font-bold text-primary mb-2">50+</p>
-                      <p className="text-muted-foreground">Research Papers</p>
-                    </div>
-                    <div>
-                      <p className="text-4xl font-bold text-primary mb-2">20+</p>
-                      <p className="text-muted-foreground">Countries</p>
-                    </div>
-                  </div>
-                  <p className="text-center text-muted-foreground">
-                    The first edition of GCESDIP was a resounding success, bringing together leading experts 
-                    from academia and industry to discuss sustainable solutions for a greener future.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* ✅ About Surat Section (Updated with ImageCarousel) */}
-        <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">About Surat</h2>
             <div className="max-w-4xl mx-auto">
@@ -261,16 +225,40 @@ const Index = () => {
                         and sustainable development.
                       </p>
                     </div>
-                    <div className="pt-2">
-                      <ImageCarousel
-                        images={[
-                          "/images/surat2.jpg",
-                          "/images/surat3.jpeg",
-                          "/images/surat4.webp",
-                        ]}
-                        interval={3500}
-                        className="mt-4"
-                      />
+                    <div className="pt-2 text-center">
+                      <SuratImageCarousel />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* ✅ Previous Edition Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
+              Previous Edition
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <Card className="shadow-card">
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        The first edition of GCESDIP was a grand success, drawing participants from academia, 
+                        research, and industry across India and abroad. It provided a vibrant platform for 
+                        scientific discussions and knowledge exchange on sustainable chemical processes.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Distinguished speakers, panel discussions, and poster sessions enriched the experience, 
+                        creating opportunities for collaboration and innovation. The overwhelming participation 
+                        reaffirmed our commitment to promoting green chemistry and engineering for a sustainable future.
+                      </p>
+                    </div>
+                    <div className="pt-2 text-center">
+                      <PreviousEditionCarousel />
                     </div>
                   </div>
                 </CardContent>
@@ -287,9 +275,20 @@ const Index = () => {
               Be part of the conversation on sustainable development and green chemistry
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8">
-                Submit Abstract
-              </Button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="secondary" className="text-lg px-8">
+                  Submit Abstract
+                </Button>
+              </a>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeL--0f225-_T4cFpwBfiiZlxMU5HIsVmgKGpY_lOzlONkr_g/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
               <Button
                 size="lg"
                 variant="outline"
@@ -297,12 +296,69 @@ const Index = () => {
               >
                 Register Now
               </Button>
+              </a>
             </div>
           </div>
         </section>
       </main>
 
       <Footer />
+    </div>
+  );
+};
+
+/* ✅ Surat Image Carousel */
+const SuratImageCarousel = () => {
+  const images = [
+    { src: "/images/surat-2.jpg", caption: "🌄 Saputara — Gujarat’s Scenic Hill Station" },
+    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
+    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views" },
+    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav — A Serene Heritage Lake" },
+    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
+  ];
+
+  return <AutoCarousel images={images} />;
+};
+
+/* ✅ Previous Edition Carousel (same style as Surat) */
+const PreviousEditionCarousel = () => {
+  const images = [
+    { src: "/images/prev1.jpg", caption: "🌿 Inauguration Ceremony of GCESDIP 1.0" },
+    { src: "/images/prev2.jpg", caption: "🎤 Keynote Session by Industry Experts" },
+    { src: "/images/prev3.jpg", caption: "🧪 Poster Presentations by Researchers" },
+    { src: "/images/prev4.jpg", caption: "🤝 Networking & Collaborative Discussions" },
+    { src: "/images/prev5.jpg", caption: "🏆 Valedictory Ceremony & Awards" },
+  ];
+
+  return <AutoCarousel images={images} />;
+};
+
+/* ✅ Shared Auto Carousel Component */
+const AutoCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setCurrentIndex((prev) => (prev + 1) % images.length),
+      3500
+    );
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full text-center">
+      <div className="overflow-hidden rounded-xl shadow-lg transition-all duration-700 ease-in-out">
+        <img
+          src={images[currentIndex].src}
+          alt={images[currentIndex].caption}
+          className="w-full h-64 md:h-72 object-cover"
+        />
+      </div>
+      <div className="mt-4 flex justify-center">
+        <p className="bg-white/40 backdrop-blur-md text-primary font-medium px-4 py-2 rounded-full text-sm md:text-base shadow-sm border border-white/60 inline-flex items-center gap-2 transition-all duration-500">
+          {images[currentIndex].caption}
+        </p>
+      </div>
     </div>
   );
 };

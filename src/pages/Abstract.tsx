@@ -6,16 +6,20 @@ import { FileText, Award, BookOpen, Newspaper } from "lucide-react";
 
 const Abstract = () => {
   const topics = [
-    "Green synthesis and catalysis",
-    "Renewable energy technologies",
-    "Sustainable materials and processes",
-    "Carbon capture and utilization",
-    "Waste valorization",
-    "Bio-based chemicals and fuels",
-    "Process intensification",
-    "Life cycle assessment",
-    "Industrial ecology",
-    "Green analytical chemistry",
+    "Process Intensification Techniques",
+    "Sustainable approaches in Pharmaceutical and Chemical Industries",
+    "Catalysis",
+    "Novel Separation Methods",
+    "Green Solvents",
+    "Functional Foods and Nutraceuticals",
+    "Green and Sustainable Chemistry in the Environment",
+    "Green Nanotechnology",
+    "Waste to Wealth",
+    "Renewable Energy and Clean Energy",
+    "Energy Storage",
+    "Process Modelling and CFD",
+    "Future Trends in Green Chemistry and Engineering",
+    "Any other area relevant to the theme of the conference",
   ];
 
   return (
@@ -24,12 +28,14 @@ const Abstract = () => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Abstract Submission</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            Abstract Submission
+          </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Share your research and contribute to sustainable development
           </p>
 
-          {/* Submit Abstract Card - centered subtle highlight */}
+          {/* Submit Abstract Card */}
           <div className="flex justify-center mb-12">
             <div className="w-full max-w-3xl">
               <Card className="shadow-card hover:shadow-hover transition-smooth">
@@ -42,14 +48,36 @@ const Abstract = () => {
                     Submit your research abstract for consideration at GCESDIP 2.0
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Abstracts should be submitted in PDF format with a maximum of 500 words. 
-                    Include title, authors, affiliations, and keywords. Authors are invited to submit abstracts highlighting original research or innovative practices aligned with the conference themes. Submissions should clearly present objectives, methods, results, and conclusions, focusing on sustainable and green approaches.
-                    Accepted abstracts will be presented as oral or poster sessions during the conference.
-                    </p>
 
-                  {/* Google Form Button with Glowing Hover */}
+                <CardContent>
+                  <ul className="text-sm text-muted-foreground mb-4 list-disc pl-6 space-y-2">
+                    <li>
+                      Abstracts should be submitted in <strong>PDF format</strong> with a
+                      maximum of <strong>500 words</strong>.
+                    </li>
+                    <li>
+                      Include <strong>title</strong>, <strong>authors</strong>,{" "}
+                      <strong>affiliations</strong>, and <strong>keywords</strong>.
+                    </li>
+                    <li>
+                      Authors are invited to submit abstracts highlighting{" "}
+                      <strong>original research</strong> or{" "}
+                      <strong>innovative practices</strong> aligned with the conference
+                      themes.
+                    </li>
+                    <li>
+                      Submissions should clearly present <strong>objectives</strong>,{" "}
+                      <strong>methods</strong>, <strong>results</strong>, and{" "}
+                      <strong>conclusions</strong>, focusing on{" "}
+                      <strong>sustainable and green approaches</strong>.
+                    </li>
+                    <li>
+                      Accepted abstracts will be presented as <strong>oral</strong> or{" "}
+                      <strong>poster sessions</strong> during the conference.
+                    </li>
+                  </ul>
+
+                  {/* Google Form Button */}
                   <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
                     target="_blank"
@@ -91,28 +119,18 @@ const Abstract = () => {
                     <span className="text-primary mr-2">•</span>
                     <span>Best Poster Presentation Award</span>
                   </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Young Researcher Award</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Best Industrial Paper Award</span>
-                  </li>
                 </ul>
               </CardContent>
             </Card>
 
-            {/* Conference Topics */}
+            {/* Conference Themes */}
             <Card className="shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="flex items-center space-x-3 mb-2">
                   <BookOpen className="h-8 w-8 text-primary" />
-                  <CardTitle className="text-2xl">Conference Topics</CardTitle>
+                  <CardTitle className="text-2xl">Conference Themes</CardTitle>
                 </div>
-                <CardDescription>
-                  Research areas of interest
-                </CardDescription>
+                <CardDescription>Research areas of interest</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
@@ -133,19 +151,28 @@ const Abstract = () => {
                   <Newspaper className="h-8 w-8 text-primary" />
                   <CardTitle className="text-2xl">Special Issue</CardTitle>
                 </div>
-                <CardDescription>
-                  Publication opportunities
-                </CardDescription>
+                <CardDescription>Publication opportunities</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Selected papers will be published in a special issue of a peer-reviewed journal 
-                  (Scopus/SCI indexed).
+                  Abstract will be published in the proceedings with an ISSN number.
+                </p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Selected papers will be published in a special issue of a peer-reviewed
+                  journal (Scopus/SCI indexed/Web of Science indexed), adopting a regular
+                  peer review process as per the norms of the concerned journal.
+                </p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  The full paper must be submitted as per the format and guidelines of the
+                  concerned journal.
+                </p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  The originality of the research contribution is vested with the authors.
                 </p>
                 <div className="space-y-2 text-sm">
-                  <p><strong>Journal Partner:</strong> To be announced</p>
-                  <p><strong>Selection Criteria:</strong> Based on presentation quality and reviewer feedback</p>
-                  <p><strong>Publication Fee:</strong> As per journal guidelines</p>
+                  <p>
+                    <strong>Journal Partner:</strong> To be announced
+                  </p>
                 </div>
               </CardContent>
             </Card>

@@ -28,7 +28,7 @@ const Programme = () => {
             <CardContent className="text-center space-y-6">
               <div className="bg-muted p-6 rounded-lg">
                 <h3 className="font-semibold text-lg mb-3">Conference Dates</h3>
-                <p className="text-2xl font-bold text-primary mb-2">17th - 18th April 2026</p>
+                <p className="text-2xl font-bold text-primary mb-2">17<sup>th</sup> - 18<sup>th</sup> April 2026</p>
                 <p className="text-muted-foreground">
                   SVNIT Surat, Gujarat, India
                 </p>
@@ -39,7 +39,7 @@ const Programme = () => {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
-                    <span>Plenary sessions on green chemistry innovations</span>
+                    <span>Plenary sessions</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
@@ -59,7 +59,7 @@ const Programme = () => {
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
-                    <span>Cultural evening and networking sessions</span>
+                    <span>Networking sessions</span>
                   </li>
                 </ul>
               </div>
