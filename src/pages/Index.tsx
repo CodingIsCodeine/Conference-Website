@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Calendar, FileText, Award, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
-import AboutSurat from "@/components/ui/AboutSurat";
 
 const Index = () => {
   const deadlines = [
@@ -75,7 +74,6 @@ const Index = () => {
             role in advancing engineering education and research in India.
           </p>
 
-          {/* Carousel - adjust image paths to match what you put in /public/images */}
           <div className="pt-2">
             <ImageCarousel
               images={[
@@ -87,9 +85,8 @@ const Index = () => {
                 "/images/svnit-10.jpg",
                 "/images/svnit-6.jpg",
                 "/images/svnit-11.jpg",
-                // add more if available
               ]}
-              interval={3500} // milliseconds; change to taste
+              interval={3500}
               className="mt-4"
             />
           </div>
@@ -97,44 +94,44 @@ const Index = () => {
       ),
     },
     {
-    title: "Dept. of Chemical Engineering",
-    icon: Users,
-    description: (
-      <div className="space-y-4">
-        <p>
-          Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes
-          leading to Bachelor’s, Master’s, and Ph.D. degrees in Chemical Engineering. The department
-          has built a comprehensive research infrastructure with top-notch facilities for carrying out
-          cutting-edge research.
-        </p>
+      title: "Dept. of Chemical Engineering",
+      icon: Users,
+      description: (
+        <div className="space-y-4">
+          <p>
+            Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes
+            leading to Bachelor’s, Master’s, and Ph.D. degrees in Chemical Engineering. The department
+            has built a comprehensive research infrastructure with top-notch facilities for carrying out
+            cutting-edge research.
+          </p>
 
-        <p>
-          The department strives to provide a conducive environment for creative and dynamic research work.
-          Faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc.,
-          and have high-quality research publications and patents. The department actively conducts faculty
-          development programmes, short-term training programmes, and workshops for engineering faculty and
-          industry personnel.
-        </p>
+          <p>
+            The department strives to provide a conducive environment for creative and dynamic research work.
+            Faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc.,
+            and have high-quality research publications and patents. The department actively conducts faculty
+            development programmes, short-term training programmes, and workshops for engineering faculty and
+            industry personnel.
+          </p>
 
-        <p>
-          Currently, the department has 19 faculty members with expertise in various domains of Chemical Engineering.
-        </p>
+          <p>
+            Currently, the department has 19 faculty members with expertise in various domains of Chemical Engineering.
+          </p>
 
-        <div className="pt-2">
-          <ImageCarousel
-            images={[
-              "/images/chemdept-1.jpg",
-              "/images/chemdept-2.jpg",
-              "/images/chemdept-3.jpg",
-            ]}
-            interval={3500}
-            className="mt-4"
-          />
+          <div className="pt-2">
+            <ImageCarousel
+              images={[
+                "/images/chemdept-1.jpg",
+                "/images/chemdept-2.jpg",
+                "/images/chemdept-3.jpg",
+              ]}
+              interval={3500}
+              className="mt-4"
+            />
+          </div>
         </div>
-      </div>
-    ),
-  },
-];
+      ),
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -151,9 +148,11 @@ const Index = () => {
       >
         <div className="container mx-auto px-4 text-center">
           <div className="animate-fade-in">
-            <p className="text-xl md:text-2xl font-semibold mb-4">17th – 18th April 2026</p>
+            <p className="text-xl md:text-2xl font-semibold mb-4">
+              17<sup>th</sup> – 18<sup>th</sup> April 2026
+            </p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-5xl mx-auto leading-tight">
-              2nd International Conference on Green Chemistry and Engineering towards Sustainable Development
+              2<sup>nd</sup> International Conference on Green Chemistry and Engineering towards Sustainable Development
             </h1>
             <p className="text-xl md:text-2xl mb-8">An Industrial Perspective (GCESDIP 2.0)</p>
             <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p>
@@ -242,14 +241,43 @@ const Index = () => {
           </div>
         </section>
 
-        <AboutSurat
-  images={[
-    '/public/images/surat2.jpg',
-    '/public/images/surat3.jpeg',
-    '/public/images/surat4.webpg',
-  ]}
-/>
-
+        {/* ✅ About Surat Section (Updated with ImageCarousel) */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">About Surat</h2>
+            <div className="max-w-4xl mx-auto">
+              <Card className="shadow-card">
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Surat, known as the "Diamond City" and "Silk City" of India, is a vibrant metropolis 
+                        in Gujarat. The city is famous for its textile and diamond cutting industries, 
+                        contributing significantly to India's economy.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        With its rich cultural heritage, modern infrastructure, and thriving industrial base, 
+                        Surat offers an ideal setting for this international conference on green chemistry 
+                        and sustainable development.
+                      </p>
+                    </div>
+                    <div className="pt-2">
+                      <ImageCarousel
+                        images={[
+                          "/images/surat2.jpg",
+                          "/images/surat3.jpeg",
+                          "/images/surat4.webp",
+                        ]}
+                        interval={3500}
+                        className="mt-4"
+                      />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         {/* Call to Action */}
         <section className="py-16 gradient-hero text-white">

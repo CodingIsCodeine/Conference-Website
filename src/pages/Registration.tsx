@@ -7,19 +7,19 @@ import { CheckCircle2 } from "lucide-react";
 
 const Registration = () => {
   const registrationFees = [
-    { category: "Indian Academician", early: "₹4,000", regular: "₹5,000" },
-    { category: "Foreign Academician", early: "$150", regular: "$200" },
-    { category: "Indian Industry Professional", early: "₹6,000", regular: "₹7,500" },
-    { category: "Foreign Industry Professional", early: "$200", regular: "$250" },
-    { category: "Indian Student", early: "₹2,000", regular: "₹2,500" },
-    { category: "Foreign Student", early: "$75", regular: "$100" },
+    { category: "UG Students", regular: "₹3,540" },
+    { category: "PG/PhD/Postdoc/Research Fellows", regular: "₹7,050" },
+    { category: "Academicians/Scientists/Researchers", regular: "₹9,440" },
+    { category: "Industry Delegate", regular: "₹11,800" },
+    { category: "Attendees", regular: "₹3,540" },
+    { category: "Foreign Students", regular: "$118" },
+    { category: "Foreign Academicians/Delegates", regular: "$147" },
   ];
 
   const includes = [
     "Access to all technical sessions",
     "Conference kit and proceedings",
     "Breakfast, lunch, and refreshments",
-    "Welcome dinner and cultural evening",
     "Conference certificate",
     "Networking opportunities",
   ];
@@ -42,9 +42,19 @@ const Registration = () => {
               <CardDescription>Complete your registration using our online form</CardDescription>
             </CardHeader>
             <CardContent className="flex justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Click Here to Register
-              </Button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  className="w-full relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_20px_rgba(34,197,94,0.7)] hover:scale-[1.05] text-lg font-semibold bg-gradient-to-r from-green-600 to-emerald-500 text-white"
+                  size="lg"
+                >
+                  <span className="relative z-10">Click Here to Register</span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-green-700/30 to-emerald-400/30 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-md"></span>
+                </Button>
+              </a>
             </CardContent>
           </Card>
 
@@ -58,15 +68,13 @@ const Registration = () => {
                     <TableHeader>
                       <TableRow>
                         <TableHead className="font-semibold">Category</TableHead>
-                        <TableHead className="font-semibold">Early Bird (Before 1 March 2026)</TableHead>
-                        <TableHead className="font-semibold">Regular (After 1 March 2026)</TableHead>
+                        <TableHead className="font-semibold">Registration Fee</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
                       {registrationFees.map((fee, index) => (
                         <TableRow key={index}>
                           <TableCell className="font-medium">{fee.category}</TableCell>
-                          <TableCell>{fee.early}</TableCell>
                           <TableCell>{fee.regular}</TableCell>
                         </TableRow>
                       ))}
@@ -80,20 +88,27 @@ const Registration = () => {
             </p>
           </section>
 
-          {/* What's Included */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-center mb-8 text-primary">Your Registration Includes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {includes.map((item, index) => (
-                <Card key={index} className="shadow-card hover:shadow-hover transition-smooth">
-                  <CardContent className="flex items-start space-x-3 p-6">
-                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-base">{item}</span>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
+{/* What's Included */}
+<section className="mb-12">
+  <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+    Your Registration Includes
+  </h2>
+
+          {/* Adaptive, centered, symmetric flex layout */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {includes.map((item, index) => (
+              <Card
+                key={index}
+                className="shadow-card hover:shadow-hover transition-smooth w-full sm:w-[45%] lg:w-[30%] max-w-xs"
+              >
+                <CardContent className="flex items-start space-x-3 p-6">
+                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <span className="text-base">{item}</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
           {/* Payment Method */}
           <section>
@@ -107,30 +122,45 @@ const Registration = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">Account Name</p>
-                    <p className="text-base">GCESDIP 2.0 - SVNIT Surat</p>
+                    <p className="text-base">Director, SVNIT-CCE</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">Bank Name</p>
-                    <p className="text-base">State Bank of India</p>
+                    <p className="text-base">State Bank of India (SVRCET Branch, Surat)</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">Account Number</p>
-                    <p className="text-base">1234567890</p>
+                    <p className="text-base">37030749143</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">IFSC Code</p>
-                    <p className="text-base">SBIN0001234</p>
+                    <p className="text-base">SBIN0003320</p>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-muted-foreground">Branch</p>
-                    <p className="text-base">SVNIT Campus, Surat</p>
+                    <p className="text-sm font-semibold text-muted-foreground">MICR Code</p>
+                    <p className="text-base">395002012</p>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">SWIFT Code</p>
-                    <p className="text-base">SBININBB123 (For international transfers)</p>
+                    <p className="text-base">SBININBB260 (For international transfers)</p>
                   </div>
                 </div>
-                
+
+                {/* Highlighted Important Note */}
+                <div className="mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg border border-yellow-300 text-center font-medium">
+                  The registration fee is <span className="font-semibold">non-refundable</span> and should be paid <span className="font-semibold">ONLINE ONLY</span> to the above account.
+                </div>
+
+                {/* QR Code Placeholder */}
+                <div className="flex justify-center mt-6">
+                  {/* Replace the src link below with your actual QR code image */}
+                  <img
+                    src="/images/qrcode.png"
+                    alt="QR Code for Payment"
+                    className="w-48 h-48 object-contain border rounded-lg shadow-md"
+                  />
+                </div>
+
                 <div className="mt-6 p-4 bg-muted rounded-lg">
                   <p className="text-sm font-semibold mb-2">Payment Guidelines:</p>
                   <ul className="text-sm space-y-1 list-disc list-inside">

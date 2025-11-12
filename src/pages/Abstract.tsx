@@ -29,29 +29,47 @@ const Abstract = () => {
             Share your research and contribute to sustainable development
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* Submit Abstract */}
-            <Card className="shadow-card hover:shadow-hover transition-smooth">
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-2">
-                  <FileText className="h-8 w-8 text-primary" />
-                  <CardTitle className="text-2xl">Submit Abstract</CardTitle>
-                </div>
-                <CardDescription>
-                  Submit your research abstract for consideration at GCESDIP 2.0
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Abstracts should be submitted in PDF format with a maximum of 500 words. 
-                  Include title, authors, affiliations, and keywords.
-                </p>
-                <Button className="w-full" size="lg">
-                  Submit Your Abstract
-                </Button>
-              </CardContent>
-            </Card>
+          {/* Submit Abstract Card - centered subtle highlight */}
+          <div className="flex justify-center mb-12">
+            <div className="w-full max-w-3xl">
+              <Card className="shadow-card hover:shadow-hover transition-smooth">
+                <CardHeader>
+                  <div className="flex items-center space-x-3 mb-2">
+                    <FileText className="h-8 w-8 text-primary" />
+                    <CardTitle className="text-2xl">Submit Abstract</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Submit your research abstract for consideration at GCESDIP 2.0
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Abstracts should be submitted in PDF format with a maximum of 500 words. 
+                    Include title, authors, affiliations, and keywords. Authors are invited to submit abstracts highlighting original research or innovative practices aligned with the conference themes. Submissions should clearly present objectives, methods, results, and conclusions, focusing on sustainable and green approaches.
+                    Accepted abstracts will be presented as oral or poster sessions during the conference.
+                    </p>
 
+                  {/* Google Form Button with Glowing Hover */}
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      className="w-full relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_15px_rgba(34,197,94,0.6)] hover:scale-[1.03]"
+                      size="lg"
+                    >
+                      <span className="relative z-10">Submit Your Abstract</span>
+                      <span className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-md"></span>
+                    </Button>
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* 3-card grid below */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Awards */}
             <Card className="shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
@@ -84,11 +102,9 @@ const Abstract = () => {
                 </ul>
               </CardContent>
             </Card>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Topics */}
-            <Card className="shadow-card">
+            {/* Conference Topics */}
+            <Card className="shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="flex items-center space-x-3 mb-2">
                   <BookOpen className="h-8 w-8 text-primary" />
@@ -111,7 +127,7 @@ const Abstract = () => {
             </Card>
 
             {/* Special Issue */}
-            <Card className="shadow-card">
+            <Card className="shadow-card hover:shadow-hover transition-smooth">
               <CardHeader>
                 <div className="flex items-center space-x-3 mb-2">
                   <Newspaper className="h-8 w-8 text-primary" />
