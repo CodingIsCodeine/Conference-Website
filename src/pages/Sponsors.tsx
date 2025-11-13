@@ -60,7 +60,7 @@ const Sponsors = () => {
   const supportPartners = [
     {
       name: "Associate Partner",
-      amount: "₹75,000",
+      amount: "₹75,000/-",
       benefits: [
         "Logo on the backdrop",
         "Logo on the Entrance Gate",
@@ -69,7 +69,7 @@ const Sponsors = () => {
     },
     {
       name: "Exhibition Stall",
-      amount: "₹50,000",
+      amount: "₹50,000/-",
       benefits: [
         "3m x 3m area",
         "*Offer: Rs 35,000 each stall cost on booking 2 stalls",
@@ -178,7 +178,7 @@ const Sponsors = () => {
                 <p>
                   <strong>Phone:</strong>{" "}
                   <a href="tel:+912612201651" className="text-primary hover:underline">
-                    +91 261 220 1651
+                    +91 0261-220 1649/1657/1658
                   </a>
                 </p>
               </CardContent>

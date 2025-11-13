@@ -93,7 +93,7 @@ const Index = () => {
       ),
     },
     {
-      title: "Dept. of Chemical Engineering",
+      title: "Department of Chemical Engineering",
       icon: Users,
       description: (
         <div className="space-y-4">
@@ -325,6 +325,7 @@ const PreviousEditionCarousel = () => {
   const images = [
     { src: "/images/conference-1.png", caption: "📃 Papers from GCESDIP 1.0" },
     { src: "/images/conference-2.png", caption: "📃 Papers from GCESDIP 1.0" },
+    { src: "/images/conference-3.png", caption: "📃 Papers from GCESDIP 1.0" },
   ];
 
   return <AutoCarousel images={images} />;

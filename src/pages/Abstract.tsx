@@ -53,11 +53,11 @@ const Abstract = () => {
                   <ul className="text-sm text-muted-foreground mb-4 list-disc pl-6 space-y-2">
                     <li>
                       Abstracts should be submitted in <strong>PDF format</strong> with a
-                      maximum of <strong>500 words</strong>.
+                      maximum of <strong>250 words</strong>.
                     </li>
                     <li>
                       Include <strong>title</strong>, <strong>authors</strong>,{" "}
-                      <strong>affiliations</strong>, and <strong>keywords</strong>.
+                      <strong>affiliations</strong>, and <strong>keywords</strong> as per the template.
                     </li>
                     <li>
                       Authors are invited to submit abstracts highlighting{" "}
@@ -154,19 +154,19 @@ const Abstract = () => {
                 <CardDescription>Publication opportunities</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm mb-4">
                   Abstract will be published in the proceedings with an ISSN number.
                 </p>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm mb-4">
                   Selected papers will be published in a special issue of a peer-reviewed
                   journal (Scopus/SCI indexed/Web of Science indexed), adopting a regular
                   peer review process as per the norms of the concerned journal.
                 </p>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm mb-4">
                   The full paper must be submitted as per the format and guidelines of the
                   concerned journal.
                 </p>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm mb-4">
                   The originality of the research contribution is vested with the authors.
                 </p>
                 <div className="space-y-2 text-sm">

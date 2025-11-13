@@ -59,7 +59,7 @@ const Committee = () => {
             <CardContent className="p-6">
               {/* ✅ Centered image container */}
               <div className="flex justify-center mb-4">
-                <div className="relative h-20 w-20 rounded-full p-[3px] bg-gradient-to-b from-primary/90 to-primary overflow-hidden transition-all duration-300 group-hover:scale-105">
+                <div className="relative h-40 w-40 rounded-full p-[3px] bg-gradient-to-b from-primary/90 to-primary overflow-hidden transition-all duration-300 group-hover:scale-105">
                   {/* ✅ Clickable avatar if link exists */}
                   {member.link ? (
                     <a
@@ -68,7 +68,7 @@ const Committee = () => {
                       rel="noopener noreferrer"
                       className="relative block w-full h-full rounded-full group"
                     >
-                      <Avatar className="w-full h-full rounded-none">
+                      <Avatar className="w-30 h-30 rounded-none">
                         <AvatarImage src={member.image} alt={member.name} className="object-cover w-full h-full" />
                         <AvatarFallback className="text-secondary-foreground text-lg">
                           {member.initials}
@@ -116,13 +116,13 @@ const Committee = () => {
       <div className="bg-primary text-primary-foreground py-3 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap">
           <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1 March 2026
+            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
           </span>
           <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1 March 2026
+            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
           </span>
           <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1 March 2026
+            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
           </span>
         </div>
       </div>

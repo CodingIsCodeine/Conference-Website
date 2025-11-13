@@ -57,8 +57,8 @@ const Organising = () => {
   const mtechStudents: Person[] = [
     { name: "Ms. Jemish Dattani", title: "MTech Student", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
     { name: "Mr. Kishan Patel", title: "MTech Student", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
-    { name: "Mr. Harshil", title: "MTech Student", initials: "H", imageSrc: "/images/dignitaries/harshil.png" },
-    { name: "Mr. Anshul", title: "MTech Student", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
+    { name: "Mr. Harshil Patel", title: "MTech Student", initials: "H", imageSrc: "/images/dignitaries/harshil.png" },
+    { name: "Mr. Ansu Silawat", title: "MTech Student", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
   ];
 
   const btechStudents: Person[] = [
@@ -140,7 +140,7 @@ const renderScholar = (person: Person) => {
         >
           <Card className="shadow-card hover:shadow-hover transition-smooth cursor-pointer hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] duration-300">
             <CardContent className="p-6 text-center">
-              <Avatar className="h-20 w-20 mx-auto mb-3 border-2 border-primary">
+              <Avatar className="h-40 w-40 mx-auto mb-3 border-2 border-primary">
                 <AvatarImage src={person.imageSrc} alt={person.name} />
                 <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
                   {person.initials}

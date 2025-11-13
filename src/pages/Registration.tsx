@@ -148,7 +148,7 @@ const Registration = () => {
 
                 {/* Highlighted Important Note */}
                 <div className="mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg border border-yellow-300 text-center font-medium">
-                  The registration fee is <span className="font-semibold">non-refundable</span> and should be paid <span className="font-semibold">ONLINE ONLY</span> to the above account.
+                  The registration fee is <span className="font-semibold">Non-refundable</span> and should be paid <span className="font-semibold">ONLINE ONLY</span> to the above account.
                 </div>
 
                 {/* QR Code Placeholder */}
@@ -161,7 +161,7 @@ const Registration = () => {
                   />
                 </div>
 
-                <div className="mt-6 p-4 bg-muted rounded-lg">
+                {/* <div className="mt-6 p-4 bg-muted rounded-lg">
                   <p className="text-sm font-semibold mb-2">Payment Guidelines:</p>
                   <ul className="text-sm space-y-1 list-disc list-inside">
                     <li>After payment, email the transaction receipt to gcesdip@ched.svnit.ac.in</li>
@@ -169,7 +169,7 @@ const Registration = () => {
                     <li>Payment confirmation will be sent within 2 working days</li>
                     <li>For UPI payments, scan the QR code provided in the registration form</li>
                   </ul>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </section>
