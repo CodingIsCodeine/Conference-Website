@@ -349,7 +349,7 @@ const AutoCarousel = ({ images }) => {
         <img
           src={images[currentIndex].src}
           alt={images[currentIndex].caption}
-          className="w-full h-64 md:h-72 object-cover"
+          className="w-full h-64 md:h-72 object-contain bg-black/5"
         />
       </div>
       <div className="mt-4 flex justify-center">

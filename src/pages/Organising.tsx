@@ -9,6 +9,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import React from "react";
+import Ticker from "@/components/Ticker";
 
 type Person = {
   name: string;
@@ -70,7 +71,7 @@ const Organising = () => {
 
   // --- RENDER HELPERS ---
   const renderAuthority = (person: Person, size: "large" | "medium" = "large", showOverlay: boolean = true) => {
-    const avatarSize = size === "large" ? "h-32 w-32" : "h-24 w-24";
+    const avatarSize = size === "large" ? "h-40 w-40" : "h-32 w-32";
     const cardClasses =
       size === "large"
         ? "shadow-card hover:shadow-hover transition-smooth cursor-pointer group"
@@ -162,6 +163,7 @@ const renderScholar = (person: Person) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      <Ticker />
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">

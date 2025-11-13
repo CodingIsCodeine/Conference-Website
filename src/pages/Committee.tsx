@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Ticker from "@/components/Ticker";
 
 interface Member {
   name: string;
@@ -111,22 +112,7 @@ const Committee = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-
-      {/* Ticker */}
-      <div className="bg-primary text-primary-foreground py-3 overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap">
-          <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
-          </span>
-          <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
-          </span>
-          <span className="text-sm font-medium mx-4">
-            📢 Last date of abstract submission is 1<sup>st</sup> March 2026
-          </span>
-        </div>
-      </div>
-
+      <Ticker />
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">

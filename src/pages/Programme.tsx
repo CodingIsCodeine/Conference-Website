@@ -2,11 +2,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
-
+import Ticker from "@/components/Ticker";
 const Programme = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+      <Ticker />
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
