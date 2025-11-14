@@ -162,6 +162,9 @@ const Registration = () => {
                     className="w-48 h-48 object-contain border rounded-lg shadow-md"
                   />
                 </div>
+                <p className="text-sm text-muted-foreground text-center mt-4">
+                  Scan the QR code above for UPI payments
+                </p>
 
                 {/* <div className="mt-6 p-4 bg-muted rounded-lg">
                   <p className="text-sm font-semibold mb-2">Payment Guidelines:</p>

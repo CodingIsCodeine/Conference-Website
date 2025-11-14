@@ -143,10 +143,6 @@ const Footer = () => {
               Department of Chemical Engineering, SVNIT, Surat
             </span>
           </p>
-          <p className="text-xs text-white/70 tracking-wide">
-          © 2025 <span className="text-primary font-semibold drop-shadow-sm">GCESDIP</span>. 
-          All Rights Reserved | SVNIT, Surat
-          </p>
         </div>
       </div>
     </footer>

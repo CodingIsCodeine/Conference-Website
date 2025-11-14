@@ -9,10 +9,10 @@ import ImageCarousel from "@/components/ui/ImageCarousel";
 
 const Index = () => {
   const deadlines = [
-    { title: "Last date of Abstract submission", date: <>1<sup>st</sup> March 2026</> },
-    { title: "Intimation of acceptance", date: <>16<sup>th</sup> March 2026</> },
-    { title: "Last date of registration", date: <>10<sup>th</sup> April 2026</> },
-    { title: "Full paper submission", date: "Will be announced soon" },
+    { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
+    { title: "Intimation of Acceptance", date: <>16<sup>th</sup> March 2026</> },
+    { title: "Last date of Registration", date: <>10<sup>th</sup> April 2026</> },
+    { title: "Full Paper Submission", date: "Will be announced soon" },
   ];
 
   const aboutSections = [
@@ -149,9 +149,10 @@ const Index = () => {
               17<sup>th</sup> – 18<sup>th</sup> April 2026
             </p>
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-5xl mx-auto leading-tight">
-              2<sup>nd</sup> International Conference on Green Chemistry and Engineering towards Sustainable Development
+              2<sup>nd</sup> International Conference on "Green Chemistry and Engineering towards Sustainable Development - An Industrial Perspective"
             </h1>
-            <p className="text-xl md:text-2xl mb-8">An Industrial Perspective (GCESDIP 2.0)</p>
+            
+            <p className="text-xl md:text-2xl mb-8">GCESDIP 2.0</p>
             <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p>
           </div>
         </div>

@@ -13,7 +13,7 @@ const Sponsors = () => {
       benefits: [
         "Logo on the backdrop",
         "Logo on the Entrance Gate",
-        "20 mins Speaker Slot",
+        "20 min Speaker Slot",
         "07 Delegate Passes",
         "Stall for Exhibition",
         "Logo on each & every Banner, Poster, and Registration Kit",
@@ -27,7 +27,7 @@ const Sponsors = () => {
       benefits: [
         "Logo on the backdrop",
         "Logo on the Entrance Gate",
-        "15 mins Speaker Slot",
+        "15 min Speaker Slot",
         "04 Delegate Passes",
         "Stall for Exhibition",
         "Logo on each & every Banner, Poster, and Registration Kit",
@@ -40,7 +40,7 @@ const Sponsors = () => {
       benefits: [
         "Logo on the backdrop",
         "Logo on the Entrance Gate",
-        "07 mins Speaker Slot",
+        "07 min Speaker Slot",
         "03 Delegate Passes",
         "Stall for Exhibition",
       ],
@@ -173,8 +173,8 @@ const Sponsors = () => {
               <CardContent className="text-center">
                 <p className="mb-4">
                   <strong>Email:</strong>{" "}
-                  <a href="mailto:gcesdip@ched.svnit.ac.in" className="text-primary hover:underline">
-                    gcesdip@ched.svnit.ac.in
+                  <a href="mailto:gcesdip2026@gmail.com" className="text-primary hover:underline">
+                    gcesdip2026@gmail.com
                   </a>
                 </p>
                 <p>

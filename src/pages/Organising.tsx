@@ -25,8 +25,8 @@ const Organising = () => {
   // --- DATA ---
   const chiefPatrons: Person[] = [
     { name: "Prof.(Dr.) Anupam Shukla", title: "Director, SVNIT, Surat", initials: "AS", hasCv: true, cvLink: "/assets/cvs/akv.pdf", imageSrc: "/images/dignitaries/anupam.png" },
-    { name: "Prof.(Dr.) A. B. Pandit", title: "VC, ICT Mumbai", initials: "ABP", hasCv: true, cvLink: "/assets/cvs/blr.pdf", imageSrc: "/" },
-    { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: true, cvLink: "/assets/cvs/csn.pdf", imageSrc: "" },
+    // { name: "Prof.(Dr.) A. B. Pandit", title: "VC, ICT Mumbai", initials: "ABP", hasCv: true, cvLink: "/assets/cvs/blr.pdf", imageSrc: "/" },
+    // { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: true, cvLink: "/assets/cvs/csn.pdf", imageSrc: "" },
   ];
 
   const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: true, cvLink: "http://svnit.ac.in/facup/homepage__vnl/web%20page%204.htm", imageSrc: "/images/dignitaries/laad.png" };
@@ -37,7 +37,7 @@ const Organising = () => {
   ];
 
   const organisingSecretaries: Person[] = [
-    { name: "Dr. Sanjaykumar R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/sanjay.png" },
+    { name: "Dr. Sanjaykumar R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/srp.png" },
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
     { name: "Dr. Sundar S. K.", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
@@ -45,33 +45,33 @@ const Organising = () => {
   ];
 
   const phdScholars: Person[] = [
-    { name: "Mr. Miraj Savani", title: "PhD Scholar", initials: "MS", imageSrc: "/images/dignitaries/miraj.png", description: "Drug Delivery, Emulation, Thermoresponsive polymers, Advance materials" },
-    { name: "Ms. Rashmi Pathania", title: "PhD Scholar", initials: "RP", imageSrc: "/images/dignitaries/rashmi.png", description: "Development of hydrophobic nano coating on different substrates"},
-    { name: "Ms. Khushbu Bhavsar", title: "Research Scholar", initials: "KB", imageSrc: "/images/dignitaries/khushbu.png", description: "Valorization of biomass through chemo-catalytic routes, Carbon capture"},
-    { name: "Mr. Purusottam Tripathy", title: "Research Scholar", initials: "PT", imageSrc: "/images/dignitaries/purusottam.png", description: "Membrane Technology, Wastewater treatment, Water purification, Advanced oxidation processes"},
-    { name: "Ms. Priya Sharma", title: "PhD Scholar", initials: "PS", imageSrc: "/images/dignitaries/priya.png", description: "Valorization of lignin to develop sustainable functional materials for diverse applications in material science"},
-    { name: "Mr. Aamir Vhora", title: "PhD Scholar", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
-    { name: "Ms. Shalinee Gupta", title: "Research Scholar", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
-    { name: "Ms. Sachin Thorat", title: "PhD Scholar", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
+    { name: "Mr. Miraj Savani", title: "", initials: "MS", imageSrc: "/images/dignitaries/miraj.png", description: "Drug Delivery, Emulation, Thermoresponsive polymers, Advance materials" },
+    { name: "Ms. Rashmi Pathania", title: "", initials: "RP", imageSrc: "/images/dignitaries/rashmi.png", description: "Development of hydrophobic nano coating on different substrates"},
+    { name: "Ms. Khushbu Bhavsar", title: "", initials: "KB", imageSrc: "/images/dignitaries/khushbu.png", description: "Valorization of biomass through chemo-catalytic routes, Carbon capture"},
+    { name: "Mr. Purusottam Tripathy", title: "", initials: "PT", imageSrc: "/images/dignitaries/purusottam.png", description: "Membrane Technology, Wastewater treatment, Water purification, Advanced oxidation processes"},
+    { name: "Ms. Priya Sharma", title: "", initials: "PS", imageSrc: "/images/dignitaries/priya.png", description: "Valorization of lignin to develop sustainable functional materials for diverse applications in material science"},
+    { name: "Mr. Aamir Vhora", title: "", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
+    { name: "Ms. Shalinee Gupta", title: "", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
+    { name: "Ms. Sachin Thorat", title: "", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
   ];
 
   const mtechStudents: Person[] = [
-    { name: "Ms. Jemish Dattani", title: "MTech Student", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
-    { name: "Mr. Kishan Patel", title: "MTech Student", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
-    { name: "Mr. Harshil Patel", title: "MTech Student", initials: "H", imageSrc: "/images/dignitaries/harshil.png" },
-    { name: "Mr. Ansu Silawat", title: "MTech Student", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
+    { name: "Ms. Jemish Dattani", title: "", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
+    { name: "Mr. Kishan Patel", title: "", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
+    { name: "Mr. Harshil Patel", title: "", initials: "H", imageSrc: "/images/dignitaries/harshil.png", description: "Extraction of bio active substances and their encapsulation in hydrogel based drug delivery system."},
+    { name: "Mr. Ansu Silawat", title: "", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
   ];
 
   const btechStudents: Person[] = [
-    { name: "Mr. Hriday K. Samdani", title: "BTech Student", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student" },
-    { name: "Student 2", title: "BTech Student", initials: "S2", imageSrc: "" },
-    { name: "Student 3", title: "BTech Student", initials: "S3", imageSrc: "" },
-    { name: "Student 4", title: "BTech Student", initials: "S4", imageSrc: "" },
+    { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student" },
+    { name: "Student 2", title: "", initials: "S2", imageSrc: "" },
+    { name: "Student 3", title: "", initials: "S3", imageSrc: "" },
+    { name: "Student 4", title: "", initials: "S4", imageSrc: "" },
   ];
 
   // --- RENDER HELPERS ---
   const renderAuthority = (person: Person, size: "large" | "medium" = "large", showOverlay: boolean = true) => {
-    const avatarSize = size === "large" ? "h-40 w-40" : "h-32 w-32";
+    const avatarSize = size === "large" ? "h-60 w-60" : "h-40 w-40";
     const cardClasses =
       size === "large"
         ? "shadow-card hover:shadow-hover transition-smooth cursor-pointer group"
@@ -163,7 +163,7 @@ const renderScholar = (person: Person) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Ticker />
+      <Ticker />  
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
@@ -175,7 +175,8 @@ const renderScholar = (person: Person) => {
           {/* Chief Patrons */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chief Patrons</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="max-w-md mx-auto">
+              {/* grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto */}
               {chiefPatrons.map((p) => renderAuthority(p, "medium", false))}
             </div>
           </section>
@@ -183,7 +184,7 @@ const renderScholar = (person: Person) => {
           {/* Patron */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-primary">Patron</h2>
-            <div className="max-w-md mx-auto">{renderAuthority(patron, "large")}</div>
+            <div className="max-w-md mx-auto">{renderAuthority(patron, "medium")}</div>
           </section>
 
           {/* Chairmen */}

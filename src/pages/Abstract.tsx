@@ -68,10 +68,8 @@ const Abstract = () => {
                       themes.
                     </li>
                     <li>
-                      Submissions should clearly present <strong>objectives</strong>,{" "}
-                      <strong>methods</strong>, <strong>results</strong>, and{" "}
-                      <strong>conclusions</strong>, focusing on{" "}
-                      <strong>sustainable and green approaches</strong>.
+                      The abstract should contain a brief <strong>context or motivation</strong> for the work, the <strong>objective or hypothesis</strong> of the study, the <strong>methodology</strong>, <strong>key findings</strong>, <strong>observations</strong>, <strong>inferences</strong>, and the overall <strong>significance</strong> along with its <strong>potential applications</strong>.
+
                     </li>
                     <li>
                       Accepted abstracts will be presented as <strong>oral</strong> or{" "}
