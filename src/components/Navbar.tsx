@@ -25,11 +25,11 @@ const Navbar = () => {
           {/* Logo Section */}
           <div className="flex items-center space-x-4">
             {/* 👉 Replace the src with your file in /public/images/ */}
-            <div className="h-[68px] w-[68px] flex items-center justify-center rounded-full bg-white p-[4px] overflow-hidden translate-y-[-1px] ring-2 ring-white">
+            <div className="h-[68px] w-[68px] flex items-center justify-center rounded-full bg-white p-[0px] overflow-hidden translate-y-[-1px] ring-2 ring-white">
               <img
-                src="/images/output_image.png"
+                src="/images/gcesdip2_logo.png"
                 alt="GCESDIP Logo"
-                className="object-contain h-full w-full translate-y-[-3px] translate-x-[-1px]"
+                className="object-contain h-full w-full translate-y-[-2px] translate-x-[0px]"
               />
             </div>
 

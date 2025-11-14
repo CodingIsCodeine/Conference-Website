@@ -30,7 +30,7 @@ const Organising = () => {
     // { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: true, cvLink: "/assets/cvs/csn.pdf", imageSrc: "" },
   ];
 
-  const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: true, cvLink: "http://svnit.ac.in/facup/homepage__vnl/web%20page%204.htm", imageSrc: "/images/dignitaries/laad.png" };
+  const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: false, imageSrc: "/images/dignitaries/laad.png" };
 
   const chairmen: Person[] = [
     { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/dignitaries/jigisha.png" },
@@ -64,7 +64,7 @@ const Organising = () => {
   ];
 
   const btechStudents: Person[] = [
-    { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student" },
+    { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "AIML Enthusiast" },
     // { name: "Student 2", title: "", initials: "S2", imageSrc: "" },
     // { name: "Student 3", title: "", initials: "S3", imageSrc: "" },
     // { name: "Student 4", title: "", initials: "S4", imageSrc: "" },
@@ -188,7 +188,7 @@ const renderScholar = (person: Person) => {
             <div className="max-w-md mx-auto">{renderAuthority(patron, "medium")}</div>
           </section>
 
-          {/* Chairmen */}
+          {/* Chairpersons */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chairpersons</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -199,7 +199,7 @@ const renderScholar = (person: Person) => {
           {/* Organising Secretaries */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-primary">Organising Secretaries</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
               {organisingSecretaries.map((person) => renderAuthority(person, "medium"))}
             </div>
           </section>
