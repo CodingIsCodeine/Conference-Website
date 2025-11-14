@@ -4,10 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Award, BookOpen, Newspaper } from "lucide-react";
 import Ticker from "@/components/Ticker";
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-import { useEffect } from "react";
+
 
 const Abstract = () => {
   const topics = [

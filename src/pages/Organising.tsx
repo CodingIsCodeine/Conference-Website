@@ -10,10 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import React from "react";
 import Ticker from "@/components/Ticker";
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-import { useEffect } from "react";
+
 
 type Person = {
   name: string;
