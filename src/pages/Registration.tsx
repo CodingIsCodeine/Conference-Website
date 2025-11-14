@@ -1,3 +1,4 @@
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle2 } from "lucide-react";
 import Ticker from "@/components/Ticker";
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+import { useEffect } from "react";
 
 const Registration = () => {
   const registrationFees = [

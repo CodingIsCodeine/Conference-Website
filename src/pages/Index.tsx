@@ -248,14 +248,19 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        The first edition of GCESDIP was a grand success, drawing participants from academia, 
-                        research, and industry across India and abroad. It provided a vibrant platform for 
-                        scientific discussions and knowledge exchange on sustainable chemical processes.
+                        GCESDIP 1.0 was conducted virtually from 16<sup>th</sup>–18<sup>th</sup> June 2021, bringing together participants from academia, research institutes, industries, and international universities.
+A total of <strong>90 presentations </strong> were delivered across 12 theme-based sessions.
+
                       </p>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Distinguished speakers, panel discussions, and poster sessions enriched the experience, 
-                        creating opportunities for collaboration and innovation. The overwhelming participation 
-                        reaffirmed our commitment to promoting green chemistry and engineering for a sustainable future.
+                        The event attracted researchers from IITs, NITs, CSIR labs and global institutions in <strong>Japan, Indonesia, Korea, and Canada.</strong>
+                        Keynote lectures highlighted emerging trends in Green Chemistry and Sustainable Development.
+                        {/* Around 30 additional participants joined to explore recent advances and research opportunities. */}
+
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Conference abstracts were published in <strong>Proceedings International</strong>.
+Partner journals such as <strong>Waste and Biomass Valorization</strong> and <strong>Materials Today: Proceedings</strong> supported full-length paper submissions.
                       </p>
                     </div>
                     <div className="pt-2 text-center">
@@ -324,9 +329,9 @@ const SuratImageCarousel = () => {
 /* ✅ Previous Edition Carousel (same style as Surat) */
 const PreviousEditionCarousel = () => {
   const images = [
-    { src: "/images/conference-1.png", caption: "📃 Papers from GCESDIP 1.0" },
-    { src: "/images/conference-2.png", caption: "📃 Papers from GCESDIP 1.0" },
-    { src: "/images/conference-3.png", caption: "📃 Papers from GCESDIP 1.0" },
+    { src: "/images/conference-1.png", caption: "" },
+    { src: "/images/conference-2.png", caption: "" },
+    { src: "/images/conference-3.png", caption: "" },
   ];
 
   return <AutoCarousel images={images} />;

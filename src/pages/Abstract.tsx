@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Award, BookOpen, Newspaper } from "lucide-react";
 import Ticker from "@/components/Ticker";
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+import { useEffect } from "react";
 
 const Abstract = () => {
   const topics = [
@@ -89,6 +93,21 @@ const Abstract = () => {
                     >
                       <span className="relative z-10">Submit Your Abstract</span>
                       <span className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-md"></span>
+                    </Button>
+                  </a>
+
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full mt-4 border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300"
+                      size="lg"
+                    >
+                      <span className="relative z-10">Download Abstract Template</span>
+                      {/* <span className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-emerald-500/20 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-md"></span> */}
                     </Button>
                   </a>
                 </CardContent>
