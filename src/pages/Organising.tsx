@@ -38,10 +38,10 @@ const Organising = () => {
   ];
 
   const organisingSecretaries: Person[] = [
-    { name: "Dr. Sanjaykumar R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/srp.png" },
+    { name: "Dr. Sanjay R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/srp.png" },
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
-    { name: "Dr. Sundar S. K.", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
+    { name: "Dr. S. K. Sundar ", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
     // { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, IIT Jammu", initials: "YN", hasCv: true, cvLink: "", imageSrc: "/images/dignitaries/nimdeo.png" },
   ];
 
