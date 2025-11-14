@@ -42,7 +42,7 @@ const Organising = () => {
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
     { name: "Dr. Sundar S. K.", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
-    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, IIT Jammu", initials: "YN", hasCv: true, cvLink: "", imageSrc: "/images/dignitaries/nimdeo.png" },
+    // { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, IIT Jammu", initials: "YN", hasCv: true, cvLink: "", imageSrc: "/images/dignitaries/nimdeo.png" },
   ];
 
   const phdScholars: Person[] = [
@@ -65,9 +65,9 @@ const Organising = () => {
 
   const btechStudents: Person[] = [
     { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "Student" },
-    { name: "Student 2", title: "", initials: "S2", imageSrc: "" },
-    { name: "Student 3", title: "", initials: "S3", imageSrc: "" },
-    { name: "Student 4", title: "", initials: "S4", imageSrc: "" },
+    // { name: "Student 2", title: "", initials: "S2", imageSrc: "" },
+    // { name: "Student 3", title: "", initials: "S3", imageSrc: "" },
+    // { name: "Student 4", title: "", initials: "S4", imageSrc: "" },
   ];
 
   // --- RENDER HELPERS ---
