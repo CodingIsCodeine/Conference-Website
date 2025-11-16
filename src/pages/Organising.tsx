@@ -67,7 +67,7 @@ const Organising = () => {
     { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "AIML Enthusiast, AI in Drug Discovery and Development" },
     { name: "Ms. Diya Sharma", title: "", initials: "DS", imageSrc: "/images/diya.png", description: "Antisolvent crystallization and its application in improving the solubility and solid-state properties of pharmaceutical drugs" },
     { name: "Ms. Vedica Mahendian", title: "", initials: "VM", imageSrc: "/images/Vedica.png", description: "Nanotechnology and applications of engineering in the pharmaceutical sector, sustainable energy and waste valorization." },
-    { name: "Ms. Akshita Jain", title: "", initials: "AJ", imageSrc: "/images/akshita.png" },
+    { name: "Ms. Akshita Jain", title: "", initials: "AJ", imageSrc: "/images/akshita.png", description: "Nanotechnology, Drug Delivery, Microbial Fuel Cells,Process Economics, Public speaking, Event logistics." },
   ];
 
   // --- RENDER HELPERS ---
