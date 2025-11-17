@@ -119,6 +119,7 @@ const Index = () => {
               images={[
                 "/images/dept-6.jpg",
                 "/images/dept-4.jpg",
+                "/images/dept-7.png",
                 "/images/dept-8.jpg",
               ]}
               interval={3500}
