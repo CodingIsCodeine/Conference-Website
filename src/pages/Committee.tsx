@@ -34,10 +34,10 @@ const Committee = () => {
   ];
 
   const nationalAdvisory: Member[] = [
-    { name: "Prof. K. K. Pant", title: "Director, IIT Roorkee", initials: "KP", image: "/images/kk.png", link: "https://web.iitd.ac.in/~kkpant/biosketch.html" }, 
-    { name: "Prof. P. K. Mishra", title: "IIT BHU", initials: "PM", image: "/images/mishra.png", link: "https://www.iitbhu.ac.in/dept/che/people/pkmishrache" },
+    { name: "Prof. K. K. Pant", title: "Director, IIT Roorkee", initials: "KP", image: "/images/pant.png", link: "https://web.iitd.ac.in/~kkpant/biosketch.html" }, 
+    { name: "Prof. P. K. Mishra", title: "IIT BHU", initials: "PM", image: "/images/dignitaries/mishra.png", link: "https://www.iitbhu.ac.in/dept/che/people/pkmishrache" },
     { name: "Dr. N. V. Choudhary", title: "CSIR-IICT Hyderabad", initials: "NC", image: "/images/nvc.png", link: "https://nvchoudary.com/" },
-    { name: "Dr. S. Sridhar", title: "CSIR-IICT Hyderabad", initials: "SS", image: "/images/sridhar.png", link: "" },
+    { name: "Dr. S. Sridhar", title: "CSIR-IICT Hyderabad", initials: "SS", image: "/images/sridhar.png", link: "https://www.linkedin.com/in/dr-s-sridhar-iict-7601011/" },
     { name: "Prof. Parameswar K. Iyer", title: "IIT Guwahati", initials: "PI", image: "/images/iyer.png", link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
     { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri" },
     { name: "Prof. Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
@@ -51,7 +51,7 @@ const Committee = () => {
     { name: "Dr. Narendra Kumar Agnihotri", title: "HPCL-Mittal Energy Limited, Noida", initials: "NA", image: "/images/dignitaries/narendra.png", link: "https://www.linkedin.com/in/narendra-kumar-agnihotri-6739b814/" },
     { name: "Mr. Nilesh Bhatt", title: "L&T Technology Services, Vadodara", initials: "NB", image: "/images/dignitaries/nilesh.png", link: "https://www.linkedin.com/in/nilesh-bhatt-01729254/" },
     { name: "Mr. Sanjay Tavethiya", title: "Shreeneel Chemicals, Ankleshwar", initials: "ST", image: "/images/dignitaries/sanjay.png", link: "https://www.linkedin.com/in/sanjay-tavethiya-37094928/?originalSubdomain=in" },
-    { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/", link: "https://www.researchgate.net/profile/Ami-Raval-3" },
+    { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/dignitaries/ami.png", link: "/images/dignitaries/amiraval.pdf" },
   ];
 
   const renderCommitteeSection = (title: string, members: Member[]) => (

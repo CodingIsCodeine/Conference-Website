@@ -175,7 +175,7 @@ const renderScholar = (person: Person) => {
 
           {/* Chief Patrons */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chief Patrons</h2>
+            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Chief Patron</h2>
             <div className="max-w-md mx-auto">
               {/* grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto */}
               {chiefPatrons.map((p) => renderAuthority(p, "medium", false))}
