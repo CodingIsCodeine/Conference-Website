@@ -6,6 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle2, Home } from "lucide-react";
 import Ticker from "@/components/Ticker";
+import { Mail, MapPin, Link as Chain } from "lucide-react";
+
 
 const Registration = () => {
   const registrationFees = [
@@ -113,43 +115,6 @@ const Registration = () => {
             </div>
           </section>
 
-          {/* ---------------------------------------------------------
-               NEW ACCOMMODATION SECTION (ADDED)
-          --------------------------------------------------------- */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-center mb-8 text-primary">
-              Accommodation Details
-            </h2>
-
-            <Card className="shadow-card">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Home className="h-6 w-6 text-primary" />
-                  Guest House Accommodation
-                </CardTitle>
-                <CardDescription>
-                  Information regarding stay and room availability
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-4 text-base">
-                <p>
-                  Sharing accommodation on a <span className="font-semibold">payment basis</span> will be 
-                  provided in the <span className="font-semibold">SVNIT Guest House</span> as per room availability.
-                </p>
-
-                <div className="p-4 bg-muted rounded-lg">
-                  <p className="text-sm font-semibold mb-2">Contact for Room Charges & Booking:</p>
-
-                  <ul className="text-sm space-y-2">
-                    <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li>
-                    <li><span className="font-medium">WhatsApp:</span> 542351xyz</li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
-
           {/* Payment Method */}
           <section>
             <h2 className="text-3xl font-bold text-center mb-8 text-primary">Payment Method</h2>
@@ -201,6 +166,65 @@ const Registration = () => {
                 <p className="text-sm text-muted-foreground text-center mt-4">
                   Scan the QR code above for UPI payments
                 </p>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Accommodation Section */}
+          <section className="mb-12">
+            <h3>.</h3>
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+              Accommodation Details
+            </h2>
+
+            <Card className="shadow-card">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Home className="h-6 w-6 text-primary" />
+                  Guest House Accommodation
+                </CardTitle>
+                <CardDescription>
+                  Information regarding stay and room availability
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent className="space-y-4 text-base">
+                <p>
+                  Sharing accommodation on a <span className="font-semibold">payment basis</span> will be 
+                  provided in the <span className="font-semibold">SVNIT Guest House</span> as per room availability.
+                </p>
+
+                <div className="p-4 bg-muted rounded-lg">
+                  <p className="text-sm font-semibold mb-2">Contact for Room Charges & Booking:</p>
+
+                  <ul className="text-sm space-y-2">
+                    <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li>
+                    <li>
+                      <span className="font-medium">Location:</span>
+                      <MapPin className="inline-block w-4 h-4 ml-1 text-red-500" />
+                      <a 
+                        href="https://maps.app.goo.gl/YUBq69X3GjyCvckF8" 
+                        className="hover:text-blue-600 transition-colors" 
+                        target="_blank"
+                      >
+                        SVPB Guest House, Ichhanath, Dumas Road, Piplod, Surat -395007.
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* ------------------------------
+                    IMAGE GOES HERE (NEW)
+                    Replace YOUR_IMAGE_PATH_HERE 
+                ------------------------------ */}
+                <div className="w-full flex justify-center mt-4">
+                  <img
+                    src="/images/location.png"
+                    alt="Guest House"
+                    className="w-full max-w-2xl rounded-lg shadow-md object-contain"
+                  />
+                </div>
+
               </CardContent>
             </Card>
           </section>

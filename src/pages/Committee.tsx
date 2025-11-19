@@ -22,7 +22,7 @@ const Committee = () => {
     { name: "Prof. Benu Adhikari", title: "RMIT University, Australia", initials: "BA", image: "/images/dignitaries/benuadhikari.png", link: "https://academics.rmit.edu.au/benu-adhikari?_gl=1*rv0fq9*_gcl_au*MjA1NTEwMjYzMy4n/dedssssssssxNzYyMzY3MDM5" },
     { name: "Prof. Zoltan Nagy", title: "Purdue University, USA", initials: "ZN", image: "/images/dignitaries/zoltan.png", link: "https://engineering.purdue.edu/ChE/people/ptProfile?id=79574" },
     { name: "Prof. Beom Soo Kim", title: "Chungbuk National University, The Republic of Korea", initials: "BK", image: "/images/dignitaries/beomsookim.png", link: "https://sites.google.com/view/cbnu-bel/people/professor?authuser=0" },
-    { name: "Prof. Neeraj Rai", title: "Mississippi University, USA", initials: "NR", image: "/images/dignitaries/neeraj.png", link: "https://www.che.msstate.edu/people/faculty/neeraj-rai/" },
+    { name: "Prof. Neeraj Rai", title: "Mississippi University, USA", initials: "NR", image: "/images/rai.png", link: "https://www.che.msstate.edu/people/faculty/neeraj-rai/" },
     { name: "Prof. Mahfud Mahfud", title: "Institut Teknologi Sepuluh Nopember (ITS), Indonesia", initials: "MM", image: "/images/dignitaries/mahfud.png", link: "https://scholar.its.ac.id/en/persons/mahfud/" },
     { name: "Prof. Meenesh R. Singh", title: "UIC Catalyst (CAT) Centre, USA", initials: "MS", image: "/images/dignitaries/meenesh.png", link: "https://www.singh-lab.com/meenesh" },
     { name: "Prof. Anet Resek Jambrak", title: "University of Zagreb, Croatia", initials: "AJ", image: "/images/dignitaries/anet.png", link: "https://www.pbf.unizg.hr/en/departments/department_for_general_programmes/laboratory_for_sustainable_development/anet_rezek_jambrak" },
@@ -39,7 +39,7 @@ const Committee = () => {
     { name: "Dr. N. V. Choudhary", title: "CSIR-IICT Hyderabad", initials: "NC", image: "/images/nvc.png", link: "https://nvchoudary.com/" },
     { name: "Dr. S. Sridhar", title: "CSIR-IICT Hyderabad", initials: "SS", image: "/images/sridhar.png", link: "https://www.linkedin.com/in/dr-s-sridhar-iict-7601011/" },
     { name: "Prof. Parameswar K. Iyer", title: "IIT Guwahati", initials: "PI", image: "/images/iyer.png", link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
-    { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri" },
+    { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri/Y%20Shastri_CV_Full.pdf" },
     { name: "Prof. Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
     { name: "Prof. Parag R. Gorate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     { name: "Dr. P. K. Rout", title: "CSIR-CIMAP Lucknow", initials: "PR", image: "/images/pk.png", link: "https://www.cimap.res.in/EmployeeProfile/EmployeeProfile.aspx?id=634" },
@@ -49,10 +49,10 @@ const Committee = () => {
     { name: "Dr. Gaurav Sharma", title: "IIT Roorkee", initials: "GS", image: "/images/gaurav.png", link: "https://www.iitr.ac.in/~CH/goravfch" },
     { name: "Dr. Bharat Modhera", title: "MANIT Bhopal", initials: "BM", image: "/images/bharat.png", link: "https://cse.manit.ac.in/content/dr-bharatkumar-k-modhera" },
     { name: "Dr. Susmita Das", title: "NIT Calicut", initials: "SD", image: "/images/sushmita.png", link: "https://nitc.ac.in/department/chemical-engineering/faculty-and-staff/faculty/dccce194-e151-4e30-a2e1-f5b418b0357e" },
-    { name: "Dr. Deepak Jain", title: "NIT Calicut", initials: "SD", image: "/images/deepak.png", link: "https://www.linkedin.com/in/deepak-jain-7a407170/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+    { name: "Dr. Deepak Jain", title: "Zoetis Pharmaceutical Research Pvt. Ltd., Navi Mumbai", initials: "DJ", image: "/images/deepak.png", link: "https://www.linkedin.com/in/deepak-jain-7a407170/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { name: "Dr. Narendra Kumar Agnihotri", title: "HPCL-Mittal Energy Limited, Noida", initials: "NA", image: "/images/dignitaries/narendra.png", link: "https://www.linkedin.com/in/narendra-kumar-agnihotri-6739b814/" },
     { name: "Mr. Nilesh Bhatt", title: "L&T Technology Services, Vadodara", initials: "NB", image: "/images/dignitaries/nilesh.png", link: "https://www.linkedin.com/in/nilesh-bhatt-01729254/" },
-    { name: "Mr. Vipul Prajapati", title: "MYK Laticrete Hyderabad", initials: "VP", image: "/images/vipul.png", link: "/images/prajapati.pdf" },
+    { name: "Mr. Vipul Prajapati", title: "MYK Laticrete, Hyderabad", initials: "VP", image: "/images/vipul.png", link: "/images/prajapati.pdf" },
     { name: "Mr. Sanjay Tavethiya", title: "Shreeneel Chemicals, Ankleshwar", initials: "ST", image: "/images/dignitaries/sanjay.png", link: "https://www.linkedin.com/in/sanjay-tavethiya-37094928/?originalSubdomain=in" },
     { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/dignitaries/ami.png", link: "/images/dignitaries/amiraval.pdf" },
   ];
@@ -129,7 +129,7 @@ const renderCommitteeSection = (title: string, members: Member[]) => (
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Committee & Speakers
+            Advisory Committee
           </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Distinguished experts from around the world guiding GCESDIP 2.0

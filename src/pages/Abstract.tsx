@@ -76,6 +76,12 @@ const Abstract = () => {
                       Accepted abstracts will be presented as <strong>oral</strong> or{" "}
                       <strong>poster sessions</strong> during the conference.
                     </li>
+                    <li>
+                      Each participant will be provided <strong>10 minutes</strong> to deliver their oral presentation. Please ensure your presentation is structured to fit within the allotted time.
+                    </li>
+                    <li>
+                      All poster submissions should be designed in <strong>A0 size (841 mm × 1189 mm)</strong>  in a vertical orientation.
+                    </li>
                   </ul>
 
                   {/* Google Form Button */}

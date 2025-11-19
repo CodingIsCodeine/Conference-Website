@@ -9,7 +9,8 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/committee", label: "Committee & Speakers" },
+    { to: "/committee", label: "Advisory Committee" },
+    { to: "/Speakers", label: "Speakers" },
     { to: "/abstract", label: "Abstract Submission" },
     { to: "/sponsors", label: "Sponsors & Exhibitors" },
     { to: "/registration", label: "Registration" },
