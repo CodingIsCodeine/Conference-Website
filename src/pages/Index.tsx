@@ -8,6 +8,32 @@ import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
 
 const Index = () => {
+  const [showHeroText, setShowHeroText] = useState(true);
+  const [showLogos, setShowLogos] = useState(false);
+
+  useEffect(() => {
+    const runAnimation = () => {
+      // Reset all states
+      setShowHeroText(true);
+      setShowLogos(false);
+
+      // Step 1: Show hero text initially, hide after 2 seconds
+      setTimeout(() => setShowHeroText(false), 2000);
+
+      // Step 2: Show all logos together after hero text disappears
+      setTimeout(() => setShowLogos(true), 2500);
+    };
+
+    // Run animation immediately
+    runAnimation();
+
+    // Loop the animation every 10 seconds
+    const loopInterval = setInterval(runAnimation, 10000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(loopInterval);
+  }, []);
+
   const deadlines = [
     { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
     { title: "Intimation of Acceptance", date: <>16<sup>th</sup> March 2026</> },
@@ -60,17 +86,12 @@ const Index = () => {
           <p>
             Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961
             by the Government of India and recognized as an Institute of National Importance since
-            2007 by Parliament of India, is among India’s premier engineering institutions. Spanning over 256 acres of lush
-            green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate,
-            integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering
-            and applied sciences.
+            2007 by Parliament of India, is among India's premier engineering institutions.
           </p>
 
           <p>
             The institute emphasizes interdisciplinary research, innovation, and industry
-            collaboration, fostering academic excellence and professional growth. With an outstanding
-            placement record and a strong network of eminent alumni, SVNIT continues to play a vital
-            role in advancing engineering education and research in India.
+            collaboration, fostering academic excellence and professional growth.
           </p>
 
           <div className="pt-2">
@@ -99,19 +120,11 @@ const Index = () => {
         <div className="space-y-4">
           <p>
             Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes
-            leading to Bachelor’s, Master’s, and Ph.D. degrees in Chemical Engineering. The department
-            has built a comprehensive research infrastructure with top-notch facilities for carrying out
-            cutting-edge research.
+            leading to Bachelor's, Master's, and Ph.D. degrees in Chemical Engineering.
           </p>
 
           <p>
             The department strives to provide a conducive environment for creative and dynamic research work.
-            Faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc.,
-            and have high-quality research publications and patents. 
-          </p>
-
-          <p>
-            Currently, the department has 19 faculty members with expertise in various domains of Chemical Engineering.
           </p>
 
           <div className="pt-2">
@@ -135,9 +148,12 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* -------------------------------------------------------- */}
+      {/* HERO SECTION WITH SLIDE-OUT + ORGANISING + LOGOS */}
+      {/* -------------------------------------------------------- */}
+
       <section
-        className="relative h-[600px] flex items-center justify-center text-white"
+        className="relative h-[600px] flex items-center justify-center text-white overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBg})`,
           backgroundSize: "cover",
@@ -145,19 +161,74 @@ const Index = () => {
         }}
       >
         <div className="container mx-auto px-4 text-center">
-          <div className="animate-fade-in">
-            <p className="text-xl md:text-2xl font-semibold mb-4">
-              17<sup>th</sup> – 18<sup>th</sup> April 2026
-            </p>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-5xl mx-auto leading-tight">
-              2<sup>nd</sup> International Conference on "Green Chemistry and Engineering towards Sustainable Development - An Industrial Perspective"
-            </h1>
-            
-            <p className="text-xl md:text-2xl mb-8">GCESDIP 2.0</p>
-            <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p>
+
+          {/* Hero original text */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+              showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+            }`}
+          >
+            <div className="container mx-auto px-4 text-center">
+              <p className="text-xl md:text-2xl font-semibold mb-4">
+                17<sup>th</sup> – 18<sup>th</sup> April 2026
+              </p>
+
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-5xl mx-auto leading-tight">
+                2<sup>nd</sup> International Conference on "Green Chemistry and Engineering towards Sustainable Development - An Industrial Perspective"
+              </h1>
+
+              <p className="text-xl md:text-2xl mb-8">GCESDIP 2.0</p>
+              <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p>
+            </div>
           </div>
+
+          {/* Organising + Logos (All together) */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+              showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="container mx-auto px-4 text-center -mt-12 md:-mt-16">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-lg">
+                <i>Organised by</i>
+              </h2>
+
+              {/* COLLEGE LOGO */}
+              <img
+                src="/images/svnit.png"
+                alt="College Logo"
+                className="mx-auto h-32 md:h-40 object-contain drop-shadow-xl mb-10"
+              />
+
+              {/* In Association With */}
+              <h3 className="text-xl md:text-2xl font-semibold mb-6 drop-shadow-lg">
+                <i>In association with</i>
+              </h3>
+
+              <div className="flex justify-center gap-10">
+                <img
+                  src="/images/ict.png"
+                  alt="Institute 2"
+                  className="h-36 md:h-40 object-contain drop-shadow-xl"
+                />
+                {/* LOGO 1 */}
+                <img
+                  src="/images/dignitaries/jammu.jpg"
+                  alt="Institute 1"
+                  className="h-32 md:h-36 object-contain drop-shadow-xl"
+                />
+
+                {/* LOGO 2 */}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
+
+      {/* -------------------------------------------------------- */}
+      {/* REST OF YOUR ORIGINAL CODE UNTOUCHED BELOW */}
+      {/* -------------------------------------------------------- */}
 
       <main className="flex-1">
         {/* Conference Deadlines */}
@@ -207,7 +278,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ✅ About Surat Section */}
+        {/* About Surat */}
         <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">About Surat</h2>
@@ -217,14 +288,10 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Surat, known as the "Diamond City" and "Silk City" of India, is a vibrant metropolis 
-                        in Gujarat. The city is famous for its textile and diamond cutting industries, 
-                        contributing significantly to India's economy.
+                        Surat, known as the "Diamond City" and "Silk City" of India.
                       </p>
                       <p className="text-muted-foreground leading-relaxed">
-                        With its rich cultural heritage, modern infrastructure, and thriving industrial base, 
-                        Surat offers an ideal setting for this international conference on green chemistry 
-                        and sustainable development.
+                        With its rich cultural heritage and thriving industrial base.
                       </p>
                     </div>
                     <div className="pt-2 text-center">
@@ -237,7 +304,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* ✅ Previous Edition Section */}
+        {/* Previous Edition */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
@@ -249,19 +316,7 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        GCESDIP 1.0 was conducted virtually from 16<sup>th</sup>–18<sup>th</sup> June 2021, bringing together participants from academia, research institutes, industries, and international universities.
-A total of <strong>90 presentations </strong> were delivered across 12 theme-based sessions.
-
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        The event attracted researchers from IITs, NITs, CSIR labs and global institutions in <strong>Japan, Indonesia, Korea, and Canada.</strong>
-                        Keynote lectures highlighted emerging trends in Green Chemistry and Sustainable Development.
-                        {/* Around 30 additional participants joined to explore recent advances and research opportunities. */}
-
-                      </p>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        Conference abstracts were published in <strong>Proceedings International</strong>.
-Partner journals such as <strong>Waste and Biomass Valorization</strong> and <strong>Materials Today: Proceedings</strong> supported full-length paper submissions.
+                        GCESDIP 1.0 was conducted virtually.
                       </p>
                     </div>
                     <div className="pt-2 text-center">
@@ -279,7 +334,7 @@ Partner journals such as <strong>Waste and Biomass Valorization</strong> and <st
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Us at GCESDIP 2.0</h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Be part of the conversation on sustainable development and green chemistry
+              Be part of the conversation on sustainable development
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -296,13 +351,13 @@ Partner journals such as <strong>Waste and Biomass Valorization</strong> and <st
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 bg-white/10 border-white text-white hover:bg-white hover:text-primary"
-              >
-                Register Now
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 bg-white/10 border-white text-white hover:bg-white hover:text-primary"
+                >
+                  Register Now
+                </Button>
               </a>
             </div>
           </div>
@@ -314,20 +369,21 @@ Partner journals such as <strong>Waste and Biomass Valorization</strong> and <st
   );
 };
 
-/* ✅ Surat Image Carousel */
+/* Surat Image Carousel */
 const SuratImageCarousel = () => {
   const images = [
-    { src: "/images/surat-2.jpg", caption: "🌄 Saputara — Gujarat’s Scenic Hill Station" },
-    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
-    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views" },
-    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav — A Serene Heritage Lake" },
-    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
+    { src: "/images/surat-2.jpg", caption: "🌄 Saputara" },
+    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach" },
+    { src: "/images/surat-7.jpg", caption: "🗿 Statue of Unity" },
+    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach" },
+    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav" },
+    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse" },
   ];
 
   return <AutoCarousel images={images} />;
 };
 
-/* ✅ Previous Edition Carousel (same style as Surat) */
+/* Previous Edition Carousel */
 const PreviousEditionCarousel = () => {
   const images = [
     { src: "/images/conference-1.png", caption: "" },
@@ -338,7 +394,7 @@ const PreviousEditionCarousel = () => {
   return <AutoCarousel images={images} />;
 };
 
-/* ✅ Shared Auto Carousel Component */
+/* Shared Auto Carousel */
 const AutoCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

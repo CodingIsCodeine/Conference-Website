@@ -178,10 +178,16 @@ const Sponsors = () => {
                     gcesdip2026@gmail.com
                   </a>
                 </p>
-                <p>
-                  <strong>Phone:</strong>{" "}
+                <p className="mb-4">
+                  <strong>Tel:</strong>{" "}
                   <a href="tel:+912612201651" className="text-primary hover:underline">
                     +91 0261-220 1649/1657/1658
+                  </a>
+                </p>
+                <p className="mb-4">
+                  <strong>Phone:</strong>{" "}
+                  <a href="tel:+9198696 07692" className="text-primary hover:underline">
+                    +91 98696 07692
                   </a>
                 </p>
               </CardContent>
