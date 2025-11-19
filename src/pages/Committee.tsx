@@ -41,76 +41,86 @@ const Committee = () => {
     { name: "Prof. Parameswar K. Iyer", title: "IIT Guwahati", initials: "PI", image: "/images/iyer.png", link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
     { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri" },
     { name: "Prof. Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
+    { name: "Prof. Parag R. Gorate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     { name: "Dr. P. K. Rout", title: "CSIR-CIMAP Lucknow", initials: "PR", image: "/images/pk.png", link: "https://www.cimap.res.in/EmployeeProfile/EmployeeProfile.aspx?id=634" },
-    { name: "Prof. Kailash Singh", title: "MNIT Jaipur", initials: "KS", image: "/images/kailash.png", link: "https://erp.nitw.ac.in/ext/profile/ch-shirish" },
+    { name: "Prof. Kailash Singh", title: "MNIT Jaipur", initials: "KS", image: "/images/kailash.png", link: "https://www.mnit.ac.in/dept_chemical/profile?fid=TK4=" },
     { name: "Prof. Shirish Sonawane", title: "NIT Warangal", initials: "SSo", image: "/images/sonawane.png", link: "https://erp.nitw.ac.in/ext/profile/ch-shirish" },
-    { name: "Prof. Sachin Mandavgane", title: "VNIT Nagpur", initials: "SM", image: "/images/sachin.png", link: "https://vnit.ac.in/engineering/chemical/2023/06/05/dr-sachin-a-mandavgane/" },
+    { name: "Prof. Sachin Mandavgane", title: "VNIT Nagpur", initials: "SM", image: "/images/mandavgane.png", link: "https://vnit.ac.in/engineering/chemical/2023/06/05/dr-sachin-a-mandavgane/" },
     { name: "Dr. Gaurav Sharma", title: "IIT Roorkee", initials: "GS", image: "/images/gaurav.png", link: "https://www.iitr.ac.in/~CH/goravfch" },
     { name: "Dr. Bharat Modhera", title: "MANIT Bhopal", initials: "BM", image: "/images/bharat.png", link: "https://cse.manit.ac.in/content/dr-bharatkumar-k-modhera" },
     { name: "Dr. Susmita Das", title: "NIT Calicut", initials: "SD", image: "/images/sushmita.png", link: "https://nitc.ac.in/department/chemical-engineering/faculty-and-staff/faculty/dccce194-e151-4e30-a2e1-f5b418b0357e" },
+    { name: "Dr. Deepak Jain", title: "NIT Calicut", initials: "SD", image: "/images/deepak.png", link: "https://www.linkedin.com/in/deepak-jain-7a407170/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
     { name: "Dr. Narendra Kumar Agnihotri", title: "HPCL-Mittal Energy Limited, Noida", initials: "NA", image: "/images/dignitaries/narendra.png", link: "https://www.linkedin.com/in/narendra-kumar-agnihotri-6739b814/" },
     { name: "Mr. Nilesh Bhatt", title: "L&T Technology Services, Vadodara", initials: "NB", image: "/images/dignitaries/nilesh.png", link: "https://www.linkedin.com/in/nilesh-bhatt-01729254/" },
+    { name: "Mr. Vipul Prajapati", title: "MYK Laticrete Hyderabad", initials: "VP", image: "/images/vipul.png", link: "/images/prajapati.pdf" },
     { name: "Mr. Sanjay Tavethiya", title: "Shreeneel Chemicals, Ankleshwar", initials: "ST", image: "/images/dignitaries/sanjay.png", link: "https://www.linkedin.com/in/sanjay-tavethiya-37094928/?originalSubdomain=in" },
     { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/dignitaries/ami.png", link: "/images/dignitaries/amiraval.pdf" },
   ];
 
-  const renderCommitteeSection = (title: string, members: Member[]) => (
-    <section className="mb-16">
-      <h2 className="text-3xl font-bold text-center mb-10 text-primary">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {members.map((member) => (
-          <Card key={member.name} className="shadow-card hover:shadow-hover transition-smooth group">
-            <CardContent className="p-6">
-              {/* ✅ Centered image container */}
-              <div className="flex justify-center mb-4">
-                <div className="relative h-40 w-40 rounded-full p-[3px] bg-gradient-to-b from-primary/90 to-primary overflow-hidden transition-all duration-300 group-hover:scale-105">
-                  {/* ✅ Clickable avatar if link exists */}
-                  {member.link ? (
-                    <a
-                      href={member.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative block w-full h-full rounded-full group"
-                    >
-                      <Avatar className="w-30 h-30 rounded-none">
-                        <AvatarImage src={member.image} alt={member.name} className="object-cover w-full h-full" />
-                        <AvatarFallback className="text-secondary-foreground text-lg">
-                          {member.initials}
-                        </AvatarFallback>
-                      </Avatar>
+const renderCommitteeSection = (title: string, members: Member[]) => (
+  <section className="mb-16">
+    <h2 className="text-3xl font-bold text-center mb-10 text-primary">{title}</h2>
 
-                      {/* ✅ Hover overlay text */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center bg-black/45 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out rounded-full w-full h-full">
-                        <span className="text-[10px] md:text-xs text-white font-medium tracking-wide opacity-90">
-                          Click here for more info
-                        </span>
-                      </div>
-                    </a>
-                  ) : (
-                    <Avatar className="w-full h-full rounded-none">
+    {/* ↓↓↓ THE ONLY CHANGE — using flex to keep last row centered ↓↓↓ */}
+    <div className="flex flex-wrap justify-center gap-6">
+      {members.map((member) => (
+        <Card
+          key={member.name}
+          className="shadow-card hover:shadow-hover transition-smooth group w-full sm:w-[48%] md:w-[31%] lg:w-[23%] max-w-[320px]"
+        >
+          <CardContent className="p-6">
+            {/* ✅ Centered image container */}
+            <div className="flex justify-center mb-4">
+              <div className="relative h-40 w-40 rounded-full p-[3px] bg-gradient-to-b from-primary/90 to-primary overflow-hidden transition-all duration-300 group-hover:scale-105">
+                {/* ✅ Clickable avatar if link exists */}
+                {member.link ? (
+                  <a
+                    href={member.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block w-full h-full rounded-full group"
+                  >
+                    <Avatar className="w-30 h-30 rounded-none">
                       <AvatarImage src={member.image} alt={member.name} className="object-cover w-full h-full" />
                       <AvatarFallback className="text-secondary-foreground text-lg">
                         {member.initials}
                       </AvatarFallback>
                     </Avatar>
-                  )}
-                </div>
-              </div>
 
-              <div className="flex-1 text-center">
-                <h3 className="text-lg font-semibold text-foreground">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">
-                  {member.title}
-                </p>
+                    {/* ✅ Hover overlay text */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center bg-black/45 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out rounded-full w-full h-full">
+                      <span className="text-[10px] md:text-xs text-white font-medium tracking-wide opacity-90">
+                        Click here for more info
+                      </span>
+                    </div>
+                  </a>
+                ) : (
+                  <Avatar className="w-full h-full rounded-none">
+                    <AvatarImage src={member.image} alt={member.name} className="object-cover w-full h-full" />
+                    <AvatarFallback className="text-secondary-foreground text-lg">
+                      {member.initials}
+                    </AvatarFallback>
+                  </Avatar>
+                )}
               </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
-  );
+            </div>
+
+            <div className="flex-1 text-center">
+              <h3 className="text-lg font-semibold text-foreground">
+                {member.name}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {member.title}
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+    {/* ↑↑↑ ONLY THIS WRAPPER CHANGED — everything else SAME ↑↑↑ */}
+  </section>
+);
+
 
   return (
     <div className="min-h-screen flex flex-col">

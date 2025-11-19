@@ -4,9 +4,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Home } from "lucide-react";
 import Ticker from "@/components/Ticker";
-
 
 const Registration = () => {
   const registrationFees = [
@@ -92,27 +91,64 @@ const Registration = () => {
             </p>
           </section>
 
-{/* What's Included */}
-<section className="mb-12">
-  <h2 className="text-3xl font-bold text-center mb-8 text-primary">
-    Your Registration Includes
-  </h2>
+          {/* What's Included */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+              Your Registration Includes
+            </h2>
 
-          {/* Adaptive, centered, symmetric flex layout */}
-          <div className="flex flex-wrap justify-center gap-6">
-            {includes.map((item, index) => (
-              <Card
-                key={index}
-                className="shadow-card hover:shadow-hover transition-smooth w-full sm:w-[45%] lg:w-[30%] max-w-xs"
-              >
-                <CardContent className="flex items-start space-x-3 p-6">
-                  <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <span className="text-base">{item}</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+            {/* Adaptive includes list */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {includes.map((item, index) => (
+                <Card
+                  key={index}
+                  className="shadow-card hover:shadow-hover transition-smooth w-full sm:w-[45%] lg:w-[30%] max-w-xs"
+                >
+                  <CardContent className="flex items-start space-x-3 p-6">
+                    <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-base">{item}</span>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* ---------------------------------------------------------
+               NEW ACCOMMODATION SECTION (ADDED)
+          --------------------------------------------------------- */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+              Accommodation Details
+            </h2>
+
+            <Card className="shadow-card">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Home className="h-6 w-6 text-primary" />
+                  Guest House Accommodation
+                </CardTitle>
+                <CardDescription>
+                  Information regarding stay and room availability
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent className="space-y-4 text-base">
+                <p>
+                  Sharing accommodation on a <span className="font-semibold">payment basis</span> will be 
+                  provided in the <span className="font-semibold">SVNIT Guest House</span> as per room availability.
+                </p>
+
+                <div className="p-4 bg-muted rounded-lg">
+                  <p className="text-sm font-semibold mb-2">Contact for Room Charges & Booking:</p>
+
+                  <ul className="text-sm space-y-2">
+                    <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li>
+                    <li><span className="font-medium">WhatsApp:</span> 542351xyz</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
 
           {/* Payment Method */}
           <section>
@@ -123,6 +159,7 @@ const Registration = () => {
                 <CardDescription>Please use the following details for payment</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground">Account Name</p>
@@ -150,14 +187,11 @@ const Registration = () => {
                   </div>
                 </div>
 
-                {/* Highlighted Important Note */}
                 <div className="mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg border border-yellow-300 text-center font-medium">
                   The registration fee is <span className="font-semibold">Non-refundable</span> and should be paid <span className="font-semibold">ONLINE ONLY</span> to the above account.
                 </div>
 
-                {/* QR Code Placeholder */}
                 <div className="flex justify-center mt-6">
-                  {/* Replace the src link below with your actual QR code image */}
                   <img
                     src="/images/qrcode.png"
                     alt="QR Code for Payment"
@@ -167,16 +201,6 @@ const Registration = () => {
                 <p className="text-sm text-muted-foreground text-center mt-4">
                   Scan the QR code above for UPI payments
                 </p>
-
-                {/* <div className="mt-6 p-4 bg-muted rounded-lg">
-                  <p className="text-sm font-semibold mb-2">Payment Guidelines:</p>
-                  <ul className="text-sm space-y-1 list-disc list-inside">
-                    <li>After payment, email the transaction receipt to gcesdip@ched.svnit.ac.in</li>
-                    <li>Include your name and registration ID in the email</li>
-                    <li>Payment confirmation will be sent within 2 working days</li>
-                    <li>For UPI payments, scan the QR code provided in the registration form</li>
-                  </ul>
-                </div> */}
               </CardContent>
             </Card>
           </section>
