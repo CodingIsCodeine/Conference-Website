@@ -12,6 +12,7 @@ import Registration from "./pages/Registration";
 import Programme from "./pages/Programme";
 import Organising from "./pages/Organising";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "@/components/scrolltop";   // <-- add this
 
 const queryClient = new QueryClient();
 
@@ -30,9 +31,11 @@ const App = () => (
           <Route path="/registration" element={<Registration />} />
           <Route path="/programme" element={<Programme />} />
           <Route path="/organising" element={<Organising />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+
+        <ScrollToTop />   {/* <-- THIS shows on every page */}
+
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

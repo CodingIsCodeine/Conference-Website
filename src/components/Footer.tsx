@@ -152,9 +152,9 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-10 pt-6 text-center">
           <p className="text-sm text-white/70">
             © {new Date().getFullYear()} All Rights Reserved —
-            <span className="text-primary font-semibold"> Department of Chemical Engineering, SVNIT, Surat, Gujarat, India</span>
+            <span className="text-primary font-semibold"> DoChE, SVNIT, Surat, Gujarat, India</span>
             <br />
-            Designed & Managed by 
+            Developed by
             <span className="text-primary font-semibold"> GCESDIP Team </span>
           </p>
         </div>
