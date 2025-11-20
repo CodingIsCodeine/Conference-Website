@@ -48,11 +48,7 @@ const Index = () => {
       description: (
         <div className="space-y-3">
           <p>
-            The 2030 Agenda for Sustainable Development envisions a world of peace,
-            prosperity, and environmental balance through its 17 Sustainable Development
-            Goals (SDGs). Achieving these goals demands greener, cleaner, and more
-            efficient approaches in every sphere — from clean energy and sustainable
-            cities to responsible production and climate action.
+            The 2030 Agenda for Sustainable Development envisions a world of peace, prosperity, and environmental balance through its 17 Sustainable Development Goals (SDGs). Achieving these goals demands greener, cleaner, and more efficient approaches in every sphere — from clean energy and sustainable cities to responsible production and climate action.
           </p>
           <p>
             This conference serves as a global platform to advance Green Chemistry and
@@ -84,14 +80,11 @@ const Index = () => {
       description: (
         <div className="space-y-4">
           <p>
-            Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961
-            by the Government of India and recognized as an Institute of National Importance since
-            2007 by Parliament of India, is among India's premier engineering institutions.
+            Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961 by the Government of India and recognized as an Institute of National Importance since 2007 by Parliament of India, is among India’s premier engineering institutions. Spanning over 256 acres of lush green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate, integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering and applied sciences.
           </p>
 
           <p>
-            The institute emphasizes interdisciplinary research, innovation, and industry
-            collaboration, fostering academic excellence and professional growth.
+            The institute emphasizes interdisciplinary research, innovation, and industry collaboration, fostering academic excellence and professional growth. With an outstanding placement record and a strong network of eminent alumni, SVNIT continues to play a vital role in advancing engineering education and research in India.
           </p>
 
           <div className="pt-2">
@@ -119,14 +112,13 @@ const Index = () => {
       description: (
         <div className="space-y-4">
           <p>
-            Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes
-            leading to Bachelor's, Master's, and Ph.D. degrees in Chemical Engineering.
+            Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes leading to Bachelor’s, Master’s, and Ph.D. degrees in Chemical Engineering. The department has built a comprehensive research infrastructure with top-notch facilities for carrying out cutting-edge research.
           </p>
 
           <p>
-            The department strives to provide a conducive environment for creative and dynamic research work.
-          </p>
+            The department strives to provide a conducive environment for creative and dynamic research work. Faculty members are granted several R&D projects from organizations like GUJCOST, DST, DBT, etc., and have high-quality research publications and patents.</p>
 
+          <p> Currently, the department has 19 faculty members with expertise in various domains of Chemical Engineering. </p>
           <div className="pt-2">
             <ImageCarousel
               images={[
@@ -288,11 +280,10 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Surat, known as the "Diamond City" and "Silk City" of India.
+                        Surat, known as the "Diamond City" and "Silk City" of India, is a vibrant metropolis in Gujarat. The city is famous for its textile and diamond cutting industries, contributing significantly to India's economy.
                       </p>
                       <p className="text-muted-foreground leading-relaxed">
-                        With its rich cultural heritage and thriving industrial base.
-                      </p>
+With its rich cultural heritage, modern infrastructure, and thriving industrial base, Surat offers an ideal setting for this international conference on green chemistry and sustainable development.                      </p>
                     </div>
                     <div className="pt-2 text-center">
                       <SuratImageCarousel />
@@ -316,8 +307,12 @@ const Index = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        GCESDIP 1.0 was conducted virtually.
+                        GCESDIP 1.0 was conducted virtually from 16<sup>th</sup>–18<sup>th</sup> June 2021, bringing together participants from academia, research institutes, industries, and international universities. A total of <strong>90 presentations </strong> were delivered across 12 theme-based sessions.
                       </p>
+
+                      <p className="text-muted-foreground leading-relaxed mb-4"> The event attracted researchers from IITs, NITs, CSIR labs and global institutions in <strong>Japan, Indonesia, Korea, and Canada.</strong> Keynote lectures highlighted emerging trends in Green Chemistry and Sustainable Development. {/* Around 30 additional participants joined to explore recent advances and research opportunities. */} </p> 
+                      <p className="text-muted-foreground leading-relaxed mb-4"> Conference abstracts were published in <strong>Proceedings International</strong>. Partner journals such as <strong>Waste and Biomass Valorization</strong> and <strong>Materials Today: Proceedings</strong> supported full-length paper submissions. </p>
+
                     </div>
                     <div className="pt-2 text-center">
                       <PreviousEditionCarousel />
@@ -334,8 +329,7 @@ const Index = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Us at GCESDIP 2.0</h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Be part of the conversation on sustainable development
-            </p>
+Be part of the conversation on sustainable development and green chemistry            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
@@ -372,12 +366,12 @@ const Index = () => {
 /* Surat Image Carousel */
 const SuratImageCarousel = () => {
   const images = [
-    { src: "/images/surat-2.jpg", caption: "🌄 Saputara" },
-    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach" },
-    { src: "/images/surat-7.jpg", caption: "🗿 Statue of Unity" },
-    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach" },
-    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav" },
-    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse" },
+    { src: "/images/surat-2.jpg", caption: "🌄 Saputara — Gujarat’s Scenic Hill Station" },
+    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
+    { src: "/images/surat-7.jpg", caption: "🗿 Statue of Unity — The World's Tallest Statue" },
+    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views " },
+    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav — A Serene Heritage Lake " },
+    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
   ];
 
   return <AutoCarousel images={images} />;
