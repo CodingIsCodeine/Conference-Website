@@ -35,16 +35,16 @@ const Registration = () => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Registration</h1>
+          {/* <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Registration</h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Register now to secure your spot at GCESDIP 2.0
-          </p>
+          </p> */}
 
           {/* Registration Button */}
           <Card className="mb-12 shadow-card bg-gradient-card">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl">Register for GCESDIP 2.0</CardTitle>
-              <CardDescription>Complete your registration using our online form</CardDescription>
+              <CardTitle className="text-4xl font-bold ">Register for GCESDIP 2.0</CardTitle>
+              <CardDescription>Complete your registration using the online form</CardDescription>
             </CardHeader>
             <CardContent className="flex justify-center">
               <a
@@ -183,9 +183,9 @@ const Registration = () => {
                   <Home className="h-6 w-6 text-primary" />
                   Guest House Accommodation
                 </CardTitle>
-                <CardDescription>
-                  Information regarding stay and room availability
-                </CardDescription>
+                {/* <CardDescription> */}
+                  {/* Information regarding stay and room availability */}
+                {/* </CardDescription> */}
               </CardHeader>
 
               <CardContent className="space-y-4 text-base">

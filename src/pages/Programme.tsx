@@ -11,10 +11,10 @@ const Programme = () => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Programme</h1>
+          {/* <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Programme</h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             Detailed conference schedule and programme
-          </p>
+          </p> */}
 
           <Card className="shadow-card">
             <CardHeader className="text-center">
@@ -36,7 +36,7 @@ const Programme = () => {
               </div>
 
               <div className="text-left space-y-4">
-                <h3 className="font-semibold text-lg">Expected Programme Highlights:</h3>
+                <h3 className="font-semibold text-lg"> Programme Highlights:</h3>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
@@ -66,9 +66,8 @@ const Programme = () => {
               </div>
 
               <div className="pt-6 border-t">
-                <p className="text-sm text-muted-foreground">
-                  Please check back later for the complete schedule with session timings, 
-                  speaker details, and venue information.
+                <p className="text-sm text-muted-foreground font-semibold">
+                  Please visit the website reguarly for updated Information on GCESDIP 2.0
                 </p>
               </div>
             </CardContent>

@@ -35,7 +35,6 @@ const Abstract = () => {
             Abstract Submission
           </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Share your research and contribute to sustainable development
           </p>
 
           {/* Submit Abstract Card */}
@@ -77,7 +76,7 @@ const Abstract = () => {
                       <strong>poster sessions</strong> during the conference.
                     </li>
                     <li>
-                      Each participant will be provided <strong>10 minutes</strong> to deliver their oral presentation. Please ensure your presentation is structured to fit within the allotted time.
+                      Each participant will be provided <strong>15 minutes (including QnA session)</strong> to deliver their oral presentation. Please ensure your presentation is structured to fit within the allotted time.
                     </li>
                     <li>
                       All poster submissions should be designed in <strong>A0 size (841 mm × 1189 mm)</strong>  in a vertical orientation.
@@ -100,7 +99,7 @@ const Abstract = () => {
                   </a>
 
                   <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
+                    href="/images/Abstract.docx"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

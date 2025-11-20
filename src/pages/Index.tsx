@@ -18,17 +18,17 @@ const Index = () => {
       setShowLogos(false);
 
       // Step 1: Show hero text initially, hide after 2 seconds
-      setTimeout(() => setShowHeroText(false), 2000);
+      setTimeout(() => setShowHeroText(false), 4000);
 
       // Step 2: Show all logos together after hero text disappears
-      setTimeout(() => setShowLogos(true), 2500);
+      setTimeout(() => setShowLogos(true), 4500);
     };
 
     // Run animation immediately
     runAnimation();
 
     // Loop the animation every 10 seconds
-    const loopInterval = setInterval(runAnimation, 10000);
+    const loopInterval = setInterval(runAnimation, 8000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(loopInterval);
@@ -141,7 +141,7 @@ const Index = () => {
       <Navbar />
 
       {/* -------------------------------------------------------- */}
-      {/* HERO SECTION WITH SLIDE-OUT + ORGANISING + LOGOS */}
+      {/* HERO SECTION WITH SLIDE-OUT + Organizing + LOGOS */}
       {/* -------------------------------------------------------- */}
 
       <section
@@ -170,11 +170,11 @@ const Index = () => {
               </h1>
 
               <p className="text-xl md:text-2xl mb-8">GCESDIP 2.0</p>
-              <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p>
+              {/* <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p> */}
             </div>
           </div>
 
-          {/* Organising + Logos (All together) */}
+          {/* Organizing + Logos (All together) */}
           <div
             className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
               showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -182,7 +182,7 @@ const Index = () => {
           >
             <div className="container mx-auto px-4 text-center -mt-12 md:-mt-16">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-lg">
-                <i>Organised by</i>
+                Organized by
               </h2>
 
               {/* COLLEGE LOGO */}
@@ -194,7 +194,7 @@ const Index = () => {
 
               {/* In Association With */}
               <h3 className="text-xl md:text-2xl font-semibold mb-6 drop-shadow-lg">
-                <i>In association with</i>
+                In association with
               </h3>
 
               <div className="flex justify-center gap-10">
@@ -227,7 +227,7 @@ const Index = () => {
         <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              Important Deadlines
+              Important Dates
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {deadlines.map((deadline, index) => (
@@ -299,7 +299,7 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
-              Previous Edition
+              About GCESDIP 1.0
             </h2>
             <div className="max-w-4xl mx-auto">
               <Card className="shadow-card">
@@ -329,7 +329,7 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Us at GCESDIP 2.0</h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-Be part of the conversation on sustainable development and green chemistry            </p>
+              Be part of the journey on sustainable development and green chemistry</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"

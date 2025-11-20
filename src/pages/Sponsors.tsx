@@ -78,8 +78,8 @@ const Sponsors = () => {
       ],
     },
     { name: "Lunch Sponsorship", amount: "₹60,000/- (02 days)" },
-    { name: "Dinner Sponsorship", amount: "₹60,000/- (02 days)" },
-    { name: "Cultural Programme", amount: "₹50,000/- (02 days)" },
+    { name: "Gala Dinner Sponsorship", amount: "₹50,000/- (01 day)" },
+    { name: "Cultural Programme", amount: "₹50,000/- (01 day)" },
     { name: "Keynote/Plenary Lectures' Sponsorship", amount: "₹20,000/-" },
   ];
 

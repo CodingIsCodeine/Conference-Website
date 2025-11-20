@@ -28,6 +28,7 @@ const Committee = () => {
     { name: "Prof. Anet Resek Jambrak", title: "University of Zagreb, Croatia", initials: "AJ", image: "/images/dignitaries/anet.png", link: "https://www.pbf.unizg.hr/en/departments/department_for_general_programmes/laboratory_for_sustainable_development/anet_rezek_jambrak" },
     { name: "Dr. Yaqiang Xie", title: "Xiamen University, China", initials: "YX", image: "/images/dignitaries/xie.png", link: "https://cee.xmu.edu.cn/info/1031/13374.htm" },
     { name: "Dr. Oishi Sanyal", title: "West Virginia University, USA", initials: "OS", image: "/images/dignitaries/oishi.png", link: "https://directory.statler.wvu.edu/faculty-staff-directory/oishi-sanyal" },
+    { name: "Dr. Alexandar Knebel", title: "Friedrich Schiller University Jena, Germany", initials: "AK", image: "/images/knebel.png", link: "https://www.linkedin.com/in/alexander-knebel/?originalSubdomain=de" },
     { name: "Shri Rajesh Shah", title: "Worley Oman Engineering LLC, Oman", initials: "RS", image: "/images/dignitaries/rajesh.png", link: "https://www.linkedin.com/in/rajesh-shah-8b650114/" },
     { name: "Mr. Thummapudi Subrahmanyam", title: "ExxonMobil, Singapore", initials: "TS", image: "/images/dignitaries/thummapudis.png", link: "https://www.linkedin.com/in/subrahmanyam-thummapudi-0a331512/?originalSubdomain=sg" },
     { name: "Dr. Nalin Maniya", title: "Elanco, USA", initials: "NM", image: "/images/dignitaries/nalin.png", link: "https://www.linkedin.com/in/nalin-maniya/" },
@@ -41,6 +42,7 @@ const Committee = () => {
     { name: "Prof. Parameswar K. Iyer", title: "IIT Guwahati", initials: "PI", image: "/images/iyer.png", link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
     { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri/Y%20Shastri_CV_Full.pdf" },
     { name: "Prof. Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
+    { name: "Prof. Chinmay Ghoroi", title: "IIT Gandhinagar", initials: "CG", image: "/images/chinmay.png", link: "https://iitgn.ac.in/faculty/chemical/fac-chinmay" },
     { name: "Prof. Parag R. Gorate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     { name: "Dr. P. K. Rout", title: "CSIR-CIMAP Lucknow", initials: "PR", image: "/images/pk.png", link: "https://www.cimap.res.in/EmployeeProfile/EmployeeProfile.aspx?id=634" },
     { name: "Prof. Kailash Singh", title: "MNIT Jaipur", initials: "KS", image: "/images/kailash.png", link: "https://www.mnit.ac.in/dept_chemical/profile?fid=TK4=" },
@@ -132,7 +134,7 @@ const renderCommitteeSection = (title: string, members: Member[]) => (
             Advisory Committee
           </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Distinguished experts from around the world guiding GCESDIP 2.0
+            Distinguished experts from around the world supporting GCESDIP 2.0
           </p>
 
           {renderCommitteeSection("International Advisory Committee", internationalAdvisory)}

@@ -22,7 +22,7 @@ type Person = {
   imageSrc?: string;
 };
 
-const Organising = () => {
+const Organizing = () => {
   // --- DATA ---
   const chiefPatrons: Person[] = [
     { name: "Prof.(Dr.) Anupam Shukla", title: "Director, SVNIT, Surat", initials: "AS", hasCv: false, cvLink: "/assets/cvs/akv.pdf", imageSrc: "/images/dignitaries/anupam.png" },
@@ -37,12 +37,12 @@ const Organising = () => {
     { name: "Dr. Meghal A. Desai", title: "Professor, DoChE, SVNIT, Surat ", initials: "MAD", hasCv: true, cvLink: "https://svnit.ac.in/facup/CV_Meghal_Website_July2025.pdf", imageSrc: "/images/dignitaries/desai.png" },
   ];
 
-  const organisingSecretaries: Person[] = [
+  const OrganizingSecretaries: Person[] = [
     { name: "Dr. Sanjay R. Patel", title: "Professor, DoChE, SVNIT, Surat ", initials: "SRP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/C.V._%20Sanjay_17-01-24.pdf", imageSrc: "/images/dignitaries/srp.png" },
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
     { name: "Dr. S. K. Sundar ", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
-    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, IIT Jammu", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/nimdeo.png" },
+    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, ChE - IIT Jammu ", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/nimdeo.png" },
   ];
 
   const phdScholars: Person[] = [
@@ -53,11 +53,11 @@ const Organising = () => {
     { name: "Ms. Priya Sharma", title: "", initials: "PS", imageSrc: "/images/dignitaries/priya.png", description: "Valorization of lignin to develop sustainable functional materials for diverse applications in material science"},
     { name: "Mr. Aamir Vhora", title: "", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
     { name: "Ms. Shalinee Gupta", title: "", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
-    { name: "Ms. Sachin Thorat", title: "", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
+    { name: "Mr. Sachin Thorat", title: "", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
   ];
 
   const mtechStudents: Person[] = [
-    { name: "Ms. Jemish Dattani", title: "", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
+    { name: "Mr. Jemish Dattani", title: "", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
     { name: "Mr. Kishan Patel", title: "", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
     { name: "Mr. Harshil Patel", title: "", initials: "H", imageSrc: "/images/dignitaries/harshil.png", description: "Extraction of bio active substances and their encapsulation in hydrogel based drug delivery system."},
     { name: "Mr. Ansu Silawat", title: "", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
@@ -168,9 +168,9 @@ const renderScholar = (person: Person) => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Organising Committee</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Organizing Committee</h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Meet the team behind GCESDIP 2.0
+            {/* Meet the team behind GCESDIP 2.0 */}
           </p>
 
           {/* Chief Patrons */}
@@ -196,11 +196,11 @@ const renderScholar = (person: Person) => {
             </div>
           </section>
 
-          {/* Organising Secretaries */}
+          {/* Organizing Secretaries */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Organising Secretaries</h2>
+            <h2 className="text-2xl font-bold text-center mb-6 text-primary">Organizing Secretaries</h2>
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 max-w-8xl mx-auto">
-              {organisingSecretaries.map((person) => renderAuthority(person, "medium"))}
+              {OrganizingSecretaries.map((person) => renderAuthority(person, "medium"))}
             </div>
           </section>
 
@@ -244,4 +244,4 @@ const renderScholar = (person: Person) => {
   );
 };
 
-export default Organising;
+export default Organizing;

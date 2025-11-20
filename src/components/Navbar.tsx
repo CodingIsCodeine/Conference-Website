@@ -15,7 +15,7 @@ const Navbar = () => {
     { to: "/sponsors", label: "Sponsors & Exhibitors" },
     { to: "/registration", label: "Registration" },
     { to: "/programme", label: "Programme" },
-    { to: "/organising", label: "Organising Committee" },
+    { to: "/organising", label: "Organizing Committee" },
   ];
 
   return (
