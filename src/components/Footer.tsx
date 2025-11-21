@@ -154,7 +154,7 @@ const Footer = () => {
             © {new Date().getFullYear()} All Rights Reserved —
             <span className="text-primary font-semibold"> DoChE, SVNIT, Surat, Gujarat, India</span>
             <br />
-            Developed by
+            Developed and Managed by
             <span className="text-primary font-semibold"> GCESDIP Team </span>
           </p>
         </div>
