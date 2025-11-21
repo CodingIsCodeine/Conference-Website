@@ -65,6 +65,7 @@ const Index = () => {
             <li>Green and Sustainable Chemistry in the Environment</li>
             <li>Green Nanotechnology</li>
             <li>Waste to Wealth</li>
+            <li>Carbon Capture, Utilization and Storage (CCUS)</li>
             <li>Renewable Energy and Clean Energy</li>
             <li>Energy Storage</li>
             <li>Process Modelling and CFD</li>

@@ -33,7 +33,7 @@ const Footer = () => {
                 Register Now 
               </a>
               <a
-                href="#"
+                href="/images/brochure.pdf"
                 className="hover:text-primary transition-colors"
               >
                 Download Brochure

@@ -41,7 +41,7 @@ const Committee = () => {
     { name: "Dr. S. Sridhar", title: "CSIR-IICT Hyderabad", initials: "SS", image: "/images/sridhar.png", link: "https://www.linkedin.com/in/dr-s-sridhar-iict-7601011/" },
     { name: "Prof. Parameswar K. Iyer", title: "IIT Guwahati", initials: "PI", image: "/images/iyer.png", link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
     { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri/Y%20Shastri_CV_Full.pdf" },
-    { name: "Prof. Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
+    { name: "Prof. (Retd.) Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
     { name: "Prof. Chinmay Ghoroi", title: "IIT Gandhinagar", initials: "CG", image: "/images/chinmay.png", link: "https://iitgn.ac.in/faculty/chemical/fac-chinmay" },
     { name: "Prof. Parag R. Gorate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     { name: "Dr. P. K. Rout", title: "CSIR-CIMAP Lucknow", initials: "PR", image: "/images/pk.png", link: "https://www.cimap.res.in/EmployeeProfile/EmployeeProfile.aspx?id=634" },

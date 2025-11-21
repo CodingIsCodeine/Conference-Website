@@ -42,7 +42,7 @@ const Organizing = () => {
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
     { name: "Dr. S. K. Sundar ", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
-    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, ChE - IIT Jammu ", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/nimdeo.png" },
+    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, ChE, IIT Jammu ", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/nimdeo.png" },
   ];
 
   const phdScholars: Person[] = [

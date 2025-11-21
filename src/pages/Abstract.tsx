@@ -17,6 +17,7 @@ const Abstract = () => {
     "Green and Sustainable Chemistry in the Environment",
     "Green Nanotechnology",
     "Waste to Wealth",
+    "Carbon Capture, Utilization and Storage (CCUS)",
     "Renewable Energy and Clean Energy",
     "Energy Storage",
     "Process Modelling and CFD",
