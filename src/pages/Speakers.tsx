@@ -22,6 +22,22 @@ const Committee = () => {
       title: "Vice Chancellor, ICT Mumbai",
       initials: "AP",
       image: "/images/pandit.png"
+    },
+    {
+      name: "Prof. Ajay K Dalai", 
+      title: "University of Saskatchewan, Canada", 
+      initials: "AD", 
+      image: "/images/dignitaries/AjayKDalai.png", 
+      // link: "https://engineering.usask.ca/people/cbe/dalai,ajay.php"
+
+    },
+    {
+      name: "Prof. Neeraj Rai", 
+      title: "Mississippi University, USA", 
+      initials: "NR", 
+      image: "/images/rai.png", 
+      // link: "https://www.che.msstate.edu/people/faculty/neeraj-rai/" },
+
     }
   ];
 
@@ -31,6 +47,20 @@ const Committee = () => {
       title: "CSIR-IICT Hyderabad",
       initials: "SS",
       image: "/images/sridhar.png"
+    },
+    { 
+      name: "Prof. Parameswar K. Iyer", 
+      title: "IIT Guwahati", 
+      initials: "PI", 
+      image: "/images/iyer.png", 
+      // link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
+    },
+    { 
+      name: "Prof. Parag R. Gorate", 
+      title: "ICT Mumbai", 
+      initials: "PG", 
+      image: "/images/parag.png", 
+      // link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     },
     {
       name: "Dr. Gaurav Sharma",
@@ -49,7 +79,14 @@ const Committee = () => {
       title: "ExxonMobil, Singapore",
       initials: "TS",
       image: "/images/dignitaries/thummapudis.png"
-    }
+    },
+    { 
+      name: "Dr. Nalin Maniya", 
+      title: "Elanco, USA", 
+      initials: "NM", 
+      image: "/images/dignitaries/nalin.png", 
+      // link: "https://www.linkedin.com/in/nalin-maniya/" },
+    },
   ];
 
   // ------------- RENDER FUNCTION (UNCHANGED CSS) ---------------

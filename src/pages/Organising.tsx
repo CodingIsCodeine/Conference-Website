@@ -33,7 +33,7 @@ const Organizing = () => {
   const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: false, imageSrc: "/images/dignitaries/laad.png" };
 
   const chairmen: Person[] = [
-    { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/dignitaries/jigisha.png" },
+    { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/jigisha.png" },
     { name: "Dr. Meghal A. Desai", title: "Professor, DoChE, SVNIT, Surat ", initials: "MAD", hasCv: true, cvLink: "https://svnit.ac.in/facup/CV_Meghal_Website_July2025.pdf", imageSrc: "/images/dignitaries/desai.png" },
   ];
 
