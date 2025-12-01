@@ -43,7 +43,7 @@ const Committee = () => {
     { name: "Prof. Yogendra Shastri", title: "IIT Bombay", initials: "YS", image: "/images/yogendra.png", link: "https://homepages.iitb.ac.in/~yshastri/Y%20Shastri_CV_Full.pdf" },
     { name: "Prof. (Retd.) Debapriya Mandal", title: "IIT Jammu", initials: "DM", image: "/images/mandal.png", link: "https://www.iitjammu.ac.in/post/prof-debapriya-mandal-wins-the-insa-visiting-scientist-programme-2024-25" },
     { name: "Prof. Chinmay Ghoroi", title: "IIT Gandhinagar", initials: "CG", image: "/images/chinmay.png", link: "https://iitgn.ac.in/faculty/chemical/fac-chinmay" },
-    { name: "Prof. Parag R. Gorate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
+    { name: "Prof. Parag R. Gogate", title: "ICT Mumbai", initials: "PG", image: "/images/parag.png", link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" },
     { name: "Dr. P. K. Rout", title: "CSIR-CIMAP Lucknow", initials: "PR", image: "/images/pk.png", link: "https://www.cimap.res.in/EmployeeProfile/EmployeeProfile.aspx?id=634" },
     { name: "Prof. Kailash Singh", title: "MNIT Jaipur", initials: "KS", image: "/images/kailash.png", link: "https://www.mnit.ac.in/dept_chemical/profile?fid=TK4=" },
     { name: "Prof. Shirish Sonawane", title: "NIT Warangal", initials: "SSo", image: "/images/sonawane.png", link: "https://erp.nitw.ac.in/ext/profile/ch-shirish" },

@@ -56,7 +56,7 @@ const Committee = () => {
       // link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" },
     },
     { 
-      name: "Prof. Parag R. Gorate", 
+      name: "Prof. Parag R. Gogate", 
       title: "ICT Mumbai", 
       initials: "PG", 
       image: "/images/parag.png", 
@@ -146,7 +146,7 @@ const Committee = () => {
             Plenary and Keynote Speakers for GCESDIP 2.0
           </p>
 
-          {renderCommitteeSection("Plenary Speaker", plenarySpeaker)}
+          {renderCommitteeSection("Plenary Speakers", plenarySpeaker)}
           {renderCommitteeSection("Keynote Speakers", keynoteSpeakers)}
 
         </div>
