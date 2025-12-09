@@ -32,6 +32,14 @@ const Committee = () => {
 
     },
     {
+      name: "Prof. K.K. Pant", 
+      title: "Director, IIT Roorkee", 
+      initials: "KP", 
+      image: "/images/pant.png", 
+      // link: "https://www.che.msstate.edu/people/faculty/neeraj-rai/" },
+
+    },
+    {
       name: "Prof. Neeraj Rai", 
       title: "Mississippi University, USA", 
       initials: "NR", 
