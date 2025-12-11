@@ -51,7 +51,7 @@ const Committee = () => {
 
   const keynoteSpeakers: Member[] = [
     {
-      name: "Prof. S. Sridhar",
+      name: "Dr. S. Sridhar",
       title: "CSIR-IICT Hyderabad",
       initials: "SS",
       image: "/images/sridhar.png"
