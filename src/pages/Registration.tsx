@@ -11,11 +11,11 @@ import { Mail, MapPin, Link as Chain } from "lucide-react";
 
 const Registration = () => {
   const registrationFees = [
-    { category: "UG Students", regular: "Rs. 3,540" },
-    { category: "PG/PhD/Postdoc/Research Fellows", regular: "Rs. 7,050" },
-    { category: "Academicians/Scientists/Researchers", regular: "Rs. 9,440" },
-    { category: "Industry Delegate", regular: "Rs. 11,800" },
-    { category: "Attendees", regular: "Rs. 3,540" },
+    { category: "UG Students", regular: "Rs. 2,950" },
+    { category: "PG/PhD/Postdoc/Research Fellows", regular: "Rs. 4,130" },
+    { category: "Academicians/Scientists/Researchers", regular: "Rs. 6,490" },
+    { category: "Industry Delegate", regular: "Rs. 8,850" },
+    { category: "Attendees", regular: "Rs. 2,950gce" },
     { category: "Foreign Students", regular: "118 USD" },
     { category: "Foreign Academicians/Delegates", regular: "147 USD" },
   ];
@@ -24,6 +24,7 @@ const Registration = () => {
     "Access to all technical sessions",
     "Conference kit",
     "Breakfast, lunch, and refreshments",
+    "Participation in preconference workshop",
     "Conference certificate",
     "Networking opportunities",
   ];
