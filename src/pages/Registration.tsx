@@ -15,7 +15,7 @@ const Registration = () => {
     { category: "PG/PhD/Postdoc/Research Fellows", regular: "Rs. 4,130" },
     { category: "Academicians/Scientists/Researchers", regular: "Rs. 6,490" },
     { category: "Industry Delegate", regular: "Rs. 8,850" },
-    { category: "Attendees", regular: "Rs. 2,950gce" },
+    { category: "Attendees", regular: "Rs. 2,950" },
     { category: "Foreign Students", regular: "118 USD" },
     { category: "Foreign Academicians/Delegates", regular: "147 USD" },
   ];
@@ -93,6 +93,70 @@ const Registration = () => {
               * All fees are inclusive of GST
             </p>
           </section>
+
+          {/* Preconference Workshop */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-center mb-2 text-primary">
+              Preconference Workshop
+            </h2>
+            <p className="text-center text-lg font-medium mb-8">
+              DoE with JMP
+            </p>
+
+            <Card className="shadow-card">
+              <CardContent className="p-8 space-y-6 text-base leading-relaxed">
+
+                {/* Intro highlight */}
+                <div className="p-4 bg-muted rounded-lg border-l-4 border-primary">
+                  <p>
+                    Design of Experiments (DOE) deals with planning, conducting the experiments,
+                    and then analyzing and interpreting the response to evaluate the factors’
+                    effect to control the value of a parameter or group of parameters. A
+                    strategically planned and executed experiment may provide a great deal of
+                    information about the effect on a response variable due to one or more
+                    factors.
+                  </p>
+                </div>
+
+                <p>
+                  DOE simply helps to pinpoint the sensitive parts and sensitive areas in
+                  designs that impact the response variables. Designers are then able to fix
+                  these problems and produce robust and improved responses prior to going into
+                  production. Also, DOE is widely employed method across diverse industries such
+                  as chemical, biotechnology, mechanical/industrial, and pharmaceuticals, etc.
+                </p>
+
+                <p>
+                  In this workshop, lectures will be delivered on the basic principles of DoE,
+                  Various optimization methods (CCD, BBD, Mixture Design) and Modern and
+                  Computer-generated designs. Also, a hands-on exposure to JMP software will be
+                  given to enhance the learning covering the aspects of DOE. Primary objective
+                  of the workshop is to guide participants through the intricacies of experiment
+                  design, analysis, and optimization stages, ensuring a thorough and hands-on
+                  exploration of the DOE framework.
+                </p>
+
+                <p>
+                  At the end of the program, participants will emerge with a heightened
+                  proficiency in utilizing DOE methodologies and the JMP software, empowering
+                  them to make informed decisions and drive continuous improvement in their work
+                  environments.
+                </p>
+
+                {/* Resource Person */}
+                <div className="mt-6 pt-4 border-t flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <p className="font-semibold">Resource Person:</p>
+                  <p className="text-primary font-medium">
+                    Dr. Muralidhara A., Global JMP team
+                  </p>
+                </div>
+
+              </CardContent>
+            </Card>
+          </section>
+             
+
+      
 
           {/* What's Included */}
           <section className="mb-12">

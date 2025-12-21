@@ -220,8 +220,36 @@ const Index = () => {
       </section>
 
       {/* -------------------------------------------------------- */}
-      {/* REST OF YOUR ORIGINAL CODE UNTOUCHED BELOW */}
+      {/* PRE-CONFERENCE WORKSHOP (THEME-CONSISTENT HIGHLIGHT) */}
       {/* -------------------------------------------------------- */}
+
+      <section className="py-12 bg-muted">
+        <div className="container mx-auto px-4">
+          <Card className="max-w-5xl mx-auto shadow-card border-4 border-primary">
+            <CardContent className="p-6 md:p-8 text-center">
+              
+              <div className="flex justify-center mb-4">
+                <Award className="h-10 w-10 text-primary" />
+              </div>
+
+              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
+                Pre-Conference Workshop
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
+                Design of Experiments with JMP
+              </h3>
+
+              <p className="text-base md:text-lg font-medium text-muted-foreground">
+                <Calendar className="inline h-5 w-5 mr-1" />
+                <strong>16<sup>th</sup> April 2026</strong>
+              </p>
+
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
 
       <main className="flex-1">
         {/* Conference Deadlines */}
