@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Calendar, FileText, Award, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
+import jmpLogo from "@/assets/jmp-logo.png"; // adjust path if needed
+
 
 const Index = () => {
   const [showHeroText, setShowHeroText] = useState(true);
@@ -48,7 +50,40 @@ const Index = () => {
 
   const aboutSections = [
     {
-      title: "Pre-Conference",
+      title: "Conference",
+      icon: FileText,
+      description: (
+        <div className="space-y-3">
+          <p>
+            The 2030 Agenda for Sustainable Development envisions a world of peace, prosperity, and environmental balance through its 17 Sustainable Development Goals (SDGs). Achieving these goals demands greener, cleaner, and more efficient approaches in every sphere — from clean energy and sustainable cities to responsible production and climate action.
+          </p>
+          <p>
+            This conference serves as a global platform to advance Green Chemistry and
+            Green Engineering, fostering collaboration among academia, industry, research
+            organizations, and policymakers, to exchange ideas in the following thrust areas:
+          </p>
+          <ul className="list-disc list-inside space-y-1 pl-3 text-left">
+            <li>Process Intensification Techniques</li>
+            <li>Sustainable Approaches in Pharmaceutical and Chemical Industries</li>
+            <li>Catalysis</li>
+            <li>Novel Separation Methods</li>
+            <li>Green Solvents</li>
+            <li>Functional Foods and Nutraceuticals</li>
+            <li>Green and Sustainable Chemistry in the Environment</li>
+            <li>Green Nanotechnology</li>
+            <li>Waste to Wealth</li>
+            <li>Carbon Capture, Utilization and Storage (CCUS)</li>
+            <li>Renewable Energy and Clean Energy</li>
+            <li>Energy Storage</li>
+            <li>Process Modelling and CFD</li>
+            <li>Future Trends in Green Chemistry and Engineering</li>
+            <li>Any other area relevant to the theme of the conference</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      title: "Pre-Conference Workshop",
       icon: FileText,
       description: (
         <div className="space-y-4 text-justified leading-relaxed">
@@ -104,39 +139,6 @@ const Index = () => {
               A <strong>separate participation certificate</strong> will be provided for this workshop.
             </p>
           </div>
-        </div>
-      ),
-    },
-    {
-      title: "Conference",
-      icon: FileText,
-      description: (
-        <div className="space-y-3">
-          <p>
-            The 2030 Agenda for Sustainable Development envisions a world of peace, prosperity, and environmental balance through its 17 Sustainable Development Goals (SDGs). Achieving these goals demands greener, cleaner, and more efficient approaches in every sphere — from clean energy and sustainable cities to responsible production and climate action.
-          </p>
-          <p>
-            This conference serves as a global platform to advance Green Chemistry and
-            Green Engineering, fostering collaboration among academia, industry, research
-            organizations, and policymakers, to exchange ideas in the following thrust areas:
-          </p>
-          <ul className="list-disc list-inside space-y-1 pl-3 text-left">
-            <li>Process Intensification Techniques</li>
-            <li>Sustainable Approaches in Pharmaceutical and Chemical Industries</li>
-            <li>Catalysis</li>
-            <li>Novel Separation Methods</li>
-            <li>Green Solvents</li>
-            <li>Functional Foods and Nutraceuticals</li>
-            <li>Green and Sustainable Chemistry in the Environment</li>
-            <li>Green Nanotechnology</li>
-            <li>Waste to Wealth</li>
-            <li>Carbon Capture, Utilization and Storage (CCUS)</li>
-            <li>Renewable Energy and Clean Energy</li>
-            <li>Energy Storage</li>
-            <li>Process Modelling and CFD</li>
-            <li>Future Trends in Green Chemistry and Engineering</li>
-            <li>Any other area relevant to the theme of the conference</li>
-          </ul>
         </div>
       ),
     },
@@ -247,7 +249,7 @@ const Index = () => {
             }`}
           >
             <div className="container mx-auto px-4 text-center max-w-4xl">
-              
+
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
                 Pre-Conference Workshop
               </p>
@@ -263,13 +265,26 @@ const Index = () => {
                 Hands-on training for researchers, academicians & industry professionals
               </p>
 
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold">
+              {/* Date */}
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold mb-6">
                 📅 <span>16<sup>th</sup> April 2026</span>
+              </div>
+
+              {/* Knowledge Partner */}
+              <div className="flex flex-col items-center justify-center gap-2 opacity-90">
+                <span className="text-xs md:text-sm uppercase tracking-wider text-white/70">
+                  Knowledge Partner
+                </span>
+
+                <img
+                  src={jmpLogo}
+                  alt="JMP Software"
+                  className="h-10 md:h-12 object-contain"
+                />
               </div>
 
             </div>
           </div>
-
 
 
           {/* Organizing + Logos (All together) */}
@@ -330,7 +345,7 @@ const Index = () => {
               </div>
 
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
-                Pre-Conference Workshop
+                PreConference Workshop
               </p>
 
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
