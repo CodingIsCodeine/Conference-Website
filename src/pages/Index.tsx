@@ -83,7 +83,7 @@ const Index = () => {
       ),
     },
     {
-      title: "Pre-Conference Workshop",
+      title: "Preconference Workshop",
       icon: FileText,
       description: (
         <div className="space-y-4 text-justified leading-relaxed">
@@ -104,7 +104,7 @@ const Index = () => {
           </p>
 
           <p>
-            This pre-conference workshop will cover the <strong>fundamental principles of DOE</strong>,
+            This preconference workshop will cover the <strong>fundamental principles of DOE</strong>,
             various optimization techniques including <strong>Central Composite Design (CCD)</strong>,
             <strong>Box–Behnken Design (BBD)</strong>, <strong>Mixture Designs</strong>,
             and modern computer-generated experimental designs.
@@ -251,7 +251,7 @@ const Index = () => {
             <div className="container mx-auto px-4 text-center max-w-4xl">
 
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
-                Pre-Conference Workshop
+                Preconference Workshop
               </p>
 
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
@@ -345,7 +345,7 @@ const Index = () => {
               </div>
 
               <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
-                PreConference Workshop
+                Preconference Workshop
               </p>
 
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
