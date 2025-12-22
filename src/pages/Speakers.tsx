@@ -95,6 +95,13 @@ const Committee = () => {
       image: "/images/dignitaries/nalin.png", 
       // link: "https://www.linkedin.com/in/nalin-maniya/" },
     },
+    { 
+      name: "Dr. Muralidhara A.", 
+      title: "Global JMP Team", 
+      initials: "MA", 
+      image: "/images/dignitaries/muralidhara.png", 
+      // link: "https://www.linkedin.com/in/nalin-maniya/" },
+    },
   ];
 
   // ------------- RENDER FUNCTION (UNCHANGED CSS) ---------------

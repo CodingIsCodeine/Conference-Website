@@ -9,30 +9,35 @@ import ImageCarousel from "@/components/ui/ImageCarousel";
 
 const Index = () => {
   const [showHeroText, setShowHeroText] = useState(true);
+  const [showWorkshop, setShowWorkshop] = useState(false);
   const [showLogos, setShowLogos] = useState(false);
+
 
   useEffect(() => {
     const runAnimation = () => {
-      // Reset all states
+      // Reset
       setShowHeroText(true);
+      setShowWorkshop(false);
       setShowLogos(false);
 
-      // Step 1: Show hero text initially, hide after 2 seconds
-      setTimeout(() => setShowHeroText(false), 4000);
+      // 1️⃣ Conference Title
+      setTimeout(() => setShowHeroText(false), 3800);
 
-      // Step 2: Show all logos together after hero text disappears
-      setTimeout(() => setShowLogos(true), 4500);
+      // 2️⃣ JMP Workshop (clean gap + fade)
+      setTimeout(() => setShowWorkshop(true), 4200);
+      setTimeout(() => setShowWorkshop(false), 6500);
+
+      // 3️⃣ Logos
+      setTimeout(() => setShowLogos(true), 6900);
     };
 
-    // Run animation immediately
     runAnimation();
 
-    // Loop the animation every 10 seconds
-    const loopInterval = setInterval(runAnimation, 8000);
+    const loopInterval = setInterval(runAnimation, 10000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(loopInterval);
   }, []);
+
 
   const deadlines = [
     { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
@@ -42,6 +47,66 @@ const Index = () => {
   ];
 
   const aboutSections = [
+    {
+      title: "Pre-Conference",
+      icon: FileText,
+      description: (
+        <div className="space-y-4 text-justified leading-relaxed">
+          <p>
+            <strong>Design of Experiments (DOE)</strong> focuses on the systematic
+            planning, execution, analysis, and interpretation of experiments to
+            evaluate the effect of multiple factors on one or more response variables.
+            A well-designed experiment provides deep insights into sensitive parameters,
+            enabling better control, optimization, and robustness in system performance.
+          </p>
+
+          <p>
+            DOE helps identify critical factors and interaction effects that significantly
+            influence outcomes, allowing designers and engineers to correct issues and
+            achieve improved and reliable performance before full-scale implementation.
+            It is widely applied across industries such as chemical, biotechnology,
+            mechanical, industrial, and pharmaceutical sectors.
+          </p>
+
+          <p>
+            This pre-conference workshop will cover the <strong>fundamental principles of DOE</strong>,
+            various optimization techniques including <strong>Central Composite Design (CCD)</strong>,
+            <strong>Box–Behnken Design (BBD)</strong>, <strong>Mixture Designs</strong>,
+            and modern computer-generated experimental designs.
+            Participants will also receive <strong>hands-on training using JMP software</strong>
+            to strengthen practical understanding and application.
+          </p>
+
+          <p>
+            The primary objective of this workshop is to guide participants through
+            the complete DOE workflow — from experiment design and statistical analysis
+            to optimization — ensuring a comprehensive and application-oriented learning experience.
+          </p>
+
+          <p>
+            By the end of the program, participants will gain enhanced proficiency in
+            DOE methodologies and JMP software, empowering them to make data-driven
+            decisions and drive continuous improvement in their respective domains.
+          </p>
+
+          <div className="mt-4 space-y-1">
+            <p className="font-semibold">Resource Person:</p>
+            <p>Dr. Muralidhara A., Global JMP Team</p>
+          </div>
+
+          {/* 🔔 Highlighted Note */}
+          <div className="mt-6 rounded-xl border border-amber-400/50 bg-amber-50/40 px-4 py-3 text-amber-900 shadow-sm">
+            <p className="font-semibold">
+              📌 Note:
+            </p>
+            <p className="text-sm mt-1">
+              There is <strong>no additional fee</strong> for conference-registered participants.
+              A <strong>separate participation certificate</strong> will be provided for this workshop.
+            </p>
+          </div>
+        </div>
+      ),
+    },
     {
       title: "Conference",
       icon: FileText,
@@ -175,6 +240,38 @@ const Index = () => {
             </div>
           </div>
 
+          {/* JMP PRE-CONFERENCE WORKSHOP */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+              showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
+          >
+            <div className="container mx-auto px-4 text-center max-w-4xl">
+              
+              <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
+                Pre-Conference Workshop
+              </p>
+
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                Design of Experiments with{" "}
+                <span className="text-primary animate-soft-pulse">
+                  JMP
+                </span>
+              </h2>
+
+              <p className="text-lg md:text-xl text-white/90 mb-6">
+                Hands-on training for researchers, academicians & industry professionals
+              </p>
+
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold">
+                📅 <span>16<sup>th</sup> April 2026</span>
+              </div>
+
+            </div>
+          </div>
+
+
+
           {/* Organizing + Logos (All together) */}
           <div
             className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
@@ -275,18 +372,47 @@ const Index = () => {
         {/* About Sections */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">About</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
+              About
+            </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {aboutSections.map((section, index) => {
                 const Icon = section.icon;
+
+                const totalCards = aboutSections.length;
+                const remainder = totalCards % 3;
+
+                // Identify cards in last row
+                const isLastRow =
+                  index >= totalCards - remainder && remainder !== 0;
+
+                // Centering logic
+                let alignmentClass = "";
+                if (isLastRow) {
+                  if (remainder === 1) {
+                    // Single card → center column
+                    alignmentClass = "md:col-start-2";
+                  } else if (remainder === 2) {
+                    // Two cards → shift both to center
+                    alignmentClass = index === totalCards - 2 ? "md:col-start-2" : "";
+                  }
+                }
+
                 return (
-                  <Card key={index} className="shadow-card hover:shadow-hover transition-smooth">
+                  <Card
+                    key={index}
+                    className={`shadow-card hover:shadow-hover transition-smooth ${alignmentClass}`}
+                  >
                     <CardHeader>
                       <div className="flex justify-center mb-4">
                         {Icon && <Icon className="h-12 w-12 text-primary" />}
                       </div>
-                      <CardTitle className="text-center text-xl">{section.title}</CardTitle>
+                      <CardTitle className="text-center text-xl">
+                        {section.title}
+                      </CardTitle>
                     </CardHeader>
+
                     <CardContent>
                       <p className="text-sm text-muted-foreground text-center leading-relaxed whitespace-pre-line">
                         {section.description}
