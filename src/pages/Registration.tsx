@@ -92,9 +92,9 @@ const Registration = () => {
             <p className="text-sm text-muted-foreground text-center mt-4">
               * All fees are inclusive of GST
             </p>
-            <p className="text-md text-muted-foreground text-center mt-4">
+            <div className="mt-6 p-4 bg-yellow-100 text-yellow-800 rounded-lg border border-yellow-300 text-center font-medium">
                <strong>Note:</strong> For the same presenting author, the registration fees (inclusive of GST) for the additional paper will be Rs. 1200/-(Indian Participant) and 25 USD(Foreign Participant)
-            </p>
+            </div>
           </section>
 
              
