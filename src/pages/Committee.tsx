@@ -93,7 +93,7 @@ const renderCommitteeSection = (title: string, members: Member[]) => (
                     {/* ✅ Hover overlay text */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center bg-black/45 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out rounded-full w-full h-full">
                       <span className="text-[10px] md:text-xs text-white font-medium tracking-wide opacity-90">
-                        Click here for more info
+                        Click for more info
                       </span>
                     </div>
                   </a>

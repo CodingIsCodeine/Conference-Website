@@ -96,9 +96,9 @@ const Index = () => {
           </p>
 
           <p>
-            DOE helps identify critical factors and interaction effects that significantly
+            {/* DOE helps identify critical factors and interaction effects that significantly
             influence outcomes, allowing designers and engineers to correct issues and
-            achieve improved and reliable performance before full-scale implementation.
+            achieve improved and reliable performance before full-scale implementation. */}
             It is widely applied across industries such as chemical, biotechnology,
             mechanical, industrial, and pharmaceutical sectors.
           </p>
@@ -108,15 +108,15 @@ const Index = () => {
             various optimization techniques including <strong>Central Composite Design (CCD)</strong>,
             <strong>Box–Behnken Design (BBD)</strong>, <strong>Mixture Designs</strong>,
             and modern computer-generated experimental designs.
-            Participants will also receive <strong>hands-on training using JMP software</strong>
+            Participants will also receive <strong>hands-on training using JMP software </strong>
             to strengthen practical understanding and application.
           </p>
 
-          <p>
+          {/* <p>
             The primary objective of this workshop is to guide participants through
             the complete DOE workflow — from experiment design and statistical analysis
             to optimization — ensuring a comprehensive and application-oriented learning experience.
-          </p>
+          </p> */}
 
           <p>
             By the end of the program, participants will gain enhanced proficiency in
@@ -142,38 +142,7 @@ const Index = () => {
         </div>
       ),
     },
-    {
-      title: "SVNIT",
-      icon: Award,
-      description: (
-        <div className="space-y-4">
-          <p>
-            Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961 by the Government of India and recognized as an Institute of National Importance since 2007 by Parliament of India, is among India’s premier engineering institutions. Spanning over 256 acres of lush green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate, integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering and applied sciences.
-          </p>
 
-          <p>
-            The institute emphasizes interdisciplinary research, innovation, and industry collaboration, fostering academic excellence and professional growth. With an outstanding placement record and a strong network of eminent alumni, SVNIT continues to play a vital role in advancing engineering education and research in India.
-          </p>
-
-          <div className="pt-2">
-            <ImageCarousel
-              images={[
-                "/images/svnit-3.jpg",
-                "/images/svnit-5.jpg",
-                "/images/svnit-7.jpg",
-                "/images/svnit-8.jpg",
-                "/images/svnit-9.jpg",
-                "/images/svnit-10.jpg",
-                "/images/svnit-6.jpg",
-                "/images/svnit-11.jpg",
-              ]}
-              interval={3500}
-              className="mt-4"
-            />
-          </div>
-        </div>
-      ),
-    },
     {
       title: "Department of Chemical Engineering",
       icon: Users,
@@ -254,9 +223,11 @@ const Index = () => {
                 Preconference Workshop
               </p>
 
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                Design of Experiments with{" "}
-                <span className="text-primary animate-soft-pulse">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <span className="block">
+                  Design of Experiments with
+                </span>
+                <span className="block mt-3 text-white">
                   JMP
                 </span>
               </h2>
@@ -271,15 +242,15 @@ const Index = () => {
               </div>
 
               {/* Knowledge Partner */}
-              <div className="flex flex-col items-center justify-center gap-2 opacity-90">
-                <span className="text-xs md:text-sm uppercase tracking-wider text-white/70">
+              <div className="flex flex-col items-center justify-center gap-3 opacity-95 mt-2">
+                <span className="text-sm md:text-base uppercase tracking-widest text-white/80">
                   Knowledge Partner
                 </span>
 
                 <img
                   src={jmpLogo}
                   alt="JMP Software"
-                  className="h-10 md:h-12 object-contain"
+                  className="h-14 md:h-16 lg:h-20 object-contain"
                 />
               </div>
 
@@ -337,28 +308,58 @@ const Index = () => {
 
       <section className="py-12 bg-muted">
         <div className="container mx-auto px-4">
-          <Card className="max-w-5xl mx-auto shadow-card border-4 border-primary">
-            <CardContent className="p-6 md:p-8 text-center">
-              
-              <div className="flex justify-center mb-4">
-                <Award className="h-10 w-10 text-primary" />
-              </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            {/* Preconference Workshop Card */}
+            <Card className="shadow-card border-4 border-primary">
+              <CardContent className="p-6 md:p-8 text-center">
+                
+                <div className="flex justify-center mb-4">
+                  <Award className="h-10 w-10 text-primary" />
+                </div>
 
-              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
-                Preconference Workshop
-              </p>
+                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
+                  Preconference Workshop
+                </p>
 
-              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
-                Design of Experiments with JMP
-              </h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
+                  Design of Experiments with JMP
+                </h3>
 
-              <p className="text-base md:text-lg font-medium text-muted-foreground">
-                <Calendar className="inline h-5 w-5 mr-1" />
-                <strong>16<sup>th</sup> April 2026</strong>
-              </p>
+                <p className="text-base md:text-lg font-medium text-muted-foreground">
+                  <Calendar className="inline h-5 w-5 mr-1" />
+                  <strong>16<sup>th</sup> April 2026</strong>
+                </p>
 
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            {/* International Conference Card */}
+            <Card className="shadow-card border-4 border-primary">
+              <CardContent className="p-6 md:p-8 text-center">
+                
+                <div className="flex justify-center mb-4">
+                  <Users className="h-10 w-10 text-primary" />
+                </div>
+
+                <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">
+                  International Conference
+                </p>
+
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-primary">
+                  GCESDIP 2.0
+                </h3>
+
+                <p className="text-base md:text-lg font-medium text-muted-foreground">
+                  <Calendar className="inline h-5 w-5 mr-1" />
+                  <strong>17<sup>th</sup> &amp; 18<sup>th</sup> April 2026</strong>
+                </p>
+
+              </CardContent>
+            </Card>
+
+          </div>
         </div>
       </section>
 
@@ -436,6 +437,30 @@ const Index = () => {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* About SVNIT */}
+        <section className="py-16 bg-muted">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">About SVNIT</h2>
+            <div className="max-w-4xl mx-auto">
+              <Card className="shadow-card">
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961 by the Government of India and recognized as an Institute of National Importance since 2007 by Parliament of India, is among India’s premier engineering institutions. Spanning over 256 acres of lush green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate, integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering and applied sciences.                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+The institute emphasizes interdisciplinary research, innovation, and industry collaboration, fostering academic excellence and professional growth. With an outstanding placement record and a strong network of eminent alumni, SVNIT continues to play a vital role in advancing engineering education and research in India.</p>
+                    </div>
+                    <div className="pt-2 text-center">
+                      <SVNITImageCarousel />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
@@ -533,6 +558,21 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
   );
 };
 
+/* SVNIT Image Carousel */
+const SVNITImageCarousel = () => {
+  const images = [
+    { src: "/images/svnit-3.jpg", },
+    { src: "/images/svnit-5.jpg", },
+    { src: "/images/svnit-7.jpg", },
+    { src: "/images/svnit-8.jpg", },
+    { src: "/images/svnit-9.jpg", },
+    { src: "/images/svnit-10.jpg", },
+    { src: "/images/svnit-6.jpg", },
+    { src: "/images/svnit-11.jpg", },
+  ];
+
+  return <AutoCarousel images={images} />;
+};
 /* Surat Image Carousel */
 const SuratImageCarousel = () => {
   const images = [
