@@ -571,7 +571,7 @@ const SVNITImageCarousel = () => {
     { src: "/images/svnit-11.jpg", },
   ];
 
-  return <AutoCarousel images={images} />;
+  return <ImageCarousel images={images} />;
 };
 /* Surat Image Carousel */
 const SuratImageCarousel = () => {
