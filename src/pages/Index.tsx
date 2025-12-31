@@ -234,7 +234,7 @@ return (
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
             showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}>
-            <div className="container mx-auto px-4 text-center max-w-4xl -mt-6">
+            <div className="container mx-auto px-4 text-center max-w-4xl -mt-8">
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
                 Preconference Workshop
               </p>
@@ -244,14 +244,14 @@ return (
                 <span className="block mt-3">JMP</span>
               </h2>
 
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm text-lg md:text-xl font-semibold">
                 📅 <span>16<sup>th</sup> April 2026</span>
               </div>
 
               <img
                 src={jmpLogo}
                 alt="JMP Software"
-                className="mx-auto mt-6 h-16 object-contain"
+                className="mx-auto mt-6 h-16 object-contain bg-white rounded-md px-4 py-2"
               />
             </div>
           </div>
@@ -266,7 +266,7 @@ return (
               <h3 className="text-xl font-semibold mb-6">In association with</h3>
               <div className="flex justify-center gap-10">
                 <img src="/images/ict.png" className="h-36" />
-                <img src="/images/dignitaries/jammu.jpg" className="h-32" />
+                <img src="/images/dignitaries/jammu.jpg" className="h-32 rounded-sm" />
               </div>
             </div>
           </div>
@@ -305,7 +305,7 @@ return (
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="h-28 md:h-32 lg:h-36 object-contain
+                      className="h-28 md:h-32 lg:h-36 object-contain rounded-md
                                 drop-shadow-[0_0_25px_rgba(255,215,0,0.45)]
                                 hover:scale-[1.04] transition-transform duration-300"
                     />

@@ -1,63 +1,74 @@
-const sponsors = [
+const knowledgePartners = [
   {
-    name: "Knowledge Partner: JMP",
+    name: "JMP",
     logo: "src/assets/jmp-logo.png",
   },
+];
+
+const sponsors = [
   {
     name: "Sahajanand Medical Technologies Limited",
-    logo: "/images/smt.png",
+    logo: "/images/smt2.png",
   },
   {
     name: "Meril Life Sciences Private Limited",
-    logo: "/images/meril.jpeg",
+    logo: "/images/meril2.jpeg",
   },
-  // Add more sponsors here later
 ];
+
+const REPEAT_COUNT = 100; // 👈 ensures full width coverage on all screens
 
 const FooterSponsorsTicker = () => {
   return (
     <a
       href="/sponsors"
-      className="block cursor-pointer hover:opacity-90 transition-opacity"
+      className="block cursor-pointer hover:opacity-95 transition-opacity"
       aria-label="View all sponsors"
     >
-      <div className="relative overflow-hidden py-4">
-        {/* Ticker Track */}
-        <div className="flex animate-footer-ticker">
-          
-          {/* First set */}
-          <div className="flex gap-10 items-center px-6">
-            {sponsors.map((s, i) => (
-              <div key={`a-${i}`} className="flex items-center gap-3 opacity-80">
-                <img
-                  src={s.logo}
-                  alt={s.name}
-                  className="h-8 w-auto object-contain bg-white rounded px-2 py-1"
-                />
-                <span className="text-sm text-white/70 whitespace-nowrap">
-                  {s.name}
-                </span>
-              </div>
+      <div className="relative overflow-hidden py-6 space-y-6">
+
+        {/* ---------------- KNOWLEDGE PARTNER ---------------- */}
+        <div className="text-center space-y-3">
+          <p className="text-xs uppercase tracking-widest text-white/60">
+            Knowledge Partner
+          </p>
+
+          <div className="flex justify-center">
+            {knowledgePartners.map((kp, i) => (
+              <img
+                key={i}
+                src={kp.logo}
+                alt={kp.name}
+                className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
+              />
             ))}
           </div>
-
-          {/* Duplicate set */}
-          <div className="flex gap-10 items-center px-6">
-            {sponsors.map((s, i) => (
-              <div key={`b-${i}`} className="flex items-center gap-3 opacity-80">
-                <img
-                  src={s.logo}
-                  alt={s.name}
-                  className="h-8 w-auto object-contain bg-white rounded px-2 py-1"
-                />
-                <span className="text-sm text-white/70 whitespace-nowrap">
-                  {s.name}
-                </span>
-              </div>
-            ))}
-          </div>
-
         </div>
+
+        {/* ---------------- SPONSORS TICKER ---------------- */}
+        <div className="space-y-2">
+          <p className="text-xs uppercase tracking-widest text-center text-white/60">
+            Sponsors
+          </p>
+
+          <div className="relative overflow-hidden">
+            <div className="flex w-max animate-footer-ticker">
+              {Array.from({ length: REPEAT_COUNT }).map((_, idx) => (
+                <div key={idx} className="flex gap-10 items-center px-6">
+                  {sponsors.map((s, i) => (
+                    <img
+                      key={`${idx}-${i}`}
+                      src={s.logo}
+                      alt={s.name}
+                      className="h-10 flex items-center justify-center bg-white rounded py-0.4 opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </a>
   );

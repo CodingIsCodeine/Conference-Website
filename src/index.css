@@ -232,5 +232,8 @@ All colors MUST be HSL.
 .animate-footer-ticker {
   display: flex;
   width: max-content;
-  animation: footerTicker 35s linear infinite;
+  animation: footerTicker 550s linear infinite;
 }
+
+
+
