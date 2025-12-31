@@ -1,5 +1,9 @@
 const sponsors = [
   {
+    name: "Knowledge Partner: JMP",
+    logo: "src/assets/jmp-logo.png",
+  },
+  {
     name: "Sahajanand Medical Technologies Limited",
     logo: "/images/smt.png",
   },
