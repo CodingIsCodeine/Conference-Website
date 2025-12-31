@@ -1,7 +1,7 @@
 const knowledgePartners = [
   {
     name: "JMP",
-    logo: "src/assets/jmp-logo.png",
+    logo: "/images/jmp-logo.png",
   },
 ];
 
