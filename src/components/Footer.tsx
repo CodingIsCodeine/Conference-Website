@@ -1,17 +1,20 @@
 import { Mail, MapPin, Link as Chain } from "lucide-react";
+import FooterSponsorsTicker from "@/components/FooterSponsorsTicker";
 
 const Footer = () => {
   return (
     <footer className="bg-academic-dark text-white mt-20">
       <div className="container mx-auto px-4 py-16">
+
         {/* Three cards layout - symmetrical grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+
           {/* CARD 1 - Important Links */}
           <div
-            className="group w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center transform transition-transform duration-300 ease-out hover:scale-105"
+            className="w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center"
             aria-label="Important Links card"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 group-hover:ring-primary/40 transition-all duration-300 mb-3">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 mb-3">
               <Chain className="h-5 w-5 text-primary" />
             </div>
 
@@ -24,13 +27,13 @@ const Footer = () => {
                 href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
                 className="hover:text-primary transition-colors"
               >
-                Abstract Submission 
+                Abstract Submission
               </a>
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeL--0f225-_T4cFpwBfiiZlxMU5HIsVmgKGpY_lOzlONkr_g/viewform"
                 className="hover:text-primary transition-colors"
               >
-                Register Now 
+                Register Now
               </a>
               <a
                 href="/images/brochure_final.pdf"
@@ -43,10 +46,10 @@ const Footer = () => {
 
           {/* CARD 2 - Location */}
           <div
-            className="group w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center transform transition-transform duration-300 ease-out hover:scale-105"
+            className="w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center"
             aria-label="Location card"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 group-hover:ring-primary/40 transition-all duration-300 mb-3">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 mb-3">
               <MapPin className="h-5 w-5 text-primary" />
             </div>
 
@@ -77,20 +80,17 @@ const Footer = () => {
 
           {/* CARD 3 - Contact Us */}
           <div
-            className="group w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center transform transition-transform duration-300 ease-out hover:scale-105"
+            className="w-full max-w-[28rem] h-64 bg-white/5 backdrop-blur-sm rounded-2xl p-6 flex flex-col justify-center items-center text-center"
             aria-label="Contact card"
           >
-            {/* Icon */}
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 group-hover:ring-primary/40 transition-all duration-300 mb-3">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 ring-1 ring-white/8 mb-3">
               <Mail className="h-5 w-5 text-primary" />
             </div>
 
-            {/* Title */}
             <h4 className="text-lg font-semibold tracking-wide mb-3">
               Contact Us
             </h4>
 
-            {/* Contact Info */}
             <div className="flex flex-col items-center justify-center space-y-5 text-sm text-white/80 leading-relaxed">
               <div>
                 <p className="text-xs text-white/70 mb-0.5">Email</p>
@@ -102,44 +102,16 @@ const Footer = () => {
                 </a>
               </div>
 
-              {/* <div>
-                <p className="text-xs text-white/70 mb-0.5">Phone</p>
-                <a
-                  href="tel:02612201649"
-                  className="block text-sm hover:text-primary transition-colors"
-                >
-                  0261-2201649 / 1657 / 1658
-                  
-                  </a>
-                  </div> */}
-
               <div>
-                <p className="text-xs text-white/70 mb-1">
-                  Phone
-                </p>
+                <p className="text-xs text-white/70 mb-1">Phone</p>
                 <div className="space-y-0.5">
-                  <a
-                    href="tel:0261-2201649 / 1657 / 1658"
-                    className="block text-sm hover:text-primary transition-colors"
-                  >
-                    0261-2201649 / 1657 / 1658
-                  </a>
-                  <a
-                    href="tel:+919869607692"
-                    className="block text-sm hover:text-primary transition-colors"
-                  >
+                  <a href="tel:+919869607692" className="block hover:text-primary transition-colors">
                     +91 98696 07692
                   </a>
-                  <a
-                    href="tel:+917977438476"
-                    className="block text-sm hover:text-primary transition-colors"
-                  >
+                  <a href="tel:+917977438476" className="block hover:text-primary transition-colors">
                     +91 79774 38476
                   </a>
-                  <a
-                    href="tel:+917016303793"
-                    className="block text-sm hover:text-primary transition-colors"
-                  >
+                  <a href="tel:+917016303793" className="block hover:text-primary transition-colors">
                     +91 70163 03793
                   </a>
                 </div>
@@ -148,16 +120,30 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* FOOTER BOTTOM */}
-        <div className="border-t border-white/10 mt-10 pt-6 text-center">
-          <p className="text-sm text-white/70">
-            © {new Date().getFullYear()} All Rights Reserved —
-            <span className="text-primary font-semibold"> DoChE, SVNIT, Surat, Gujarat, India</span>
-            <br />
-            Developed and Managed by
-            <span className="text-primary font-semibold"> GCESDIP Team </span>
-          </p>
+        {/* FOOTER LOWER BAND */}
+        <div className="mt-12">
+
+          {/* TOP LINE */}
+          <div className="border-t border-white/10" />
+
+          {/* Sponsors ticker BETWEEN the two lines */}
+          <FooterSponsorsTicker />
+
+          {/* BOTTOM LINE + COPYRIGHT */}
+          <div className="border-t border-white/10 pt-6 text-center">
+            <p className="text-sm text-white/70">
+              © {new Date().getFullYear()} All Rights Reserved —
+              <span className="text-primary font-semibold">
+                {" "}DoChE, SVNIT, Surat, Gujarat, India
+              </span>
+              <br />
+              Developed and Managed by
+              <span className="text-primary font-semibold"> GCESDIP Team </span>
+            </p>
+          </div>
+
         </div>
+
       </div>
     </footer>
   );

@@ -6,40 +6,62 @@ import { Button } from "@/components/ui/button";
 import { Calendar, FileText, Award, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
-import jmpLogo from "@/assets/jmp-logo.png"; // adjust path if needed
-
+import jmpLogo from "@/assets/jmp-logo.png";
 
 const Index = () => {
   const [showHeroText, setShowHeroText] = useState(true);
   const [showWorkshop, setShowWorkshop] = useState(false);
   const [showLogos, setShowLogos] = useState(false);
+  const [showGoldSponsor, setShowGoldSponsor] = useState(false);
+
+  const goldSponsors = [
+    {
+      name: "Sahajanand Medical Technologies Limited",
+      logo: "/images/smt.png",
+    },
+    {
+      name: "Meril Life Sciences Private Limited",
+      logo: "/images/meril.jpeg",
+    },
+    // {
+    //   name: "Sponsor Name 3",
+    //   logo: "/images/sponsor3.png",
+    // },
+    // keep adding without touching UI logic
+  ];
 
 
   useEffect(() => {
     const runAnimation = () => {
-      // Reset
+      // 🔄 Reset
       setShowHeroText(true);
       setShowWorkshop(false);
       setShowLogos(false);
+      setShowGoldSponsor(false);
 
-      // 1️⃣ Conference Title
+      // 1️⃣ Conference
       setTimeout(() => setShowHeroText(false), 3800);
 
-      // 2️⃣ JMP Workshop (clean gap + fade)
+      // 2️⃣ Workshop
       setTimeout(() => setShowWorkshop(true), 4200);
       setTimeout(() => setShowWorkshop(false), 6500);
 
-      // 3️⃣ Logos
+      // 3️⃣ Organizing Logos
       setTimeout(() => setShowLogos(true), 6900);
+      setTimeout(() => setShowLogos(false), 9000);
+
+      // 4️⃣ Gold Sponsor (FIXED)
+      setTimeout(() => setShowGoldSponsor(true), 9400);
+      setTimeout(() => setShowGoldSponsor(false), 11500);
     };
 
     runAnimation();
 
-    const loopInterval = setInterval(runAnimation, 10000);
+    // ⏱️ Loop AFTER full cycle completes
+    const loopInterval = setInterval(runAnimation, 12000);
 
     return () => clearInterval(loopInterval);
   }, []);
-
 
   const deadlines = [
     { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
@@ -173,12 +195,12 @@ const Index = () => {
     },
   ];
 
-  return (
+return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
       {/* -------------------------------------------------------- */}
-      {/* HERO SECTION WITH SLIDE-OUT + Organizing + LOGOS */}
+      {/* HERO SECTION */}
       {/* -------------------------------------------------------- */}
 
       <section
@@ -191,12 +213,10 @@ const Index = () => {
       >
         <div className="container mx-auto px-4 text-center">
 
-          {/* Hero original text */}
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-              showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
-            }`}
-          >
+          {/* Conference */}
+          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
+            showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+          }`}>
             <div className="container mx-auto px-4 text-center">
               <p className="text-xl md:text-2xl font-semibold mb-4">
                 17<sup>th</sup> – 18<sup>th</sup> April 2026
@@ -207,100 +227,99 @@ const Index = () => {
               </h1>
 
               <p className="text-xl md:text-2xl mb-8">GCESDIP 2.0</p>
-              {/* <p className="text-lg md:text-xl">SVNIT, Surat, Gujarat, India</p> */}
             </div>
           </div>
 
-          {/* JMP PRE-CONFERENCE WORKSHOP */}
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-              showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-          >
-            <div className="container mx-auto px-4 text-center max-w-4xl">
-
+          {/* Workshop */}
+          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+            showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}>
+            <div className="container mx-auto px-4 text-center max-w-4xl -mt-6">
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
                 Preconference Workshop
               </p>
 
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="block">
-                  Design of Experiments with
-                </span>
-                <span className="block mt-3 text-white">
-                  JMP
-                </span>
+                <span className="block">Design of Experiments with</span>
+                <span className="block mt-3">JMP</span>
               </h2>
 
-              <p className="text-lg md:text-xl text-white/90 mb-6">
-                Hands-on training for researchers, academicians & industry professionals
-              </p>
-
-              {/* Date */}
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold mb-6">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md text-lg md:text-xl font-semibold">
                 📅 <span>16<sup>th</sup> April 2026</span>
               </div>
 
-              {/* Knowledge Partner */}
-              <div className="flex flex-col items-center justify-center gap-3 opacity-95 mt-2">
-                <span className="text-sm md:text-base uppercase tracking-widest text-white/80">
-                  Knowledge Partner
-                </span>
-
-                <img
-                  src={jmpLogo}
-                  alt="JMP Software"
-                  className="h-14 md:h-16 lg:h-20 object-contain"
-                />
-              </div>
-
+              <img
+                src={jmpLogo}
+                alt="JMP Software"
+                className="mx-auto mt-6 h-16 object-contain"
+              />
             </div>
           </div>
 
+          {/* Logos */}
+          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-600 ${
+            showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}>
+            <div className="text-center -mt-10">
+              <h2 className="text-2xl font-bold mb-6">Organized by</h2>
+              <img src="/images/svnit.png" className="mx-auto h-36 mb-10" />
+              <h3 className="text-xl font-semibold mb-6">In association with</h3>
+              <div className="flex justify-center gap-10">
+                <img src="/images/ict.png" className="h-36" />
+                <img src="/images/dignitaries/jammu.jpg" className="h-32" />
+              </div>
+            </div>
+          </div>
 
-          {/* Organizing + Logos (All together) */}
+          {/* GOLD SPONSORS (ADAPTIVE) */}
           <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-              showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showGoldSponsor ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="container mx-auto px-4 text-center -mt-12 md:-mt-16">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 drop-shadow-lg">
-                Organized by
-              </h2>
+            <div className="text-center relative w-full max-w-5xl mx-auto px-6">
 
-              {/* COLLEGE LOGO */}
-              <img
-                src="/images/svnit.png"
-                alt="College Logo"
-                className="mx-auto h-32 md:h-40 object-contain drop-shadow-xl mb-10"
-              />
+              {/* soft glow */}
+              <div className="absolute inset-0 -z-10 flex items-center justify-center">
+                <div className="w-[420px] h-[420px] rounded-full bg-yellow-400/15 blur-3xl animate-pulse" />
+              </div>
 
-              {/* In Association With */}
-              <h3 className="text-xl md:text-2xl font-semibold mb-6 drop-shadow-lg">
-                In association with
-              </h3>
+              <p className="uppercase tracking-widest mb-6 text-yellow-200 font-semibold">
+                Gold Sponsors
+              </p>
 
-              <div className="flex justify-center gap-10">
-                <img
-                  src="/images/ict.png"
-                  alt="Institute 2"
-                  className="h-36 md:h-40 object-contain drop-shadow-xl"
-                />
-                {/* LOGO 1 */}
-                <img
-                  src="/images/dignitaries/jammu.jpg"
-                  alt="Institute 1"
-                  className="h-32 md:h-36 object-contain drop-shadow-xl"
-                />
-
-                {/* LOGO 2 */}
+              <div
+                className={`grid gap-8 items-center justify-center ${
+                  goldSponsors.length === 1
+                    ? "grid-cols-1"
+                    : goldSponsors.length === 2
+                    ? "grid-cols-1 sm:grid-cols-2"
+                    : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                }`}
+              >
+                {goldSponsors.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center gap-3 opacity-90 hover:opacity-100 transition-all duration-300"
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="h-28 md:h-32 lg:h-36 object-contain
+                                drop-shadow-[0_0_25px_rgba(255,215,0,0.45)]
+                                hover:scale-[1.04] transition-transform duration-300"
+                    />
+                    <p className="text-sm text-yellow-100/80 font-medium text-center">
+                      {sponsor.name}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
         </div>
-      </section>
+      </section>          
 
       {/* -------------------------------------------------------- */}
       {/* PRE-CONFERENCE WORKSHOP (THEME-CONSISTENT HIGHLIGHT) */}
