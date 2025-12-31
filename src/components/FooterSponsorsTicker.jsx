@@ -1,7 +1,9 @@
+import jmpLogo from "@/assets/jmp-logo.png";
+
 const knowledgePartners = [
   {
     name: "JMP",
-    logo: "/images/jmp-logo.png",
+    logo: jmpLogo,
   },
 ];
 
