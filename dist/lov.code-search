@@ -1,0 +1,93 @@
+# Query: lov
+# ContextLines: 1
+
+26 results - 7 files
+
+index.html:
+  25        property="og:image"
+  26:       content="https://www.gcesdip2.com/images/gcesdiplogo.png"
+  27      />
+
+  33        name="twitter:image"
+  34:       content="https://www.gcesdip2.com/images/gcesdiplogo.png"
+  35      />
+
+package-lock.json:
+    72          "globals": "^15.15.0",
+    73:         "lovable-tagger": "^1.1.11",
+    74          "postcss": "^8.5.6",
+
+  2636        "resolved": "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.53.1.tgz",
+  2637:       "integrity": "sha512-usmzIgD0rf1syoOZ2WZvy8YpXK5G1V3btm3QZddoGSa6mOgfXWkkv+642bfUUldomgrbiLQGrPryb7DXLovPWQ==",
+  2638        "cpu": [
+
+  5065      },
+  5066:     "node_modules/lovable-tagger": {
+  5067        "version": "1.1.11",
+  5068:       "resolved": "https://registry.npmjs.org/lovable-tagger/-/lovable-tagger-1.1.11.tgz",
+  5069        "integrity": "sha512-G1gUZi8CebQpB/5+IHWYekRyeRFF2RR7iXSjGO+iVWpwlpa19swgYCYem2z+IkBJO0fKRYJ98xz4yhdt++MzLA==",
+
+  5596        "resolved": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz",
+  5597:       "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==",
+  5598        "dev": true,
+
+  6160        "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz",
+  6161:       "integrity": "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==",
+  6162        "dev": true,
+
+package.json:
+  77      "globals": "^15.15.0",
+  78:     "lovable-tagger": "^1.1.11",
+  79      "postcss": "^8.5.6",
+
+README.md:
+   1: # Welcome to your Lovable project
+   2  
+
+   4  
+   5: **URL**: https://lovable.dev/projects/679945bb-5cf5-4b47-9302-6fcdb206472c
+   6  
+
+  10  
+  11: **Use Lovable**
+  12  
+  13: Simply visit the [Lovable Project](https://lovable.dev/projects/679945bb-5cf5-4b47-9302-6fcdb206472c) and start prompting.
+  14  
+  15: Changes made via Lovable will be committed automatically to this repo.
+  16  
+
+  18  
+  19: If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+  20  
+
+  64  
+  65: Simply open [Lovable](https://lovable.dev/projects/679945bb-5cf5-4b47-9302-6fcdb206472c) and click on Share -> Publish.
+  66  
+  67: ## Can I connect a custom domain to my Lovable project?
+  68  
+
+  72  
+  73: Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+vite.config.ts:
+  3  import path from "path";
+  4: import { componentTagger } from "lovable-tagger";
+  5  
+
+brochure\package-lock.json:
+  2267        "resolved": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz",
+  2268:       "integrity": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==",
+  2269        "dev": true,
+
+  2408        "resolved": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz",
+  2409:       "integrity": "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==",
+  2410        "dev": true,
+
+dist\index.html:
+  25        property="og:image"
+  26:       content="https://www.gcesdip2.com/images/gcesdiplogo.png"
+  27      />
+
+  33        name="twitter:image"
+  34:       content="https://www.gcesdip2.com/images/gcesdiplogo.png"
+  35      />

@@ -141,6 +141,23 @@ const Footer = () => {
               <span className="text-primary font-semibold"> GCESDIP Team </span>
             </p>
           </div>
+          {/* FLAG COUNTER */}
+          <div className="flex justify-center py-6 hover:border-gold/40">
+            <a
+              href="https://worldflagcounter.com/details/iYS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-80 hover:opacity-100 transition-opacity "
+            >
+              <img
+                src="https://worldflagcounter.com/iYS/"
+                alt="Global Visitors"
+                className="rounded-xl border border-gold/20 bg-white/5 
+"
+              />
+            </a>
+          </div>
+
 
         </div>
 
