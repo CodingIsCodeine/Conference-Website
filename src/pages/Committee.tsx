@@ -58,7 +58,7 @@ const Committee = () => {
     { name: "Mr. Vipul Prajapati", title: "MYK Laticrete, Hyderabad", initials: "VP", image: "/images/vipul.png", link: "/images/prajapati.pdf" },
     { name: "Mr. Sanjay Tavethiya", title: "Shreeneel Chemicals, Ankleshwar", initials: "ST", image: "/images/dignitaries/sanjay.png", link: "https://www.linkedin.com/in/sanjay-tavethiya-37094928/?originalSubdomain=in" },
     { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/dignitaries/ami.png", link: "/images/dignitaries/amiraval.pdf" },
-    { name: "Dr. Sunita Varjani", title: "School of Engineering Jointly with School of Health Science and Technology,UPES, Dehradun;          Adjunct Professor, Korea University, Seoul, South Korea", initials: "SV", image: "/images/sunita.png", link: "https://www.linkedin.com/in/dr-sunita-varjani-puro-86295727/?originalSubdomain=hk" },
+    { name: "Dr. Sunita Varjani", title: "UPES, Dehradun; Korea University, Seoul, South Korea", initials: "SV", image: "/images/sunita.png", link: "https://www.linkedin.com/in/dr-sunita-varjani-puro-86295727/?originalSubdomain=hk" },
   ];
 
 const renderCommitteeSection = (title: string, members: Member[]) => (
