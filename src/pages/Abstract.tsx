@@ -177,7 +177,7 @@ const Abstract = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm mb-4">
-                  Abstract will be published in the proceedings with an ISSN number.
+                  Abstract will be published in the <strong> Proceedings International </strong> with an ISSN number.
                 </p>
                 <p className="text-sm mb-4">
                   Selected papers will be published in a special issue of a peer-reviewed
@@ -193,7 +193,7 @@ const Abstract = () => {
                 </p>
                 <div className="space-y-2 text-sm">
                   <p>
-                    <strong>Journal Partner:</strong> To be announced
+                    <strong>Journal Partner:</strong> Proceedings International
                   </p>
                 </div>
               </CardContent>
