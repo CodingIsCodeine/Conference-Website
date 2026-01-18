@@ -176,9 +176,16 @@ const Abstract = () => {
                 <CardDescription>Publication opportunities</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm mb-4">
-                  Abstract will be published in the <strong> Proceedings International </strong> with an ISSN number.
-                </p>
+  <p className="text-sm mb-4">
+    Abstracts will be published in the{" "}
+    <strong className="text-[#2b2b2b]">
+      Platinum Open Access Journal{" "}
+      <span className="text-[#2E8B57]">
+        "Proceedings International"
+      </span>
+    </strong>{" "}
+    with ISSN number.
+  </p>
                 <p className="text-sm mb-4">
                   Selected papers will be published in a special issue of a peer-reviewed
                   journal (Scopus/SCI indexed/Web of Science indexed), adopting a regular
