@@ -176,16 +176,19 @@ const Abstract = () => {
                 <CardDescription>Publication opportunities</CardDescription>
               </CardHeader>
               <CardContent>
-  <p className="text-sm mb-4">
-    Abstracts will be published in the{" "}
-    <strong className="text-[#2b2b2b]">
-      Platinum Open Access Journal{" "}
-      <span className="text-[#2E8B57]">
-        "Proceedings International"
-      </span>
-    </strong>{" "}
-    with ISSN number.
-  </p>
+                <p className="text-sm mb-4">
+                  Abstracts will be published in the{" "}
+                  <strong className="text-[#2b2b2b]">
+                    Platinum Open Access Journal{" "}
+                    <span className="text-[#2E8B57]">
+                      <a   href="https://conferenceproceedings.international"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="proceedings-link">"Proceedings International"</a>
+                    </span>
+                  </strong>{" "}
+                  with ISSN number.
+                </p>
                 <p className="text-sm mb-4">
                   Selected papers will be published in a special issue of a peer-reviewed
                   journal (Scopus/SCI indexed/Web of Science indexed), adopting a regular
@@ -200,7 +203,10 @@ const Abstract = () => {
                 </p>
                 <div className="space-y-2 text-sm">
                   <p>
-                    <strong>Journal Partner:</strong> Proceedings International
+                    <strong>Journal Partner:</strong> Proceedings International <a href="https://conferenceproceedings.international" target="_blank" rel="noopener noreferrer" className="proceedings-link">(https://conferenceproceedings.international)</a>
+                  </p>
+                  <p>
+                    
                   </p>
                 </div>
               </CardContent>

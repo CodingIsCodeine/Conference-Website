@@ -235,5 +235,35 @@ All colors MUST be HSL.
   animation: footerTicker 550s linear infinite;
 }
 
+.proceedings-link {
+  position: relative;
+  color: #2E8B57;
+  text-decoration: none;
+}
+
+/* .proceedings-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease;
+} */
+
+.proceedings-link:hover::after {
+  width: 100%;
+}
+
+
+.proceedings-link:hover {
+  color: #1e40af;
+  transform: translateY(-1px);
+  text-decoration: underline;
+}
+
+
+
 
 
