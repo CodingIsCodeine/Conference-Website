@@ -49,6 +49,7 @@ const Committee = () => {
     { name: "Prof. Kailash Singh", title: "MNIT Jaipur", initials: "KS", image: "/images/kailash.png", link: "https://www.mnit.ac.in/dept_chemical/profile?fid=TK4=" },
     { name: "Prof. Shirish Sonawane", title: "NIT Warangal", initials: "SSo", image: "/images/sonawane.png", link: "https://erp.nitw.ac.in/ext/profile/ch-shirish" },
     { name: "Prof. Sachin Mandavgane", title: "VNIT Nagpur", initials: "SM", image: "/images/mandavgane.png", link: "https://vnit.ac.in/engineering/chemical/2023/06/05/dr-sachin-a-mandavgane/" },
+    { name: "Prof. Sunita Varjani", title: "UPES, Dehradun; Korea University, Seoul, South Korea", initials: "SV", image: "/images/sunita.png", link: "https://www.linkedin.com/in/dr-sunita-varjani-puro-86295727/?originalSubdomain=hk" },
     { name: "Dr. Gaurav Sharma", title: "IIT Roorkee", initials: "GS", image: "/images/gaurav.png", link: "https://www.iitr.ac.in/~CH/goravfch" },
     { name: "Dr. Bharat Modhera", title: "MANIT Bhopal", initials: "BM", image: "/images/bharat.png", link: "https://cse.manit.ac.in/content/dr-bharatkumar-k-modhera" },
     { name: "Dr. Susmita Das", title: "NIT Calicut", initials: "SD", image: "/images/sushmita.png", link: "https://nitc.ac.in/department/chemical-engineering/faculty-and-staff/faculty/dccce194-e151-4e30-a2e1-f5b418b0357e" },
@@ -58,7 +59,6 @@ const Committee = () => {
     { name: "Mr. Vipul Prajapati", title: "MYK Laticrete, Hyderabad", initials: "VP", image: "/images/vipul.png", link: "/images/prajapati.pdf" },
     { name: "Mr. Sanjay Tavethiya", title: "Shreeneel Chemicals, Ankleshwar", initials: "ST", image: "/images/dignitaries/sanjay.png", link: "https://www.linkedin.com/in/sanjay-tavethiya-37094928/?originalSubdomain=in" },
     { name: "Dr. Ami Raval", title: "Sahajanand Medical Technologies, Surat", initials: "AR", image: "/images/dignitaries/ami.png", link: "/images/dignitaries/amiraval.pdf" },
-    { name: "Dr. Sunita Varjani", title: "UPES, Dehradun; Korea University, Seoul, South Korea", initials: "SV", image: "/images/sunita.png", link: "https://www.linkedin.com/in/dr-sunita-varjani-puro-86295727/?originalSubdomain=hk" },
   ];
 
 const renderCommitteeSection = (title: string, members: Member[]) => (
