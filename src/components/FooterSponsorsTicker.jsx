@@ -16,6 +16,10 @@ const knowledgePartners = [
   },
 ];
 
+const knowledgePartnerLink = "https://www.jmp.com";
+const mediaPartnerLink = "https://www.indianchemicalnews.com/";
+
+
 const sponsors = [
   {
     name: "Sahajanand Medical Technologies Limited",
@@ -48,13 +52,21 @@ const FooterSponsorsTicker = () => {
             </p>
             <div className="flex justify-center">
               {knowledgePartners.map((kp, i) => (
-                <img
+                <a
                   key={i}
-                  src={kp.logo}
-                  alt={kp.name}
-                  className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
-                />
+                  href={knowledgePartnerLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={kp.logo}
+                    alt={kp.name}
+                    className="h-10 w-auto object-cover bg-white rounded px-4 py-2 hover:scale-105 transition-transform"
+                  />
+                </a>
               ))}
+
             </div>
           </div>
 
@@ -65,12 +77,19 @@ const FooterSponsorsTicker = () => {
             </p>
             <div className="flex justify-center">
               {mediaPartners.map((mp, i) => (
-                <img
+                <a
                   key={i}
-                  src={mp.logo}
-                  alt={mp.name}
-                  className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
-                />
+                  href={mediaPartnerLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img
+                    src={mp.logo}
+                    alt={mp.name}
+                    className="h-10 w-auto object-cover bg-white rounded px-4 py-2 hover:scale-105 transition-transform"
+                  />
+                </a>
               ))}
             </div>
           </div>
