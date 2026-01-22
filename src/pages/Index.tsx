@@ -7,12 +7,16 @@ import { Calendar, FileText, Award, Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
 import jmpLogo from "@/assets/jmp-logo.png";
+import mediaPartnerLogo from "@/assets/icn_logo.png";
+
 
 const Index = () => {
   const [showHeroText, setShowHeroText] = useState(true);
   const [showWorkshop, setShowWorkshop] = useState(false);
   const [showLogos, setShowLogos] = useState(false);
   const [showGoldSponsor, setShowGoldSponsor] = useState(false);
+  const [showMediaPartner, setShowMediaPartner] = useState(false);
+
 
   const goldSponsors = [
     {
@@ -38,6 +42,8 @@ const Index = () => {
       setShowWorkshop(false);
       setShowLogos(false);
       setShowGoldSponsor(false);
+      setShowMediaPartner(false);
+
 
       // 1️⃣ Conference
       setTimeout(() => setShowHeroText(false), 3800);
@@ -53,12 +59,17 @@ const Index = () => {
       // 4️⃣ Gold Sponsor (FIXED)
       setTimeout(() => setShowGoldSponsor(true), 9400);
       setTimeout(() => setShowGoldSponsor(false), 11500);
+
+      setTimeout(() => setShowMediaPartner(true), 11600);
+      setTimeout(() => setShowMediaPartner(false), 13800);
+
     };
 
     runAnimation();
 
     // ⏱️ Loop AFTER full cycle completes
-    const loopInterval = setInterval(runAnimation, 12000);
+    const loopInterval = setInterval(runAnimation, 14500);
+
 
     return () => clearInterval(loopInterval);
   }, []);
@@ -267,6 +278,31 @@ return (
               <div className="flex justify-center gap-10">
                 <img src="/images/ict.png" className="h-36" />
                 <img src="/images/dignitaries/jammu.jpg" className="h-32 rounded-sm" />
+              </div>
+            </div>
+          </div>
+          {/* MEDIA PARTNER */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showMediaPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="text-center">
+              <p className="uppercase tracking-widest mb-6 text-sky-200 font-semibold">
+                Media Partner
+              </p>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center justify-center -z-10">
+                  <div className="w-[320px] h-[320px] rounded-full bg-sky-400/20 blur-3xl animate-pulse" />
+                </div>
+
+                <img
+                  src={mediaPartnerLogo}
+                  alt="Media Partner"
+                  className="mx-auto h-36 md:h-40 lg:h-44 object-contain bg-white rounded-xl px-6 py-4 shadow-lg
+                            hover:scale-[1.05] transition-transform duration-300"
+                />
               </div>
             </div>
           </div>

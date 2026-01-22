@@ -1,4 +1,13 @@
 import jmpLogo from "@/assets/jmp-logo.png";
+import mediaPartnerLogo from "@/assets/icn_logo.png";
+
+
+const mediaPartners = [
+  {
+    name: "ICN News",
+    logo: mediaPartnerLogo,
+  },
+];
 
 const knowledgePartners = [
   {
@@ -29,24 +38,44 @@ const FooterSponsorsTicker = () => {
     >
       <div className="relative overflow-hidden py-6 space-y-6">
 
-        {/* ---------------- KNOWLEDGE PARTNER ---------------- */}
-        <div className="text-center space-y-3">
-          <p className="text-xs uppercase tracking-widest text-white/60">
-            Knowledge Partner
-          </p>
+{/* ---------------- PARTNERS ---------------- */}
+<div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-centerr">
 
-          <div className="flex justify-center">
-            {knowledgePartners.map((kp, i) => (
-              <img
-                key={i}
-                src={kp.logo}
-                alt={kp.name}
-                className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
-              />
-            ))}
+          {/* Knowledge Partner */}
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-widest text-white/60">
+              Knowledge Partner
+            </p>
+            <div className="flex justify-center">
+              {knowledgePartners.map((kp, i) => (
+                <img
+                  key={i}
+                  src={kp.logo}
+                  alt={kp.name}
+                  className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
+                />
+              ))}
+            </div>
           </div>
-        </div>
 
+          {/* Media Partner */}
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-widest text-white/60">
+              Media Partner
+            </p>
+            <div className="flex justify-center">
+              {mediaPartners.map((mp, i) => (
+                <img
+                  key={i}
+                  src={mp.logo}
+                  alt={mp.name}
+                  className="h-10 w-auto object-cover bg-white rounded px-4 py-2"
+                />
+              ))}
+            </div>
+          </div>
+
+        </div>
         {/* ---------------- SPONSORS TICKER ---------------- */}
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-widest text-center text-white/60">
