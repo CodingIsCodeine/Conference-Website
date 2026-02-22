@@ -1,31 +1,36 @@
 import { useState } from "react";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react"; // ✅ Search removed
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
-  const navLinks = [
+  // MAIN LINKS (visible)
+  const mainLinks = [
     { to: "/", label: "Home" },
     { to: "/committee", label: "Advisory Committee" },
-    { to: "/Speakers", label: "Speakers" },
     { to: "/abstract", label: "Abstract Submission" },
-    { to: "/sponsors", label: "Sponsors & Exhibitors" },
+    { to: "/Speakers", label: "Speakers" },
     { to: "/registration", label: "Registration" },
     { to: "/programme", label: "Programme" },
+  ];
+
+  // ONLY THESE INSIDE MORE
+  const moreLinks = [
+    { to: "/sponsors", label: "Sponsors & Exhibitors" },
     { to: "/organising", label: "Organizing Committee" },
   ];
 
   return (
     <nav className="sticky top-0 z-50 bg-academic-dark text-white shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          
-          {/* Logo Section */}
-          <div className="flex items-center space-x-4">
-            {/* 👉 Replace the src with your file in /public/images/ */}
+      <div className="max-w-[1300px] mx-auto px-4">
+        <div className="flex items-center h-20">
+
+          {/* Logo + Title (ORIGINAL POSITIONING RESTORED) */}
+          <div className="flex items-center gap-4 shrink-0">
             <div className="h-[68px] w-[68px] flex items-center justify-center rounded-full bg-white p-[4px] overflow-hidden translate-y-[-1px] ring-2 ring-white">
               <img
                 src="/images/gcesdiplogo.png"
@@ -34,59 +39,84 @@ const Navbar = () => {
               />
             </div>
 
-            {/* Optional fallback placeholder (remove if not needed) */}
-            {/* <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-[10px] tracking-wider">
-              GCESDIP
-            </div> */}
-          </div>
-
-          {/* Center Title - Hidden on mobile */}
-          <div className="hidden lg:block text-center">
-            <h1 className="text-xl font-bold tracking-wide">GCESDIP 2.0</h1>
+            <h1 className="hidden md:block text-xl font-bold tracking-wide whitespace-nowrap">
+              GCESDIP 2.0
+            </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
+          <div className="hidden lg:flex items-center gap-1 ml-auto relative">
+
+            {mainLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-smooth"
+                className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md whitespace-nowrap"
                 activeClassName="bg-primary text-white"
               >
                 {link.label}
               </NavLink>
             ))}
-            {/* ✅ Search button removed */}
+
+            {/* MORE DROPDOWN */}
+            <div className="relative">
+              <button
+                onClick={() => setMoreOpen(!moreOpen)}
+                className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md flex items-center gap-1"
+              >
+                More <ChevronDown size={16} />
+              </button>
+
+              {moreOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-academic-dark border border-white/10 rounded-md shadow-lg py-2 z-50">
+                  {moreLinks.map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setMoreOpen(false)}
+                      className="block px-4 py-2 text-sm text-white/90 hover:text-white hover:bg-white/10 whitespace-nowrap"
+                      activeClassName="bg-primary text-white"
+                    >
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-[300px] bg-academic-dark text-white border-l border-white/10"
-            >
-              <div className="flex flex-col space-y-4 mt-8">
-                <h2 className="text-xl font-bold mb-4">GCESDIP 2.0</h2>
-                {navLinks.map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={() => setIsOpen(false)}
-                    className="px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-smooth"
-                    activeClassName="bg-primary text-white"
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
-              </div>
-            </SheetContent>
-          </Sheet>
+          {/* Mobile Menu */}
+          <div className="ml-auto lg:hidden">
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent
+                side="right"
+                className="w-[300px] bg-academic-dark text-white border-l border-white/10"
+              >
+                <div className="flex flex-col space-y-3 mt-8">
+                  <h2 className="text-xl font-bold mb-4">GCESDIP 2.0</h2>
+
+                  {[...mainLinks, ...moreLinks].map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md"
+                      activeClassName="bg-primary text-white"
+                    >
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+
         </div>
       </div>
     </nav>
