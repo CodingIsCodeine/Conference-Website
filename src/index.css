@@ -263,6 +263,14 @@ All colors MUST be HSL.
   text-decoration: underline;
 }
 
+html, body {
+  overscroll-behavior-y: none;
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+}
 
 
 

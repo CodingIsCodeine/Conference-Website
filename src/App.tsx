@@ -12,7 +12,7 @@ import Registration from "./pages/Registration";
 import Programme from "./pages/Programme";
 import Organising from "./pages/Organising";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "@/components/scrolltop";   // <-- add this
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +21,12 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+
       <BrowserRouter>
+
+        {/* 👇 MUST be here */}
+        <ScrollToTop />
+
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/committee" element={<Committee />} />
@@ -33,8 +38,6 @@ const App = () => (
           <Route path="/organising" element={<Organising />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-
-        <ScrollToTop />   {/* <-- THIS shows on every page */}
 
       </BrowserRouter>
     </TooltipProvider>
