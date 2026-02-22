@@ -8,6 +8,8 @@ import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
 import jmpLogo from "@/assets/jmp-logo.png";
 import mediaPartnerLogo from "@/assets/icn_logo.png";
+import cabeqLogo from "@/assets/cabeq.png";
+import proceedingsLogo from "@/assets/proceedings.png";
 
 
 const Index = () => {
@@ -16,6 +18,7 @@ const Index = () => {
   const [showLogos, setShowLogos] = useState(false);
   const [showGoldSponsor, setShowGoldSponsor] = useState(false);
   const [showMediaPartner, setShowMediaPartner] = useState(false);
+  const [showJournalPartner, setShowJournalPartner] = useState(false);
 
 
   const goldSponsors = [
@@ -35,44 +38,62 @@ const Index = () => {
   ];
 
 
-  useEffect(() => {
-    const runAnimation = () => {
-      // 🔄 Reset
-      setShowHeroText(true);
-      setShowWorkshop(false);
-      setShowLogos(false);
-      setShowGoldSponsor(false);
-      setShowMediaPartner(false);
+useEffect(() => {
 
+  const DISPLAY = 3800;   // readable
+  const FADE = 700;       // matches your CSS duration-700
+  const TOTAL = DISPLAY + FADE; // real slot per slide
 
-      // 1️⃣ Conference
-      setTimeout(() => setShowHeroText(false), 3800);
+  const runAnimation = () => {
 
-      // 2️⃣ Workshop
-      setTimeout(() => setShowWorkshop(true), 4200);
-      setTimeout(() => setShowWorkshop(false), 6500);
+    // reset instantly
+    setShowHeroText(false);
+    setShowWorkshop(false);
+    setShowLogos(false);
+    setShowGoldSponsor(false);
+    setShowMediaPartner(false);
+    setShowJournalPartner(false);
 
-      // 3️⃣ Organizing Logos
-      setTimeout(() => setShowLogos(true), 6900);
-      setTimeout(() => setShowLogos(false), 9000);
+    // timeline positions
+    const t0 = 0;
+    const t1 = TOTAL;
+    const t2 = 2 * TOTAL;
+    const t3 = 3 * TOTAL;
+    const t4 = 4 * TOTAL;
+    const t5 = 5 * TOTAL;
 
-      // 4️⃣ Gold Sponsor (FIXED)
-      setTimeout(() => setShowGoldSponsor(true), 9400);
-      setTimeout(() => setShowGoldSponsor(false), 11500);
+    // Conference
+    setTimeout(() => setShowHeroText(true), t0);
+    setTimeout(() => setShowHeroText(false), t0 + DISPLAY);
 
-      setTimeout(() => setShowMediaPartner(true), 11600);
-      setTimeout(() => setShowMediaPartner(false), 13800);
+    // Workshop
+    setTimeout(() => setShowWorkshop(true), t1);
+    setTimeout(() => setShowWorkshop(false), t1 + DISPLAY);
 
-    };
+    // Organized by
+    setTimeout(() => setShowLogos(true), t2);
+    setTimeout(() => setShowLogos(false), t2 + DISPLAY);
 
-    runAnimation();
+    // Gold
+    setTimeout(() => setShowGoldSponsor(true), t3);
+    setTimeout(() => setShowGoldSponsor(false), t3 + DISPLAY);
 
-    // ⏱️ Loop AFTER full cycle completes
-    const loopInterval = setInterval(runAnimation, 14500);
+    // Media
+    setTimeout(() => setShowMediaPartner(true), t4);
+    setTimeout(() => setShowMediaPartner(false), t4 + DISPLAY);
 
+    // Journal
+    setTimeout(() => setShowJournalPartner(true), t5);
+    setTimeout(() => setShowJournalPartner(false), t5 + DISPLAY);
+  };
 
-    return () => clearInterval(loopInterval);
-  }, []);
+  runAnimation();
+
+  const loopInterval = setInterval(runAnimation, 6 * TOTAL);
+
+  return () => clearInterval(loopInterval);
+
+}, []);
 
   const deadlines = [
     { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
@@ -268,7 +289,7 @@ return (
           </div>
 
           {/* Logos */}
-          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-600 ${
+          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-900 ease-in-out ${
             showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center -mt-10">
@@ -306,6 +327,38 @@ return (
               </div>
             </div>
           </div>
+
+
+          {/* JOURNAL PARTNER */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showJournalPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="text-center">
+              <p className="uppercase tracking-widest mb-6 text-emerald-200 font-semibold">
+                Journal Partners
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+
+                <img
+                  src={cabeqLogo}
+                  alt="CABEQ"
+                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
+                />
+
+                <img
+                  src={proceedingsLogo}
+                  alt="Proceedings International"
+                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
+                />
+
+              </div>
+            </div>
+          </div>
+
+
 
           {/* GOLD SPONSORS (ADAPTIVE) */}
           <div
@@ -495,6 +548,60 @@ return (
             </div>
           </div>
         </section>
+
+
+        {/* About Journal (CABEQ) */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
+              About Journal
+            </h2>
+
+            <div className="max-w-5xl mx-auto">
+              <Card className="shadow-card">
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    {/* Text */}
+                    <div>
+                      <h3 className="text-2xl font-semibold mb-4">
+                        Chemical and Biochemical Engineering Quarterly (CABEQ)
+                      </h3>
+
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        Chemical and Biochemical Engineering Quarterly (CABEQ) is an international
+                        peer-reviewed journal publishing original research and review articles in
+                        the field of chemical and biochemical engineering. The journal focuses on
+                        fundamental and applied research contributing to sustainable processes,
+                        industrial innovation, and emerging technologies.
+                      </p>
+
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>🔹 Indexed in SCIE and Scopus</li>
+                        <li>🔹 Impact Factor: 1.6</li>
+                        <li>🔹 No Article Processing Charges (APC) for accepted papers</li>
+                        <li>🔹 Covers chemical, biochemical and environmental engineering research</li>
+                      </ul>
+                    </div>
+
+                    {/* Image */}
+                    <div className="text-center">
+                      <img
+                        src={cabeqLogo}
+                        alt="CABEQ Journal"
+                        className="mx-auto h-72 object-contain bg-white rounded-xl p-6 shadow-md"
+                      />
+                    </div>
+
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+
+
 
         {/* About SVNIT */}
         <section className="py-16 bg-muted">

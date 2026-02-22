@@ -1,6 +1,7 @@
 import jmpLogo from "@/assets/jmp-logo.png";
 import mediaPartnerLogo from "@/assets/icn_logo.png";
-
+import cabeqLogo from "@/assets/cabeq.png";
+import proceedingsLogo from "@/assets/proceedings.png";
 
 const mediaPartners = [
   {
@@ -16,9 +17,21 @@ const knowledgePartners = [
   },
 ];
 
+const journalPartners = [
+  {
+    name: "Chemical and Biochemical Engineering Quarterly (CABEQ)",
+    logo: cabeqLogo,
+    link: "http://silverstripe.fkit.hr/cabeq/",
+  },
+  {
+    name: "Proceedings International",
+    logo: proceedingsLogo,
+    link: "https://conferenceproceedings.international",
+  },
+];
+
 const knowledgePartnerLink = "https://www.jmp.com";
 const mediaPartnerLink = "https://www.indianchemicalnews.com/";
-
 
 const sponsors = [
   {
@@ -42,8 +55,8 @@ const FooterSponsorsTicker = () => {
     >
       <div className="relative overflow-hidden py-6 space-y-6">
 
-{/* ---------------- PARTNERS ---------------- */}
-<div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-centerr">
+        {/* ---------------- PARTNERS ---------------- */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-center">
 
           {/* Knowledge Partner */}
           <div className="space-y-3">
@@ -59,14 +72,15 @@ const FooterSponsorsTicker = () => {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <img
-                    src={kp.logo}
-                    alt={kp.name}
-                    className="h-10 w-auto object-cover bg-white rounded px-4 py-2 hover:scale-105 transition-transform"
-                  />
+                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                    <img
+                      src={kp.logo}
+                      alt={kp.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
                 </a>
               ))}
-
             </div>
           </div>
 
@@ -84,17 +98,46 @@ const FooterSponsorsTicker = () => {
                   rel="noopener noreferrer"
                   className="inline-block"
                 >
-                  <img
-                    src={mp.logo}
-                    alt={mp.name}
-                    className="h-10 w-auto object-cover bg-white rounded px-4 py-2 hover:scale-105 transition-transform"
-                  />
+                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                    <img
+                      src={mp.logo}
+                      alt={mp.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Journal Partner */}
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-widest text-white/60">
+              Journal Partner
+            </p>
+            <div className="flex justify-center gap-4">
+              {journalPartners.map((jp, i) => (
+                <a
+                  key={i}
+                  href={jp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                    <img
+                      src={jp.logo}
+                      alt={jp.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
                 </a>
               ))}
             </div>
           </div>
 
         </div>
+
         {/* ---------------- SPONSORS TICKER ---------------- */}
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-widest text-center text-white/60">

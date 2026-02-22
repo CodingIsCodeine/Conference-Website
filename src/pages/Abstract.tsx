@@ -177,38 +177,90 @@ const Abstract = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm mb-4">
+                  Selected Full Papers will be considered for publication in the{" "}
+                  <a
+                    href="http://silverstripe.fkit.hr/cabeq/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="proceedings-link font-semibold"
+                  >
+                    Chemical and Biochemical Engineering Quarterly (CABEQ)
+                  </a>{" "}
+                  journal.
+                </p>
+
+                {/* CABEQ DETAILS */}
+                <div className="text-sm mb-4 pl-3 border-l-2 border-[#2E8B57]">
+                  <p className="font-semibold mb-1">About the Journal:</p>
+                  <p>🔹 Indexed in SCIE and Scopus</p>
+                  <p>🔹 Impact Factor: 1.6</p>
+                  <p>🔹 No Article Processing Charges (APC) for accepted papers</p>
+                  <p>🔹 International peer-reviewed journal in chemical and biochemical engineering</p>
+                </div>
+
+
+                <p className="text-sm mb-4">
+                  The full paper must be submitted as per the format and guidelines of the
+                  journal.
+                </p>
+
+                <p className="text-sm mb-4">
+                  The originality of the research contribution is vested with the authors.
+                </p>
+
+                <div className="space-y-2 text-sm">
+                  <p>
+                    <strong>Journal Partner:</strong> Chemical and Biochemical Engineering Quarterly (CABEQ){" "}
+                    <a
+                      href="http://silverstripe.fkit.hr/cabeq/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="proceedings-link"
+                    >
+                      (http://silverstripe.fkit.hr/cabeq/)
+                    </a>
+                  </p>
+                </div>
+                
+                <p className="text-sm mb-3"></p>
+                <p className="text-sm"></p>
+
+                <p className="text-sm mb-4">
                   Abstracts will be published in the{" "}
                   <strong className="text-[#2b2b2b]">
                     Platinum Open Access Journal{" "}
                     <span className="text-[#2E8B57]">
-                      <a   href="https://conferenceproceedings.international"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="proceedings-link">"Proceedings International"</a>
+                      <a
+                        href="https://conferenceproceedings.international"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="proceedings-link"
+                      >
+                        "Proceedings International"
+                      </a>
                     </span>
                   </strong>{" "}
                   with ISSN number.
                 </p>
-                <p className="text-sm mb-4">
-                  Selected papers will be published in a special issue of a peer-reviewed
-                  journal (Scopus/SCI indexed/Web of Science indexed), adopting a regular
-                  peer review process as per the norms of the concerned journal.
-                </p>
-                <p className="text-sm mb-4">
-                  The full paper must be submitted as per the format and guidelines of the
-                  concerned journal.
-                </p>
-                <p className="text-sm mb-4">
-                  The originality of the research contribution is vested with the authors.
-                </p>
+
+
+
+                {/* JOURNAL PARTNERS */}
                 <div className="space-y-2 text-sm">
                   <p>
-                    <strong>Journal Partner:</strong> Proceedings International <a href="https://conferenceproceedings.international" target="_blank" rel="noopener noreferrer" className="proceedings-link">(https://conferenceproceedings.international)</a>
+                    <strong>Journal Partner:</strong> Proceedings International{" "}
+                    <a
+                      href="https://conferenceproceedings.international"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="proceedings-link"
+                    >
+                      (https://conferenceproceedings.international)
+                    </a>
                   </p>
-                  <p>
-                    
-                  </p>
+
                 </div>
+
               </CardContent>
             </Card>
           </div>
