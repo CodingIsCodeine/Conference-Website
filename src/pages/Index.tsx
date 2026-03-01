@@ -96,7 +96,7 @@ useEffect(() => {
 }, []);
 
   const deadlines = [
-    { title: "Last date of Abstract Submission", date: <>1<sup>st</sup> March 2026</> },
+    { title: "Last date of Abstract Submission (Extended)", date: <>20<sup>th</sup> March 2026</> },
     { title: "Intimation of Acceptance", date: <>16<sup>th</sup> March 2026</> },
     { title: "Last date of Registration", date: <>10<sup>th</sup> April 2026</> },
     { title: "Full Paper Submission", date: "Will be announced soon" },
