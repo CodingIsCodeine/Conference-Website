@@ -19,6 +19,7 @@ const Index = () => {
   const [showGoldSponsor, setShowGoldSponsor] = useState(false);
   const [showMediaPartner, setShowMediaPartner] = useState(false);
   const [showJournalPartner, setShowJournalPartner] = useState(false);
+  const [showAnrf, setShowAnrf] = useState(false);
 
 
   const goldSponsors = [
@@ -40,27 +41,29 @@ const Index = () => {
 
 useEffect(() => {
 
-  const DISPLAY = 3800;   // readable
-  const FADE = 700;       // matches your CSS duration-700
-  const TOTAL = DISPLAY + FADE; // real slot per slide
+  const DISPLAY = 3800;
+  const FADE = 700;
+  const TOTAL = DISPLAY + FADE;
 
   const runAnimation = () => {
 
-    // reset instantly
+    // reset
     setShowHeroText(false);
     setShowWorkshop(false);
     setShowLogos(false);
+    setShowAnrf(false); // NEW
     setShowGoldSponsor(false);
     setShowMediaPartner(false);
     setShowJournalPartner(false);
 
-    // timeline positions
+    // timeline
     const t0 = 0;
     const t1 = TOTAL;
     const t2 = 2 * TOTAL;
     const t3 = 3 * TOTAL;
     const t4 = 4 * TOTAL;
     const t5 = 5 * TOTAL;
+    const t6 = 6 * TOTAL; // NEW LAST
 
     // Conference
     setTimeout(() => setShowHeroText(true), t0);
@@ -74,30 +77,33 @@ useEffect(() => {
     setTimeout(() => setShowLogos(true), t2);
     setTimeout(() => setShowLogos(false), t2 + DISPLAY);
 
+    // 🟡 ANRF (NEW SECTION)
+    setTimeout(() => setShowAnrf(true), t3);
+    setTimeout(() => setShowAnrf(false), t3 + DISPLAY);
+
     // Gold
-    setTimeout(() => setShowGoldSponsor(true), t3);
-    setTimeout(() => setShowGoldSponsor(false), t3 + DISPLAY);
+    setTimeout(() => setShowGoldSponsor(true), t4);
+    setTimeout(() => setShowGoldSponsor(false), t4 + DISPLAY);
 
     // Media
-    setTimeout(() => setShowMediaPartner(true), t4);
-    setTimeout(() => setShowMediaPartner(false), t4 + DISPLAY);
+    setTimeout(() => setShowMediaPartner(true), t5);
+    setTimeout(() => setShowMediaPartner(false), t5 + DISPLAY);
 
     // Journal
-    setTimeout(() => setShowJournalPartner(true), t5);
-    setTimeout(() => setShowJournalPartner(false), t5 + DISPLAY);
+    setTimeout(() => setShowJournalPartner(true), t6);
+    setTimeout(() => setShowJournalPartner(false), t6 + DISPLAY);
   };
 
   runAnimation();
 
-  const loopInterval = setInterval(runAnimation, 6 * TOTAL);
+  const loopInterval = setInterval(runAnimation, 7 * TOTAL); // UPDATED
 
   return () => clearInterval(loopInterval);
 
 }, []);
-
   const deadlines = [
-    { title: "Last date of Abstract Submission", date: <>20<sup>th</sup> March 2026</> },
-    { title: "Intimation of Acceptance", date: <>26<sup>th</sup> March 2026</> },
+    { title: "Last date of Abstract Submission", date: <>27<sup>th</sup> March 2026</> },
+    { title: "Intimation of Acceptance", date: <>1<sup>st</sup> April 2026</> },
     { title: "Last date of Registration", date: <>10<sup>th</sup> April 2026</> },
     { title: "Full Paper Submission", date: "Will be announced soon" },
   ];
@@ -302,6 +308,31 @@ return (
               </div>
             </div>
           </div>
+
+          {/* ANRF Sponsor */}
+          <div
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${
+              showAnrf ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
+              Sponsored by
+            </p>
+
+            <img
+              src="/images/anrf.jpg"
+              alt="ANRF Logo"
+              className="h-20 md:h-28 object-contain mb-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm"
+            />
+
+            <p className="text-sm md:text-base text-gray-200 text-center drop-shadow-md">
+              Anusandhan National Research Foundation
+            </p>
+          </div>
+
+
+
+
           {/* MEDIA PARTNER */}
           <div
             className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${

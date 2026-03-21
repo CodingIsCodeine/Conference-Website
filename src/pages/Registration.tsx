@@ -22,10 +22,10 @@ const Registration = () => {
 
   const includes = [
     "Access to all technical sessions",
-    "Conference kit",
-    "Breakfast, lunch, and refreshments",
+    "Conference kit and Certificate",
+    "Breakfast, Lunch and Refreshments ",
     "Participation in preconference workshop",
-    "Conference certificate",
+    "Accomodation",
     "Networking opportunities",
   ];
 
@@ -198,15 +198,15 @@ const Registration = () => {
 
               <CardContent className="space-y-4 text-base">
                 <p>
-                  Sharing accommodation on a <span className="font-semibold">payment basis</span> will be 
-                  provided in the <span className="font-semibold">SVNIT Guest House</span> as per room availability.
+                  Accommodation will be 
+                  provided on sharing basis at the <span className="font-semibold">SVNIT Guest House/Narmad Bhavan</span> for upto 3 nights
                 </p>
 
                 <div className="p-4 bg-muted rounded-lg">
-                  <p className="text-sm font-semibold mb-2">Contact for Room Charges & Booking:</p>
+                  <p className="text-sm font-semibold mb-2">Contact for Booking: Mr. Jemish Dattani (+91 9033669554)</p>
 
                   <ul className="text-sm space-y-2">
-                    <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li>
+                    {/* <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li> */}
                     <li>
                       <span className="font-medium">Location:</span>
                       <MapPin className="inline-block w-4 h-4 ml-1 text-red-500" />
