@@ -207,7 +207,7 @@ const Registration = () => {
 
                   <ul className="text-sm space-y-2">
                     {/* <li><span className="font-medium">Email:</span> svnitguesthouse@gmail.com</li> */}
-                    <li>
+                    {/* <li>
                       <span className="font-medium">Location:</span>
                       <MapPin className="inline-block w-4 h-4 ml-1 text-red-500" />
                       <a 
@@ -217,7 +217,7 @@ const Registration = () => {
                       >
                         SVPB Guest House, Ichhanath, Dumas Road, Piplod, Surat -395007.
                       </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
 
