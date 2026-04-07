@@ -121,7 +121,6 @@ const renderCommitteeSection = (title: string, members: Member[]) => (
         </Card>
       ))}
     </div>
-    {/* ↑↑↑ ONLY THIS WRAPPER CHANGED — everything else SAME ↑↑↑ */}
   </section>
 );
 
