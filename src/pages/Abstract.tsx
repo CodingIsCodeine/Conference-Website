@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Award, BookOpen, Newspaper } from "lucide-react";
+import { FileText, Award, BookOpen, Newspaper, Trophy } from "lucide-react";
 import Ticker from "@/components/Ticker";
 
 
@@ -121,29 +121,56 @@ const Abstract = () => {
           {/* 3-card grid below */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Awards */}
-            <Card className="shadow-card hover:shadow-hover transition-smooth">
-              <CardHeader>
-                <div className="flex items-center space-x-3 mb-2">
-                  <Award className="h-8 w-8 text-primary" />
-                  <CardTitle className="text-2xl">Awards</CardTitle>
-                </div>
-                <CardDescription>
-                  Recognition for outstanding contributions
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Best Oral Presentation Award</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">•</span>
-                    <span>Best Poster Presentation Award</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+          {/* Awards */}
+          <Card className="shadow-card hover:shadow-hover transition-smooth h-full">
+            <CardHeader>
+              <div className="flex items-center space-x-3 mb-2">
+                <Award className="h-8 w-8 text-primary" />
+                <CardTitle className="text-2xl">Awards</CardTitle>
+              </div>
+
+              <CardDescription className="font-medium text-base">
+                Celebrating Excellence, Inspiring Innovation
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Recognizing exceptional research and scientific communication at GCESDIP 2.0.
+              </p>
+
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start">
+                <Trophy className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                <span>
+                  3 Best Oral Presentation Awards <br />
+                  <span className="text-xs text-muted-foreground font-bold">(₹3,000 each)</span>
+                </span>
+              </li>
+
+              <li className="flex items-start">
+                <Trophy className="h-4 w-4 text-primary mr-2 mt-0.5" />
+                <span>
+                  3 Best Poster Presentation Awards <br />
+                  <span className="text-xs text-muted-foreground font-bold">(₹2,000 each)</span>
+                </span>
+              </li>
+            </ul>
+
+              {/* Sponsor Logo Placeholder */}
+              <div className="pt-3 border-t">
+                <p className="text-xs text-muted-foreground mb-2">
+                  Supported by
+                </p>
+
+                <img 
+                  src="/images/royal.jpeg" 
+                  alt="Royal Society of Chemistry Logo" 
+                  className="h-32 object-contain mx-auto"
+                />
+              </div>
+            </CardContent>
+          </Card>
 
             {/* Conference Themes */}
             <Card className="shadow-card hover:shadow-hover transition-smooth">
