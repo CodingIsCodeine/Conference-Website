@@ -126,6 +126,19 @@ const Footer = () => {
           {/* TOP LINE */}
           <div className="border-t border-white/10" />
 
+          {/* ✅ NEW: Supported by section */}
+          <div className="flex flex-col items-center justify-center py-6">
+            <p className="text-sm uppercase tracking-widest text-white/60 mb-3">
+              Supported by
+            </p>
+            <a href="https://www.rsc.org/" target="_blank" rel="noopener noreferrer">
+            <img
+              src="/images/royal.jpeg"
+              alt="RCS Logo"
+              className="h-24 object-contain bg-white rounded-sm px-3 py-1"/>
+            </a>
+          </div>
+
           {/* Sponsors ticker BETWEEN the two lines */}
           <FooterSponsorsTicker />
 
@@ -141,23 +154,6 @@ const Footer = () => {
               <span className="text-primary font-semibold"> GCESDIP Team </span>
             </p>
           </div>
-          {/* FLAG COUNTER
-          <div className="flex justify-center py-6 hover:border-gold/40">
-            <a
-              href="https://worldflagcounter.com/details/iYS"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-80 hover:opacity-100 transition-opacity "
-            >
-              <img
-                src="https://worldflagcounter.com/iYS/"
-                alt="Global Visitors"
-                className="rounded-xl border border-gold/20 bg-white/5 
-"
-              />
-            </a>
-          </div>
- */}
 
         </div>
 

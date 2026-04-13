@@ -20,6 +20,7 @@ const Index = () => {
   const [showMediaPartner, setShowMediaPartner] = useState(false);
   const [showJournalPartner, setShowJournalPartner] = useState(false);
   const [showAnrf, setShowAnrf] = useState(false);
+  const [showAwards, setShowAwards] = useState(false);
 
 
   const goldSponsors = [
@@ -31,76 +32,78 @@ const Index = () => {
       name: "Meril Life Sciences Private Limited",
       logo: "/images/meril.jpeg",
     },
-    // {
-    //   name: "Sponsor Name 3",
-    //   logo: "/images/sponsor3.png",
-    // },
-    // keep adding without touching UI logic
   ];
 
 
-useEffect(() => {
+  useEffect(() => {
 
-  const DISPLAY = 3800;
-  const FADE = 700;
-  const TOTAL = DISPLAY + FADE;
+    const DISPLAY = 3800;
+    const FADE = 700;
+    const TOTAL = DISPLAY + FADE;
 
-  const runAnimation = () => {
+    const runAnimation = () => {
 
-    // reset
-    setShowHeroText(false);
-    setShowWorkshop(false);
-    setShowLogos(false);
-    setShowAnrf(false); // NEW
-    setShowGoldSponsor(false);
-    setShowMediaPartner(false);
-    setShowJournalPartner(false);
+      // reset all
+      setShowHeroText(false);
+      setShowWorkshop(false);
+      setShowLogos(false);
+      setShowAnrf(false);
+      setShowGoldSponsor(false);
+      setShowMediaPartner(false);
+      setShowJournalPartner(false);
+      setShowAwards(false);
 
-    // timeline
-    const t0 = 0;
-    const t1 = TOTAL;
-    const t2 = 2 * TOTAL;
-    const t3 = 3 * TOTAL;
-    const t4 = 4 * TOTAL;
-    const t5 = 5 * TOTAL;
-    const t6 = 6 * TOTAL; // NEW LAST
+      // timeline — 8 sequential slots (t0 … t7)
+      const t0 = 0;
+      const t1 = TOTAL;
+      const t2 = 2 * TOTAL;
+      const t3 = 3 * TOTAL;
+      const t4 = 4 * TOTAL;
+      const t5 = 5 * TOTAL;
+      const t6 = 6 * TOTAL;
+      const t7 = 7 * TOTAL;
 
-    // Conference
-    setTimeout(() => setShowHeroText(true), t0);
-    setTimeout(() => setShowHeroText(false), t0 + DISPLAY);
+      // Slide 0 — Conference
+      setTimeout(() => setShowHeroText(true),  t0);
+      setTimeout(() => setShowHeroText(false), t0 + DISPLAY);
 
-    // Workshop
-    setTimeout(() => setShowWorkshop(true), t1);
-    setTimeout(() => setShowWorkshop(false), t1 + DISPLAY);
+      // Slide 1 — Workshop
+      setTimeout(() => setShowWorkshop(true),  t1);
+      setTimeout(() => setShowWorkshop(false), t1 + DISPLAY);
 
-    // Organized by
-    setTimeout(() => setShowLogos(true), t2);
-    setTimeout(() => setShowLogos(false), t2 + DISPLAY);
+      // Slide 2 — Organized by
+      setTimeout(() => setShowLogos(true),  t2);
+      setTimeout(() => setShowLogos(false), t2 + DISPLAY);
 
-    // 🟡 ANRF (NEW SECTION)
-    setTimeout(() => setShowAnrf(true), t3);
-    setTimeout(() => setShowAnrf(false), t3 + DISPLAY);
+      // Slide 3 — ANRF (Sponsored by)
+      setTimeout(() => setShowAnrf(true),  t3);
+      setTimeout(() => setShowAnrf(false), t3 + DISPLAY);
 
-    // Gold
-    setTimeout(() => setShowGoldSponsor(true), t4);
-    setTimeout(() => setShowGoldSponsor(false), t4 + DISPLAY);
+      // Slide 4 — Gold Sponsors
+      setTimeout(() => setShowGoldSponsor(true),  t4);
+      setTimeout(() => setShowGoldSponsor(false), t4 + DISPLAY);
 
-    // Media
-    setTimeout(() => setShowMediaPartner(true), t5);
-    setTimeout(() => setShowMediaPartner(false), t5 + DISPLAY);
+      // Slide 5 — Media Partner
+      setTimeout(() => setShowMediaPartner(true),  t5);
+      setTimeout(() => setShowMediaPartner(false), t5 + DISPLAY);
 
-    // Journal
-    setTimeout(() => setShowJournalPartner(true), t6);
-    setTimeout(() => setShowJournalPartner(false), t6 + DISPLAY);
-  };
+      // Slide 6 — Journal Partners
+      setTimeout(() => setShowJournalPartner(true),  t6);
+      setTimeout(() => setShowJournalPartner(false), t6 + DISPLAY);
 
-  runAnimation();
+      // Slide 7 — Awards Supported by
+      setTimeout(() => setShowAwards(true),  t7);
+      setTimeout(() => setShowAwards(false), t7 + DISPLAY);
+    };
 
-  const loopInterval = setInterval(runAnimation, 7 * TOTAL); // UPDATED
+    runAnimation();
 
-  return () => clearInterval(loopInterval);
+    const loopInterval = setInterval(runAnimation, 8 * TOTAL);
 
-}, []);
+    return () => clearInterval(loopInterval);
+
+  }, []);
+
   const deadlines = [
     { title: "Last date of Abstract Submission", date: <>27<sup>th</sup> March 2026</> },
     { title: "Intimation of Acceptance", date: <>1<sup>st</sup> April 2026</> },
@@ -156,9 +159,6 @@ useEffect(() => {
           </p>
 
           <p>
-            {/* DOE helps identify critical factors and interaction effects that significantly
-            influence outcomes, allowing designers and engineers to correct issues and
-            achieve improved and reliable performance before full-scale implementation. */}
             It is widely applied across industries such as chemical, biotechnology,
             mechanical, industrial, and pharmaceutical sectors.
           </p>
@@ -172,12 +172,6 @@ useEffect(() => {
             to strengthen practical understanding and application.
           </p>
 
-          {/* <p>
-            The primary objective of this workshop is to guide participants through
-            the complete DOE workflow — from experiment design and statistical analysis
-            to optimization — ensuring a comprehensive and application-oriented learning experience.
-          </p> */}
-
           <p>
             By the end of the program, participants will gain enhanced proficiency in
             DOE methodologies and JMP software, empowering them to make data-driven
@@ -189,7 +183,6 @@ useEffect(() => {
             <p>Dr. Muralidhara A., Global JMP Team</p>
           </div>
 
-          {/* 🔔 Highlighted Note */}
           <div className="mt-6 rounded-xl border border-amber-400/50 bg-amber-50/40 px-4 py-3 text-amber-900 shadow-sm">
             <p className="font-semibold">
               📌 Note:
@@ -209,7 +202,7 @@ useEffect(() => {
       description: (
         <div className="space-y-4">
           <p>
-            Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes leading to Bachelor’s, Master’s, and Ph.D. degrees in Chemical Engineering. The department has built a comprehensive research infrastructure with top-notch facilities for carrying out cutting-edge research.
+            Established in 1995, the Department of Chemical Engineering, SVNIT, Surat, offers programmes leading to Bachelor's, Master's, and Ph.D. degrees in Chemical Engineering. The department has built a comprehensive research infrastructure with top-notch facilities for carrying out cutting-edge research.
           </p>
 
           <p>
@@ -233,7 +226,7 @@ useEffect(() => {
     },
   ];
 
-return (
+  return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
@@ -251,7 +244,7 @@ return (
       >
         <div className="container mx-auto px-4 text-center">
 
-          {/* Conference */}
+          {/* Slide 0 — Conference */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
             showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
           }`}>
@@ -268,7 +261,7 @@ return (
             </div>
           </div>
 
-          {/* Workshop */}
+          {/* Slide 1 — Workshop */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
             showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}>
@@ -294,8 +287,8 @@ return (
             </div>
           </div>
 
-          {/* Logos */}
-          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-900 ease-in-out ${
+          {/* Slide 2 — Organized by / Logos */}
+          <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
             showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center -mt-10">
@@ -309,10 +302,10 @@ return (
             </div>
           </div>
 
-          {/* ANRF Sponsor */}
+          {/* Slide 3 — ANRF Sponsor */}
           <div
-            className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-700 ${
-              showAnrf ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
+              showAnrf ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
@@ -330,68 +323,7 @@ return (
             </p>
           </div>
 
-
-
-
-          {/* MEDIA PARTNER */}
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-              showMediaPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="text-center">
-              <p className="uppercase tracking-widest mb-6 text-sky-200 font-semibold">
-                Media Partner
-              </p>
-
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center justify-center -z-10">
-                  <div className="w-[320px] h-[320px] rounded-full bg-sky-400/20 blur-3xl animate-pulse" />
-                </div>
-
-                <img
-                  src={mediaPartnerLogo}
-                  alt="Media Partner"
-                  className="mx-auto h-36 md:h-40 lg:h-44 object-contain bg-white rounded-xl px-6 py-4 shadow-lg
-                            hover:scale-[1.05] transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
-
-
-          {/* JOURNAL PARTNER */}
-          <div
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-              showJournalPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="text-center">
-              <p className="uppercase tracking-widest mb-6 text-emerald-200 font-semibold">
-                Journal Partners
-              </p>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-
-                <img
-                  src={cabeqLogo}
-                  alt="CABEQ"
-                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
-                />
-
-                <img
-                  src={proceedingsLogo}
-                  alt="Proceedings International"
-                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
-                />
-
-              </div>
-            </div>
-          </div>
-
-
-
-          {/* GOLD SPONSORS (ADAPTIVE) */}
+          {/* Slide 4 — Gold Sponsors */}
           <div
             className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
               showGoldSponsor ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -399,7 +331,6 @@ return (
           >
             <div className="text-center relative w-full max-w-5xl mx-auto px-6">
 
-              {/* soft glow */}
               <div className="absolute inset-0 -z-10 flex items-center justify-center">
                 <div className="w-[420px] h-[420px] rounded-full bg-yellow-400/15 blur-3xl animate-pulse" />
               </div>
@@ -438,8 +369,84 @@ return (
             </div>
           </div>
 
+          {/* Slide 5 — Media Partner */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showMediaPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="text-center">
+              <p className="uppercase tracking-widest mb-6 text-sky-200 font-semibold">
+                Media Partner
+              </p>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center justify-center -z-10">
+                  <div className="w-[320px] h-[320px] rounded-full bg-sky-400/20 blur-3xl animate-pulse" />
+                </div>
+
+                <img
+                  src={mediaPartnerLogo}
+                  alt="Media Partner"
+                  className="mx-auto h-36 md:h-40 lg:h-44 object-contain bg-white rounded-xl px-6 py-4 shadow-lg
+                            hover:scale-[1.05] transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Slide 6 — Journal Partners */}
+          <div
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showJournalPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <div className="text-center">
+              <p className="uppercase tracking-widest mb-6 text-emerald-200 font-semibold">
+                Journal Partners
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+
+                <img
+                  src={cabeqLogo}
+                  alt="CABEQ"
+                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
+                />
+
+                <img
+                  src={proceedingsLogo}
+                  alt="Proceedings International"
+                  className="h-32 md:h-36 object-contain bg-white rounded-xl px-6 py-4 shadow-lg hover:scale-[1.05] transition-transform duration-300"
+                />
+
+              </div>
+            </div>
+          </div>
+
+          {/* Slide 7 — Awards Supported by */}
+          <div
+            className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
+              showAwards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
+              Awards Supported by
+            </p>
+
+            <img
+              src="/images/royal.jpeg"
+              alt="RCS Logo"
+              className="h-20 md:h-28 object-contain mb-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm"
+            />
+
+            <p className="text-sm md:text-base text-gray-200 text-center drop-shadow-md">
+              Royal Society of Chemistry
+            </p>
+          </div>
+
         </div>
-      </section>          
+      </section>
 
       {/* -------------------------------------------------------- */}
       {/* PRE-CONFERENCE WORKSHOP (THEME-CONSISTENT HIGHLIGHT) */}
@@ -447,13 +454,13 @@ return (
 
       <section className="py-12 bg-muted">
         <div className="container mx-auto px-4">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            
+
             {/* Preconference Workshop Card */}
             <Card className="shadow-card border-4 border-primary">
               <CardContent className="p-6 md:p-8 text-center">
-                
+
                 <div className="flex justify-center mb-4">
                   <Award className="h-10 w-10 text-primary" />
                 </div>
@@ -477,7 +484,7 @@ return (
             {/* International Conference Card */}
             <Card className="shadow-card border-4 border-primary">
               <CardContent className="p-6 md:p-8 text-center">
-                
+
                 <div className="flex justify-center mb-4">
                   <Users className="h-10 w-10 text-primary" />
                 </div>
@@ -538,18 +545,14 @@ return (
                 const totalCards = aboutSections.length;
                 const remainder = totalCards % 3;
 
-                // Identify cards in last row
                 const isLastRow =
                   index >= totalCards - remainder && remainder !== 0;
 
-                // Centering logic
                 let alignmentClass = "";
                 if (isLastRow) {
                   if (remainder === 1) {
-                    // Single card → center column
                     alignmentClass = "md:col-start-2";
                   } else if (remainder === 2) {
-                    // Two cards → shift both to center
                     alignmentClass = index === totalCards - 2 ? "md:col-start-2" : "";
                   }
                 }
@@ -569,9 +572,9 @@ return (
                     </CardHeader>
 
                     <CardContent>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed whitespace-pre-line">
+                      <div className="text-sm text-muted-foreground text-center leading-relaxed">
                         {section.description}
-                      </p>
+                      </div>
                     </CardContent>
                   </Card>
                 );
@@ -593,7 +596,6 @@ return (
                 <CardContent className="p-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
-                    {/* Text */}
                     <div>
                       <h3 className="text-2xl font-semibold mb-4">
                         Chemical and Biochemical Engineering Quarterly (CABEQ)
@@ -615,7 +617,6 @@ return (
                       </ul>
                     </div>
 
-                    {/* Image */}
                     <div className="text-center">
                       <img
                         src={cabeqLogo}
@@ -632,8 +633,6 @@ return (
         </section>
 
 
-
-
         {/* About SVNIT */}
         <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
@@ -644,9 +643,11 @@ return (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961 by the Government of India and recognized as an Institute of National Importance since 2007 by Parliament of India, is among India’s premier engineering institutions. Spanning over 256 acres of lush green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate, integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering and applied sciences.                      </p>
+                        Sardar Vallabhbhai National Institute of Technology (SVNIT), Surat, established in 1961 by the Government of India and recognized as an Institute of National Importance since 2007 by Parliament of India, is among India's premier engineering institutions. Spanning over 256 acres of lush green campus, SVNIT offers diverse programs including 11 undergraduate, 21 postgraduate, integrated M.Sc., dual-degree (B.Tech.+M.Tech./MBA), and Ph.D. programs across engineering and applied sciences.
+                      </p>
                       <p className="text-muted-foreground leading-relaxed">
-The institute emphasizes interdisciplinary research, innovation, and industry collaboration, fostering academic excellence and professional growth. With an outstanding placement record and a strong network of eminent alumni, SVNIT continues to play a vital role in advancing engineering education and research in India.</p>
+                        The institute emphasizes interdisciplinary research, innovation, and industry collaboration, fostering academic excellence and professional growth. With an outstanding placement record and a strong network of eminent alumni, SVNIT continues to play a vital role in advancing engineering education and research in India.
+                      </p>
                     </div>
                     <div className="pt-2 text-center">
                       <SVNITImageCarousel />
@@ -671,7 +672,8 @@ The institute emphasizes interdisciplinary research, innovation, and industry co
                         Surat, known as the "Diamond City" and "Silk City" of India, is a vibrant metropolis in Gujarat. The city is famous for its textile and diamond cutting industries, contributing significantly to India's economy.
                       </p>
                       <p className="text-muted-foreground leading-relaxed">
-With its rich cultural heritage, modern infrastructure, and thriving industrial base, Surat offers an ideal setting for this international conference on green chemistry and sustainable development.                      </p>
+                        With its rich cultural heritage, modern infrastructure, and thriving industrial base, Surat offers an ideal setting for this international conference on green chemistry and sustainable development.
+                      </p>
                     </div>
                     <div className="pt-2 text-center">
                       <SuratImageCarousel />
@@ -698,7 +700,7 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
                         GCESDIP 1.0 was conducted virtually from 16<sup>th</sup>–18<sup>th</sup> June 2021, bringing together participants from academia, research institutes, industries, and international universities. A total of <strong>90 presentations </strong> were delivered across 12 theme-based sessions.
                       </p>
 
-                      <p className="text-muted-foreground leading-relaxed mb-4"> The event attracted researchers from IITs, NITs, CSIR labs and global institutions in <strong>Japan, Indonesia, Korea, and Canada.</strong> Keynote lectures highlighted emerging trends in Green Chemistry and Sustainable Development. {/* Around 30 additional participants joined to explore recent advances and research opportunities. */} </p> 
+                      <p className="text-muted-foreground leading-relaxed mb-4"> The event attracted researchers from IITs, NITs, CSIR labs and global institutions in <strong>Japan, Indonesia, Korea, and Canada.</strong> Keynote lectures highlighted emerging trends in Green Chemistry and Sustainable Development. </p>
                       <p className="text-muted-foreground leading-relaxed mb-4"> Conference abstracts were published in <strong>Proceedings International</strong>. Partner journals such as <strong>Waste and Biomass Valorization</strong> and <strong>Materials Today: Proceedings</strong> supported full-length paper submissions. </p>
 
                     </div>
@@ -717,7 +719,8 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Us at GCESDIP 2.0</h2>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Be part of the journey on sustainable development and green chemistry</p>
+              Be part of the journey on sustainable development and green chemistry
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLScHFyvWELZv5HZOM6Z7mOL8uqkqgJrWbZA2iMKWPtQPZph05w/viewform"
@@ -754,27 +757,28 @@ With its rich cultural heritage, modern infrastructure, and thriving industrial 
 /* SVNIT Image Carousel */
 const SVNITImageCarousel = () => {
   const images = [
-    { src: "/images/svnit-3.jpg", },
-    { src: "/images/svnit-5.jpg", },
-    { src: "/images/svnit-7.jpg", },
-    { src: "/images/svnit-8.jpg", },
-    { src: "/images/svnit-9.jpg", },
-    { src: "/images/svnit-10.jpg", },
-    { src: "/images/svnit-6.jpg", },
-    { src: "/images/svnit-11.jpg", },
+    { src: "/images/svnit-3.jpg" },
+    { src: "/images/svnit-5.jpg" },
+    { src: "/images/svnit-7.jpg" },
+    { src: "/images/svnit-8.jpg" },
+    { src: "/images/svnit-9.jpg" },
+    { src: "/images/svnit-10.jpg" },
+    { src: "/images/svnit-6.jpg" },
+    { src: "/images/svnit-11.jpg" },
   ];
 
   return <ImageCarousel images={images} />;
 };
+
 /* Surat Image Carousel */
 const SuratImageCarousel = () => {
   const images = [
-    { src: "/images/surat-2.jpg", caption: "🌄 Saputara — Gujarat’s Scenic Hill Station" },
+    { src: "/images/surat-2.jpg",  caption: "🌄 Saputara — Gujarat's Scenic Hill Station" },
     { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
-    { src: "/images/surat-7.jpg", caption: "🗿 Statue of Unity — The World's Tallest Statue" },
-    { src: "/images/surat-4.jpg", caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views " },
-    { src: "/images/surat-6.jpg", caption: "🏞️ Gopi Talav — A Serene Heritage Lake " },
-    { src: "/images/surat-5.jpg", caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
+    { src: "/images/surat-7.jpg",  caption: "🗿 Statue of Unity — The World's Tallest Statue" },
+    { src: "/images/surat-4.jpg",  caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views" },
+    { src: "/images/surat-6.jpg",  caption: "🏞️ Gopi Talav — A Serene Heritage Lake" },
+    { src: "/images/surat-5.jpg",  caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
   ];
 
   return <AutoCarousel images={images} />;
