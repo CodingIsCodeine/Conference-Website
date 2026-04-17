@@ -54,13 +54,13 @@ const Organizing = () => {
     { name: "Mr. Aamir Vhora", title: "", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
     { name: "Ms. Shalinee Gupta", title: "", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
     { name: "Mr. Sachin Thorat", title: "", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
+    { name: "Mr. Nishant Chaudhary", title: "", initials: "NC", imageSrc: "/images/nishant.png", description: ""},
   ];
 
   const mtechStudents: Person[] = [
     { name: "Mr. Jemish Dattani", title: "", initials: "JD", imageSrc: "/images/dignitaries/jemish.png", description: "Eco-friendly techniques to extract cellulose from aquatic biomass using innovative physical and chemical methods. Research emphasizes sustainable resource utilisation through integrated extraction strategies."},
     { name: "Mr. Kishan Patel", title: "", initials: "KP", imageSrc: "/images/dignitaries/kishan.png", description: "Flue gas separation through mixed matrix membranes enhances gas selectivity and permeability by combining the robustness of polymers with the superior adsorption and diffusion properties of inorganic fillers."},
     { name: "Mr. Harshil Patel", title: "", initials: "H", imageSrc: "/images/dignitaries/harshil.png", description: "Extraction of bio active substances and their encapsulation in hydrogel based drug delivery system."},
-    { name: "Mr. Nishant Chaudhary", title: "", initials: "NC", imageSrc: "/images/nishant.png", description: ""},
     // { name: "Mr. Ansu Silawat", title: "", initials: "A", imageSrc: "/images/dignitaries/anshul.png", description: "A study on ultrasound reactive Crystallisation of Lithium Carbonate using Through Microfludic channels." },
   ];
 
