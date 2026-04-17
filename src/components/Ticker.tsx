@@ -6,14 +6,15 @@ const Ticker = () => {
     <div className="bg-primary text-primary-foreground py-3 overflow-hidden">
       <div className="animate-marquee whitespace-nowrap">
         <span className="text-sm font-medium mx-4">
-          📢 Last date of abstract submission is extended to 27<sup>th</sup> March 2026
+          📢 Registrations are now <strong>CLOSED</strong>
         </span>
         <span className="text-sm font-medium mx-4">
-          📢 Last date of abstract submission is extended to 27<sup>th</sup> March 2026
+          📢 Registrations are now <strong>CLOSED</strong>
         </span>
         <span className="text-sm font-medium mx-4">
-          📢 Last date of abstract submission is extended to 27<sup>th</sup> March 2026
+          📢 Registrations are now <strong>CLOSED</strong>
         </span>
+        
         
       </div>
 
