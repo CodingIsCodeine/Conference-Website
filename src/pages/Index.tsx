@@ -111,6 +111,110 @@ const Index = () => {
     { title: "Full Paper Submission", date: "Will be announced soon" },
   ];
 
+  const oralWinners = [
+    {
+      session: "Session I",
+      theme: "Process Intensification Techniques",
+      id: "GCE_O_03",
+      title: "Intensified Zero-Waste Extraction of Citronella Essential Oil Using an Integrated Crusher–Extractor: RSM-Based Multi-Response Optimization",
+      winners: ["Krishna K Chauhan"],
+      coauthors: "Meghal A. Desai, Jigisha K. Parikh",
+    },
+    {
+      session: "Session II",
+      theme: "Sustainable Approach in Pharmaceutical / Chemical Industries",
+      id: "GCE_O_52",
+      title: "Mechanistic Insights into Elemental Sulphur Formation, its Quantification and Control in the Viscose Process",
+      winners: ["Sachin Gondhalekar", "Pravin Pawar"],
+      coauthors: "Sunil Dhumal, Shirish Thakre",
+    },
+    {
+      session: "Session III",
+      theme: "Process Modelling and Simulation",
+      id: "GCE_O_66",
+      title: "Prediction of Biomass Pyrolysis Products from Preliminary Analysis using Machine Learning",
+      winners: ["Zeel Desai"],
+      coauthors: "Hemant Kumar Balsora, Kartik S",
+    },
+    {
+      session: "Session IV",
+      theme: "Renewable and Clean Energy",
+      id: "GCE_O_64",
+      title: "Experimental Investigations on a Compact Dual Cell Passive DMFC with a Common Methanol Reservoir",
+      winners: ["Budda Jeshwanthi", "Mude Hrushitha"],
+      coauthors: "Ballari Adithi, Bhukya Nageswar",
+    },
+    {
+      session: "Session V",
+      theme: "Waste to Wealth",
+      id: "GCE_O_17",
+      title: "Application of K₂CO₃ Activated Hydrochar in the Immobilization of Lipases",
+      winners: ["Ravichandra Patil"],
+      coauthors: "Venu B. Borugadda, Bishnu Acharya, Ajay K. Dalai",
+    },
+    {
+      session: "Session VI",
+      theme: "Green Catalysis for Sustainable Processes",
+      id: "GCE_O_06",
+      title: "Catalytic Conversion of Fructose to 5-Ethoxymethylfurfural over Defect-Induced Metal Dichalcogenide",
+      winners: ["Nidhi Kushwaha"],
+      coauthors: "Kamal K. Pant",
+    },
+    {
+      session: "Session VI",
+      theme: "Green Catalysis for Sustainable Processes",
+      id: "GCE_O_41",
+      title: "Conversion of Ethyl Levulinate via Alcoholysis of Furfuryl Alcohol over Composite H-ZSM-5/HAP Catalyst",
+      winners: ["Rahul V Prajapati"],
+      coauthors: "Singh Alok, Sanjay Srivastava, Arun M. Patel, G. C. Jadeja, Jigisha Parikh",
+    },
+    {
+      session: "Session VII",
+      theme: "Process Modelling and Simulation",
+      id: "GCE_O_58",
+      title: "Separation of Dimethyl Carbonate-Methyl Alcohol Azeotropic Mixture by Extractive Distillation: Simulation and Experimental Validation",
+      winners: ["Reshma R. Devale", "Pooja P. Sanap", "Yogesh S. Mahajan"],
+      coauthors: "",
+    },
+    {
+      session: "Session VIII",
+      theme: "Environmental Sustainability",
+      id: "GCE_O_40",
+      title: "Toxic to Technological: CO₂ Utilization for Sustainable Synthesis of Carbonates Integrated with Optimization and Kinetic Studies",
+      winners: ["Mubassera M. Arab"],
+      coauthors: "Jigisha Parikh, Khushbu Bhavsar, S. K. Sundar",
+    },
+    {
+      session: "Session VIII",
+      theme: "Environmental Sustainability",
+      id: "GCE_O_42",
+      title: "Role of Solvent–Polymer Compatibility and Additives in Tailoring Hydrophobic PDMS–PVDF Membranes for Desalination Using Membrane Distillation",
+      winners: ["Manish Singh Rajput"],
+      coauthors: "Manish Vashishtha, Sarita Kalla, Sushant Upadhyaya",
+    },
+  ];
+
+  const posterWinners = [
+    {
+      id: "GCE_P_19",
+      title: "Green Process for Enrichment of Gymnemic Acid from Gymnema sylvestre Leaves and ω-Fatty Acids from Ocimum basilicum Seeds and their Synergistic Impact as Superfood",
+      winners: ["Abhishek Yadav"],
+      coauthors: "Naziya Syed, Deepak Kumar, Debabrata Chanda, Prasant Kumar Rout",
+    },
+    {
+      id: "GCE_P_04",
+      title: "Amine Functionalized Radiation-Induced Glycidyl Methacrylate Grafted Polyamide-6 for CO₂ Adsorption",
+      winners: ["Jasmine Kaur"],
+      coauthors: "Sudhir Kumar Singh, Raj Kumar Gupta, Haripada Bhunia",
+    },
+    {
+      id: "GCE_P_05",
+      title: "Facile Synthesis of a Bismuth Sulphide/Sulphur-Doped Graphitic Carbon Nitride Nanocomposite for Electrocatalytic Detection of a Metronidazole Drug",
+      winners: ["Ravneet Kaur"],
+      coauthors: "Davinder Kumar",
+    },
+  ];
+
   const aboutSections = [
     {
       title: "Conference",
@@ -511,6 +615,135 @@ const Index = () => {
 
 
       <main className="flex-1">
+
+        {/* -------------------------------------------------------- */}
+        {/* AWARD WINNERS */}
+        {/* -------------------------------------------------------- */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+
+            {/* Section Header */}
+            <div className="text-center mb-14 animate-fade-in">
+              <div className="flex justify-center mb-4">
+                <div className="animate-soft-pulse">
+                  <Award className="h-12 w-12 text-primary" />
+                  {/* <span className="absolute -top-1 -right-1 text-base">🏆</span> */}
+                </div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                Award Winners
+              </h2>
+              <p className="text-muted-foreground text-sm uppercase tracking-widest">
+                GCESDIP 2.0 &nbsp;·&nbsp; April 17–18, 2026
+              </p>
+              <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-primary/30" />
+            </div>
+
+            {/* Oral Presentations */}
+            <div className="max-w-6xl mx-auto mb-14">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex-1 h-px bg-border" />
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground px-2">
+                  Oral Presentations
+                </h3>
+                <div className="flex-1 h-px bg-border" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {oralWinners.map((winner, index) => (
+                  <Card
+                    key={index}
+                    className="shadow-card hover:shadow-hover transition-smooth border-l-[3px] border-l-primary gradient-card"
+                  >
+                    <CardContent className="p-5">
+                      {/* Session badge + ID */}
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-0.5">
+                          {winner.session}
+                        </span>
+                        <span className="text-xs text-muted-foreground font-mono">
+                          {winner.id}
+                        </span>
+                      </div>
+
+                      {/* Theme */}
+                      <p className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wide mb-1">
+                        {winner.theme}
+                      </p>
+
+                      {/* Paper title */}
+                      <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">
+                        {winner.title}
+                      </p>
+
+                      {/* Winners */}
+                      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
+                        {winner.winners.map((name, i) => (
+                          <span key={i} className="font-semibold text-sm text-primary">
+                            {name}{i < winner.winners.length - 1 ? "," : ""}
+                          </span>
+                        ))}
+                        {winner.coauthors && (
+                          <span className="text-xs text-muted-foreground">
+                            {winner.winners.length > 0 ? ", " : ""}{winner.coauthors}
+                          </span>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
+            {/* Poster Presentations */}
+            <div className="max-w-5xl mx-auto">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex-1 h-px bg-border" />
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground px-2">
+                  Poster Presentations
+                </h3>
+                <div className="flex-1 h-px bg-border" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {posterWinners.map((winner, index) => (
+                  <Card
+                    key={index}
+                    className="shadow-card hover:shadow-hover transition-smooth border-l-[3px] border-l-primary gradient-card"
+                  >
+                    <CardContent className="p-5">
+                      <span className="inline-block text-xs font-mono text-muted-foreground bg-muted rounded px-2 py-0.5 mb-3">
+                        {winner.id}
+                      </span>
+                      <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-3">
+                        {winner.title}
+                      </p>
+                      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
+                        {winner.winners.map((name, i) => (
+                          <span key={i} className="font-semibold text-sm text-primary">
+                            {name}{i < winner.winners.length - 1 ? "," : ""}
+                          </span>
+                        ))}
+                        {winner.coauthors && (
+                          <span className="text-xs text-muted-foreground">
+                            , {winner.coauthors}
+                          </span>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Congratulations note */}
+              <p className="text-center text-sm text-muted-foreground mt-8 italic">
+                Congratulations to all the award winners and thank you to every participant for making GCESDIP 2.0 a success.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
         {/* Conference Deadlines */}
         <section className="py-16 bg-muted">
           <div className="container mx-auto px-4">
