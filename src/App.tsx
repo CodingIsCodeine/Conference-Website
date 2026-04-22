@@ -9,7 +9,7 @@ import Speakers from "./pages/Speakers";
 import Abstract from "./pages/Abstract";
 import Sponsors from "./pages/Sponsors";
 import Registration from "./pages/Registration";
-import Programme from "./pages/Programme";
+// import Programme from "./pages/Programme";
 import Organising from "./pages/Organising";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -34,7 +34,7 @@ const App = () => (
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/programme" element={<Programme />} />
+          {/* <Route path="/programme" element={<Programme />} /> */}
           <Route path="/organising" element={<Organising />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

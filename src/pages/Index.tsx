@@ -198,19 +198,19 @@ const Index = () => {
     {
       id: "GCE_P_19",
       title: "Green Process for Enrichment of Gymnemic Acid from Gymnema sylvestre Leaves and ω-Fatty Acids from Ocimum basilicum Seeds and their Synergistic Impact as Superfood",
-      winners: ["Abhishek Yadav"],
+      winners: ["Abhishek Yadav,"],
       coauthors: "Naziya Syed, Deepak Kumar, Debabrata Chanda, Prasant Kumar Rout",
     },
     {
       id: "GCE_P_04",
       title: "Amine Functionalized Radiation-Induced Glycidyl Methacrylate Grafted Polyamide-6 for CO₂ Adsorption",
-      winners: ["Jasmine Kaur"],
+      winners: ["Jasmine Kaur,"],
       coauthors: "Sudhir Kumar Singh, Raj Kumar Gupta, Haripada Bhunia",
     },
     {
       id: "GCE_P_05",
       title: "Facile Synthesis of a Bismuth Sulphide/Sulphur-Doped Graphitic Carbon Nitride Nanocomposite for Electrocatalytic Detection of a Metronidazole Drug",
-      winners: ["Ravneet Kaur"],
+      winners: ["Ravneet Kaur,"],
       coauthors: "Davinder Kumar",
     },
   ];
@@ -721,12 +721,12 @@ const Index = () => {
                       <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
                         {winner.winners.map((name, i) => (
                           <span key={i} className="font-semibold text-sm text-primary">
-                            {name}{i < winner.winners.length - 1 ? "," : ""}
+                            {name}{i < winner.winners.length - 1 ? "" : ""}
                           </span>
                         ))}
                         {winner.coauthors && (
                           <span className="text-xs text-muted-foreground">
-                            , {winner.coauthors}
+                             {winner.coauthors}
                           </span>
                         )}
                       </div>

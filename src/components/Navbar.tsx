@@ -15,7 +15,7 @@ const Navbar = () => {
     { to: "/abstract", label: "Abstract Submission" },
     { to: "/Speakers", label: "Speakers" },
     { to: "/registration", label: "Registration" },
-    { to: "/programme", label: "Programme" },
+    // { to: "/programme", label: "Programme" },
   ];
 
   // ONLY THESE INSIDE MORE
