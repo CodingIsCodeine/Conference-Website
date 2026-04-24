@@ -737,7 +737,7 @@ const Index = () => {
 
               {/* Congratulations note */}
               <p className="text-center text-sm text-muted-foreground mt-8 italic">
-                Congratulations to all the award winners and thank you to every participant for making GCESDIP 2.0 a success.
+                Congratulations to all the award winners and thank you to every participant for making GCESDIP 2.0 a grand success.
               </p>
             </div>
 
