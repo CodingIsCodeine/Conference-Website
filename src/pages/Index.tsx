@@ -574,177 +574,184 @@ const Index = () => {
       </section>
 
       <main className="flex-1">
-        {/* -------------------------------------------------------- */}
-        {/* AWARDS & RECOGNITIONS (ENHANCED PREMIUM VERSION) */}
-        {/* -------------------------------------------------------- */}
-        <section
-          className="py-20 relative overflow-hidden"
-          style={{
-            background: "linear-gradient(135deg, #eef2f7 0%, #d1fae5 55%, #fef9c3 100%)"
-            }}  
-        >
-          {/* GLOW BACKGROUND */}
-          <div className="absolute inset-0 -z-10 flex items-center justify-center">
-            <div className="w-[500px] h-[500px] bg-yellow-400/25 rounded-full blur-3xl animate-pulse" />
-            <div className="w-[400px] h-[400px] bg-emerald-400/25 rounded-full blur-3xl absolute top-10 left-10" />
-          </div>
-
-          <div className="container mx-auto px-4">
-
-            {/* HEADER */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                Awards & Recognitions
-              </h2>
-              <p className="text-muted-foreground text-sm uppercase tracking-widest">
-                GCESDIP 2.0 · April 17–18, 2026
-              </p>
-              <div className="mt-5 mx-auto w-20 h-[2px] rounded-full bg-primary/30" />
-            </div>
-
-            {/* ===================== */}
-            {/* 🥇 RSC ORAL */}
-            {/* ===================== */}
-            <div className="max-w-5xl mx-auto mb-16">
-              <h3 className="text-center text-lg font-semibold mb-4 text-cyan-600 flex items-center justify-center gap-2">
-                <Award className="w-5 h-5 text-yellow-500" />
-                RSC Oral Presentation Awards
-              </h3>
-              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {rscOralWinners.map((winner, index) => (
-                  <div
-                    key={index}
-                    className="rounded-xl p-5 transition-all duration-300 hover:-trancyan-y-1 hover:shadow-2xl hover:scale-[1.02] border border-cyan-200 border-l-[4px] border-l-cyan-500 bg-white/90"
-                  >
-                    <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
-                      RSC Award
-                    </span>
-
-                    <p className="text-xs text-cyan-600 mb-1">{winner.theme}</p>
-                    <p className="text-xs text-gray-700 mb-3 line-clamp-2">{winner.title}</p>
-
-                    <div className="text-sm">
-                      <span className="font-semibold text-cyan-700">
-                        {winner.winners.join(", ")}
-                      </span>
-                      {winner.coauthors && (
-                        <span className="text-xs text-cyan-700/70">
-                          {", " + winner.coauthors}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* DIVIDER */}
-            <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-
-            {/* ===================== */}
-            {/* 🥈 GCESDIP ORAL */}
-            {/* ===================== */}
-            <div className="max-w-6xl mx-auto mb-16">
-              <h3 className="text-center text-lg font-semibold mb-4 text-primary flex items-center justify-center gap-2">
-                <Award className="w-5 h-5 text-yellow-500" />
-                GCESDIP 2.0 Oral Presentation Awards
-              </h3>
-              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {oralWinners.map((winner, index) => (
-                  <Card
-                    key={index}
-                    className="shadow-card hover:shadow-2xl hover:-trancyan-y-1 transition-all duration-300 border border-primary/20 border-l-[4px] border-l-primary"
-                  >
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-0.5">
-                          {winner.session}
-                        </span>
-                        <span className="text-xs text-muted-foreground font-mono">
-                          {winner.id}
-                        </span>
-                      </div>
-
-                      <p className="text-xs font-medium text-green-700/70 uppercase tracking-wide mb-1">
-                        {winner.theme}
-                      </p>
-
-                      <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">
-                        {winner.title}
-                      </p>
-
-                      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
-                        {winner.winners.map((name, i) => (
-                          <span key={i} className="font-semibold text-sm text-primary">
-                            {name}{i < winner.winners.length - 1 ? "," : ""}
-                          </span>
-                        ))}
-                        {winner.coauthors && (
-                          <span className="text-xs text-green-700/70">
-                            {winner.winners.length > 0 ? ", " : ""}
-                            {winner.coauthors}
-                          </span>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
-            {/* DIVIDER */}
-            <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-
-            {/* ===================== */}
-            {/* 🥉 POSTER (JOINT) */}
-            {/* ===================== */}
-            <div className="max-w-5xl mx-auto">
-              <h3 className="text-center text-lg font-semibold mb-4 text-yellow-700 flex items-center justify-center gap-2">
-                <Award className="w-5 h-5 text-yellow-500" />
-                RSC & GCESDIP 2.0 Poster Presentation Awards
-              </h3>
-              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {rscPosterWinners.map((winner, index) => (
-                  <div
-  key={index}
-  className="rounded-xl p-5 transition-all duration-300 hover:-trancyan-y-1 hover:shadow-2xl hover:scale-[1.02] border border-yellow-200 border-l-[4px] border-l-yellow-500 bg-white/90"
+{/* -------------------------------------------------------- */}
+{/* AWARDS & RECOGNITIONS (FINAL FLOWING VERSION) */}
+{/* -------------------------------------------------------- */}
+<section
+  className="py-20 relative overflow-hidden"
+  style={{
+    background: "linear-gradient(120deg, #eef2f7, #d1fae5, #a7f3d0, #fef9c3, #fde68a, #d1fae5)",
+    backgroundSize: "220% 220%",
+    animation: "gradientFlow 8s linear infinite"
+  }}
 >
-                    <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
-                      Joint Award
-                    </span>
+  {/* SOFT OVERLAY (reduces harshness + adds premium feel) */}
+  <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] pointer-events-none" />
 
-                    <p className="text-xs text-gray-700 mb-3 line-clamp-3">
-                      {winner.title}
-                    </p>
+  {/* OPTIONAL GLOW BLOBS (keep if you liked earlier effect) */}
+  <div className="absolute inset-0 -z-10 flex items-center justify-center">
+    <div className="w-[500px] h-[500px] bg-yellow-300/20 rounded-full blur-3xl animate-pulse" />
+    <div className="w-[400px] h-[400px] bg-emerald-300/20 rounded-full blur-3xl absolute top-10 left-10" />
+  </div>
 
-                    <div className="text-sm">
-                      <span className="font-semibold text-yellow-700">
-                        {winner.winners.join(", ")}
-                      </span>
-                      {winner.coauthors && (
-                        <span className="text-xs text-yellow-600">
-                          {", " + winner.coauthors}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+  <div className="container mx-auto px-4 relative z-10">
 
-              <p className="text-center text-xs text-muted-foreground mt-10 italic">
-                Poster awards jointly recognized by RSC and GCESDIP 2.0
-              </p>
+    {/* HEADER */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+        Awards & Recognitions
+      </h2>
+      <p className="text-muted-foreground text-sm uppercase tracking-widest">
+        GCESDIP 2.0 · April 17–18, 2026
+      </p>
+      <div className="mt-5 mx-auto w-20 h-[2px] rounded-full bg-primary/30" />
+    </div>
+
+    {/* ===================== */}
+    {/* 🟦 RSC ORAL */}
+    {/* ===================== */}
+    <div className="max-w-5xl mx-auto mb-16">
+      <h3 className="text-center text-lg font-semibold mb-4 text-cyan-700 flex items-center justify-center gap-2">
+        RSC Oral Presentation Awards
+      </h3>
+      <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {rscOralWinners.map((winner, index) => (
+          <div
+            key={index}
+            className="rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] border border-cyan-200 border-l-[4px] border-l-cyan-500 bg-white/90"
+          >
+            <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-cyan-100 text-cyan-800 border border-cyan-300">
+              RSC Award
+            </span>
+
+            <p className="text-xs font-medium text-tertiaryTeal uppercase tracking-wide mb-1">{winner.theme}</p>
+            <p className="text-xs text-muted-foreground leading-relaxed mb-3 font-medium">{winner.title}</p>
+
+            <div className="flex flex-col gap-0.5 text-sm">
+              {/* Main authors */}
+              <span className="font-semibold text-tertiary">
+                {winner.winners.join(", ")}
+              </span>
+
+              {/* Co-authors */}
+              {winner.coauthors && (
+                <span className="text-xs text-tertiaryEmerald">
+                  {winner.coauthors}
+                </span>
+              )}
             </div>
-
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
 
+    {/* DIVIDER */}
+    <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
+{/* ===================== */}
+{/* 🟢 GCESDIP ORAL */}
+{/* ===================== */}
+<div className="max-w-6xl mx-auto mb-16">
+  <h3 className="text-center text-lg font-semibold mb-4 text-primary flex items-center justify-center gap-2">
+    GCESDIP 2.0 Oral Presentation Awards
+  </h3>
+  <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {oralWinners.map((winner, index) => (
+      <Card
+        key={index}
+        className="shadow-card hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-primary/20 border-l-[4px] border-l-primary gradient-card"
+      >
+        <CardContent className="p-5">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-0.5">
+              {winner.session}
+            </span>
+            <span className="text-xs text-muted-foreground font-mono">
+              {winner.id}
+            </span>
+          </div>
+
+          <p className="text-xs font-medium text-lime-600 uppercase tracking-wide mb-1">
+            {winner.theme}
+          </p>
+
+          <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2 font-medium">
+            {winner.title}
+          </p>
+
+          <div className="flex flex-col gap-1">
+            {/* Main authors */}
+            <span className="font-semibold text-sm text-primary">
+              {winner.winners.join(", ")}
+            </span>
+
+            {/* Co-authors */}
+            {winner.coauthors && (
+              <span className="text-xs text-emerald-700/80">
+                {winner.coauthors}
+              </span>
+            )}
+          </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+    {/* DIVIDER */}
+    <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
+    {/* ===================== */}
+    {/* 🟡 POSTER (JOINT) */}
+    {/* ===================== */}
+    <div className="max-w-5xl mx-auto">
+      <h3 className="text-center text-lg font-semibold mb-4 text-yellow-700 flex items-center justify-center gap-2">
+        RSC & GCESDIP 2.0 Poster Presentation Awards
+      </h3>
+      <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {rscPosterWinners.map((winner, index) => (
+          <div
+            key={index}
+            className="rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] border border-yellow-200 border-l-[4px] border-l-yellow-500 bg-white/90"
+          >
+            <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
+              Joint Award
+            </span>
+
+            <p className="text-xs text-muted-foreground leading-relaxed mb-3 font-medium">
+              {winner.title}
+            </p>
+
+            <div className="flex flex-col gap-1 text-sm">
+              {/* Main authors */}
+              <span className="font-semibold text-quaternaryAnalogousDeep">
+                {winner.winners.join(", ")}
+              </span>
+
+              {/* Co-authors */}
+              {winner.coauthors && (
+                <span className="text-xs text-quaternaryAnalogous">
+                  {winner.coauthors}
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+              <p className="text-center text-sm text-muted-foreground mt-10 italic">
+                Congratulations to all the winners and thank you to each and every participant for making GCESDIP 2.0 a grand success!
+              </p>
+    </div>
+
+  </div>
+</section>
         {/* -------------------------------------------------------- */}
         {/* CONFERENCE GALLERY */}
         {/* -------------------------------------------------------- */}

@@ -20,6 +20,19 @@ All colors MUST be HSL.
     --primary: 142 76% 36%;
     --primary-foreground: 0 0% 100%;
 
+    --tertiary: 210 76% 36%;
+    --tertiary-foreground: 0 0% 100%;
+
+    --tertiary-teal: 190 70% 38%;
+    --tertiary-teal-foreground: 0 0% 100%;
+
+    --tertiary-emerald: 220 70% 32%;
+    --tertiary-emerald-foreground: 0 0% 100%;
+
+    --quaternary: 45 90% 50%;
+    --quaternary-analogous: 35 85% 48%;        /* like teal (shift toward orange) */
+    --quaternary-analogous-deep: 25 80% 42%;   /* like emerald (deeper orange) */
+
     --secondary: 142 35% 90%;
     --secondary-foreground: 142 76% 20%;
 
@@ -272,6 +285,9 @@ html, body {
   min-height: 100%;
 }
 
-
-
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 60%; }
+  100% { background-position: 0% 50%; }
+}
 

@@ -31,6 +31,30 @@ export default {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        tertiary: {
+          DEFAULT: "hsl(var(--tertiary))",
+          foreground: "hsl(var(--tertiary-foreground))",
+        },
+        tertiaryTeal: {
+          DEFAULT: "hsl(var(--tertiary-teal))",
+          foreground: "hsl(var(--tertiary-teal-foreground))",
+        },
+        tertiaryEmerald: {
+          DEFAULT: "hsl(var(--tertiary-emerald))",
+          foreground: "hsl(var(--tertiary-emerald-foreground))",
+        },
+        quaternary: {
+          DEFAULT: "hsl(var(--quaternary))",
+          foreground: "hsl(var(--quaternary-foreground))",
+        },
+        quaternaryAnalogous: {
+          DEFAULT: "hsl(var(--quaternary-analogous))",
+          foreground: "hsl(var(--quaternary-analogous-foreground))",
+        },
+        quaternaryAnalogousDeep: {
+          DEFAULT: "hsl(var(--quaternary-analogous-deep))",
+          foreground: "hsl(var(--quaternary-analogous-deep-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
