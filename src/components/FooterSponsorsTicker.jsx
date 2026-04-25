@@ -142,6 +142,7 @@ const FooterSponsorsTicker = () => {
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-widest text-center text-white/60">
             Gold Sponsors
+            
           </p>
 
           <div className="relative overflow-hidden">

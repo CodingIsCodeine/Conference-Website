@@ -620,7 +620,7 @@ const Index = () => {
                       className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2"
                       style={{ background: "rgba(250,204,21,0.15)", color: "#b45309", border: "1px solid rgba(250,204,21,0.3)" }}
                     >
-                      Award Winner
+                      RSC Award Winner
                     </span>
                     <p className="text-xs text-emerald-600 mb-1">{winner.theme}</p>
                     <p className="text-xs text-gray-700 mb-3 line-clamp-2">{winner.title}</p>
@@ -651,7 +651,7 @@ const Index = () => {
                       className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2"
                       style={{ background: "rgba(250,204,21,0.15)", color: "#b45309", border: "1px solid rgba(250,204,21,0.3)" }}
                     >
-                      Award Winner
+                      RSC and GCESDIP 2.0 Award Winner
                     </span>
                     <p className="text-xs text-gray-700 mb-3 line-clamp-3">{winner.title}</p>
                     <div className="text-sm">
