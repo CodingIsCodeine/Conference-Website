@@ -297,7 +297,7 @@ const Index = () => {
             <p className="font-semibold">Resource Person:</p>
             <p>Dr. Muralidhara A., Global JMP Team</p>
           </div>
-          <div className="mt-6 rounded-xl border border-amber-400/50 bg-amber-50/40 px-4 py-3 text-amber-900 shadow-sm">
+          <div className="mt-6 rounded-xl border border-cyan-400/50 bg-cyan-50/40 px-4 py-3 text-cyan-900 shadow-sm">
             <p className="font-semibold">📌 Note:</p>
             <p className="text-sm mt-1">
               There is <strong>no additional fee</strong> for conference-registered participants.
@@ -355,7 +355,7 @@ const Index = () => {
 
           {/* Slide 0 — Conference */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-            showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
+            showHeroText ? "opacity-100 trancyan-y-0" : "opacity-0 -trancyan-y-8"
           }`}>
             <div className="container mx-auto px-4 text-center">
               <p className="text-xl md:text-2xl font-semibold mb-4">
@@ -370,7 +370,7 @@ const Index = () => {
 
           {/* Slide 1 — Workshop */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-            showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            showWorkshop ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-6"
           }`}>
             <div className="container mx-auto px-4 text-center max-w-4xl -mt-8">
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
@@ -393,7 +393,7 @@ const Index = () => {
 
           {/* Slide 2 — Organized by / Logos */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-            showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showLogos ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <div className="text-center -mt-10">
               <h2 className="text-2xl font-bold mb-6">Organized by</h2>
@@ -408,7 +408,7 @@ const Index = () => {
 
           {/* Slide 3 — ANRF Sponsor */}
           <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
-            showAnrf ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showAnrf ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
               Sponsored by
@@ -425,7 +425,7 @@ const Index = () => {
 
           {/* Slide 4 — Gold Sponsors */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showGoldSponsor ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showGoldSponsor ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <div className="text-center relative w-full max-w-5xl mx-auto px-6">
               <div className="absolute inset-0 -z-10 flex items-center justify-center">
@@ -461,7 +461,7 @@ const Index = () => {
 
           {/* Slide 5 — Media Partner */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showMediaPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showMediaPartner ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <div className="text-center">
               <p className="uppercase tracking-widest mb-6 text-sky-200 font-semibold">
@@ -483,7 +483,7 @@ const Index = () => {
 
           {/* Slide 6 — Journal Partners */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showJournalPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showJournalPartner ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <div className="text-center">
               <p className="uppercase tracking-widest mb-6 text-emerald-200 font-semibold">
@@ -506,7 +506,7 @@ const Index = () => {
 
           {/* Slide 7 — Awards Supported by */}
           <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
-            showAwards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            showAwards ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
           }`}>
             <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
               Awards Supported by
@@ -574,60 +574,65 @@ const Index = () => {
       </section>
 
       <main className="flex-1">
-
         {/* -------------------------------------------------------- */}
-        {/* RSC AWARD WINNERS */}
+        {/* AWARDS & RECOGNITIONS (ENHANCED PREMIUM VERSION) */}
         {/* -------------------------------------------------------- */}
         <section
           className="py-20 relative overflow-hidden"
-          style={{ background: "linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%)" }}
+          style={{
+            background: "linear-gradient(135deg, #eef2f7 0%, #d1fae5 55%, #fef9c3 100%)"
+            }}  
         >
-          <div className="container mx-auto px-4 relative z-10">
+          {/* GLOW BACKGROUND */}
+          <div className="absolute inset-0 -z-10 flex items-center justify-center">
+            <div className="w-[500px] h-[500px] bg-yellow-400/25 rounded-full blur-3xl animate-pulse" />
+            <div className="w-[400px] h-[400px] bg-emerald-400/25 rounded-full blur-3xl absolute top-10 left-10" />
+          </div>
 
-            {/* Header */}
-            <div className="text-center mb-14">
-              <div className="relative inline-flex items-center justify-center mb-5 p-3 rounded-2xl border border-emerald-200 bg-white/70 backdrop-blur-sm">
-                <div className="absolute inset-0 -z-10 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-yellow-400/30 blur-2xl opacity-70" />
-                </div>
-                <img src="/images/royal.jpeg" alt="RSC" className="h-16 object-contain rounded-lg" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-emerald-900 mb-2">
-                RSC Award Winners
+          <div className="container mx-auto px-4">
+
+            {/* HEADER */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                Awards & Recognitions
               </h2>
-              <p className="text-emerald-700 text-sm uppercase tracking-widest">
+              <p className="text-muted-foreground text-sm uppercase tracking-widest">
                 GCESDIP 2.0 · April 17–18, 2026
               </p>
-              <div
-                className="mt-5 mx-auto w-20 h-[2px] rounded-full"
-                style={{ background: "linear-gradient(90deg, transparent, #facc15, transparent)" }}
-              />
+              <div className="mt-5 mx-auto w-20 h-[2px] rounded-full bg-primary/30" />
             </div>
 
-            {/* Oral */}
-            <div className="max-w-5xl mx-auto mb-12">
-              <h3 className="text-center text-sm font-semibold uppercase tracking-widest text-emerald-700 mb-6">
-                Oral Presentations
+            {/* ===================== */}
+            {/* 🥇 RSC ORAL */}
+            {/* ===================== */}
+            <div className="max-w-5xl mx-auto mb-16">
+              <h3 className="text-center text-lg font-semibold mb-4 text-cyan-600 flex items-center justify-center gap-2">
+                <Award className="w-5 h-5 text-yellow-500" />
+                RSC Oral Presentation Awards
               </h3>
+              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 {rscOralWinners.map((winner, index) => (
                   <div
                     key={index}
-                    className="rounded-xl p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-                    style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(16,185,129,0.2)" }}
+                    className="rounded-xl p-5 transition-all duration-300 hover:-trancyan-y-1 hover:shadow-2xl hover:scale-[1.02] border border-cyan-200 border-l-[4px] border-l-cyan-500 bg-white/90"
                   >
-                    <span
-                      className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2"
-                      style={{ background: "rgba(250,204,21,0.15)", color: "#b45309", border: "1px solid rgba(250,204,21,0.3)" }}
-                    >
-                      RSC Award Winner
+                    <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
+                      RSC Award
                     </span>
-                    <p className="text-xs text-emerald-600 mb-1">{winner.theme}</p>
+
+                    <p className="text-xs text-cyan-600 mb-1">{winner.theme}</p>
                     <p className="text-xs text-gray-700 mb-3 line-clamp-2">{winner.title}</p>
+
                     <div className="text-sm">
-                      <span className="font-semibold text-emerald-900">{winner.winners.join(", ")}</span>
+                      <span className="font-semibold text-cyan-700">
+                        {winner.winners.join(", ")}
+                      </span>
                       {winner.coauthors && (
-                        <span className="text-xs text-emerald-700/70">{", " + winner.coauthors}</span>
+                        <span className="text-xs text-cyan-700/70">
+                          {", " + winner.coauthors}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -635,91 +640,43 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Poster */}
-            <div className="max-w-5xl mx-auto">
-              <h3 className="text-center text-sm font-semibold uppercase tracking-widest text-emerald-700 mb-6">
-                Poster Presentations
+            {/* DIVIDER */}
+            <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+
+            {/* ===================== */}
+            {/* 🥈 GCESDIP ORAL */}
+            {/* ===================== */}
+            <div className="max-w-6xl mx-auto mb-16">
+              <h3 className="text-center text-lg font-semibold mb-4 text-primary flex items-center justify-center gap-2">
+                <Award className="w-5 h-5 text-yellow-500" />
+                GCESDIP 2.0 Oral Presentation Awards
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {rscPosterWinners.map((winner, index) => (
-                  <div
-                    key={index}
-                    className="rounded-xl p-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-                    style={{ background: "rgba(255,255,255,0.85)", border: "1px solid rgba(16,185,129,0.2)" }}
-                  >
-                    <span
-                      className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2"
-                      style={{ background: "rgba(250,204,21,0.15)", color: "#b45309", border: "1px solid rgba(250,204,21,0.3)" }}
-                    >
-                      RSC and GCESDIP 2.0 Award Winner
-                    </span>
-                    <p className="text-xs text-gray-700 mb-3 line-clamp-3">{winner.title}</p>
-                    <div className="text-sm">
-                      <span className="font-semibold text-emerald-900">{winner.winners.join(", ")}</span>
-                      {winner.coauthors && (
-                        <span className="text-xs text-emerald-700/70">{", " + winner.coauthors}</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-center text-xs text-emerald-700/70 mt-10 italic">
-                Presented by the Royal Society of Chemistry
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        {/* -------------------------------------------------------- */}
-        {/* GCESDIP 2.0 AWARD WINNERS */}
-        {/* -------------------------------------------------------- */}
-        <section className="py-16 bg-background">
-          <div className="container mx-auto px-4">
-
-            <div className="text-center mb-14 animate-fade-in">
-              <div className="flex justify-center mb-4">
-                <div className="animate-soft-pulse">
-                  <Award className="h-12 w-12 text-primary" />
-                </div>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                GCESDIP 2.0 Winners
-              </h2>
-              <p className="text-muted-foreground text-sm uppercase tracking-widest">
-                Oral Presentations &nbsp;·&nbsp; April 17–18, 2026
-              </p>
-              <div className="mt-4 mx-auto w-16 h-1 rounded-full bg-primary/30" />
-            </div>
-
-            <div className="max-w-6xl mx-auto mb-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex-1 h-px bg-border" />
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground px-2">
-                  Oral Presentations
-                </h3>
-                <div className="flex-1 h-px bg-border" />
-              </div>
+              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {oralWinners.map((winner, index) => (
                   <Card
                     key={index}
-                    className="shadow-card hover:shadow-hover transition-smooth border-l-[3px] border-l-primary gradient-card"
+                    className="shadow-card hover:shadow-2xl hover:-trancyan-y-1 transition-all duration-300 border border-primary/20 border-l-[4px] border-l-primary"
                   >
                     <CardContent className="p-5">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-0.5">
                           {winner.session}
                         </span>
-                        <span className="text-xs text-muted-foreground font-mono">{winner.id}</span>
+                        <span className="text-xs text-muted-foreground font-mono">
+                          {winner.id}
+                        </span>
                       </div>
-                      <p className="text-xs font-medium text-muted-foreground/70 uppercase tracking-wide mb-1">
+
+                      <p className="text-xs font-medium text-green-700/70 uppercase tracking-wide mb-1">
                         {winner.theme}
                       </p>
+
                       <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">
                         {winner.title}
                       </p>
+
                       <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
                         {winner.winners.map((name, i) => (
                           <span key={i} className="font-semibold text-sm text-primary">
@@ -727,8 +684,9 @@ const Index = () => {
                           </span>
                         ))}
                         {winner.coauthors && (
-                          <span className="text-xs text-muted-foreground">
-                            {winner.winners.length > 0 ? ", " : ""}{winner.coauthors}
+                          <span className="text-xs text-green-700/70">
+                            {winner.winners.length > 0 ? ", " : ""}
+                            {winner.coauthors}
                           </span>
                         )}
                       </div>
@@ -738,9 +696,51 @@ const Index = () => {
               </div>
             </div>
 
-            <p className="text-center text-sm text-muted-foreground mt-4 italic">
-              Congratulations to all the award winners and thank you to every participant for making GCESDIP 2.0 a grand success!
-            </p>
+            {/* DIVIDER */}
+            <div className="my-14 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+
+            {/* ===================== */}
+            {/* 🥉 POSTER (JOINT) */}
+            {/* ===================== */}
+            <div className="max-w-5xl mx-auto">
+              <h3 className="text-center text-lg font-semibold mb-4 text-yellow-700 flex items-center justify-center gap-2">
+                <Award className="w-5 h-5 text-yellow-500" />
+                RSC & GCESDIP 2.0 Poster Presentation Awards
+              </h3>
+              <div className="mx-auto mb-8 w-24 h-[2px] rounded-full bg-gradient-to-r from-transparent via-yellow-400 to-transparent" />
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {rscPosterWinners.map((winner, index) => (
+                  <div
+  key={index}
+  className="rounded-xl p-5 transition-all duration-300 hover:-trancyan-y-1 hover:shadow-2xl hover:scale-[1.02] border border-yellow-200 border-l-[4px] border-l-yellow-500 bg-white/90"
+>
+                    <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
+                      Joint Award
+                    </span>
+
+                    <p className="text-xs text-gray-700 mb-3 line-clamp-3">
+                      {winner.title}
+                    </p>
+
+                    <div className="text-sm">
+                      <span className="font-semibold text-yellow-700">
+                        {winner.winners.join(", ")}
+                      </span>
+                      {winner.coauthors && (
+                        <span className="text-xs text-yellow-600">
+                          {", " + winner.coauthors}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-center text-xs text-muted-foreground mt-10 italic">
+                Poster awards jointly recognized by RSC and GCESDIP 2.0
+              </p>
+            </div>
 
           </div>
         </section>
@@ -1115,7 +1115,7 @@ const Index = () => {
 //         {/* Prev */}
 //         <button
 //           onClick={goToPrev}
-//           className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
+//           className="absolute left-3 top-1/2 -trancyan-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
 //           aria-label="Previous photo"
 //         >
 //           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -1126,7 +1126,7 @@ const Index = () => {
 //         {/* Next */}
 //         <button
 //           onClick={goToNext}
-//           className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
+//           className="absolute right-3 top-1/2 -trancyan-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
 //           aria-label="Next photo"
 //         >
 //           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -1273,7 +1273,7 @@ const AutoCarousel = ({ images }) => {
         {/* Prev button */}
         <button
           onClick={goToPrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
+          className="absolute left-2 top-1/2 -trancyan-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
           aria-label="Previous"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -1284,7 +1284,7 @@ const AutoCarousel = ({ images }) => {
         {/* Next button */}
         <button
           onClick={goToNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
+          className="absolute right-2 top-1/2 -trancyan-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
           aria-label="Next"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -1293,7 +1293,7 @@ const AutoCarousel = ({ images }) => {
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        <div className="absolute bottom-2 left-1/2 -trancyan-x-1/2 flex gap-1.5 z-10">
           {images.map((_, i) => (
             <button
               key={i}
