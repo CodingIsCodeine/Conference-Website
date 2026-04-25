@@ -53,7 +53,7 @@ const FooterSponsorsTicker = () => {
       className="block cursor-pointer hover:opacity-95 transition-opacity"
       aria-label="View all sponsors"
     >
-      <div className="relative overflow-hidden py-6 space-y-6">
+      <div className="relative overflow-hidden py-6 space-y-10">
 
         {/* ---------------- PARTNERS ---------------- */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-center">
