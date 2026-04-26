@@ -623,10 +623,10 @@ const Index = () => {
             className="rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] border border-cyan-200 border-l-[4px] border-l-cyan-500 bg-white/90"
           >
             <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-cyan-100 text-cyan-800 border border-cyan-300">
-              RSC Award
+              {winner.id}
             </span>
 
-            <p className="text-xs font-medium text-tertiaryTeal uppercase tracking-wide mb-1">{winner.theme}</p>
+            {/* <p className="text-xs font-medium text-tertiaryTeal uppercase tracking-wide mb-1"></p> */}
             <p className="text-xs text-muted-foreground leading-relaxed mb-3 font-medium">{winner.title}</p>
 
             <div className="flex flex-col gap-0.5 text-sm">
@@ -668,11 +668,11 @@ const Index = () => {
         <CardContent className="p-5">
           <div className="flex items-center gap-2 mb-3">
             <span className="inline-block text-xs font-semibold text-primary-foreground bg-primary rounded-full px-3 py-0.5">
-              {winner.session}
-            </span>
-            <span className="text-xs text-muted-foreground font-mono">
               {winner.id}
             </span>
+            {/* <span className="text-xs text-muted-foreground font-mono">
+              
+            </span> */}
           </div>
 
           <p className="text-xs font-medium text-lime-600 uppercase tracking-wide mb-1">
@@ -721,7 +721,7 @@ const Index = () => {
             className="rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:scale-[1.02] border border-yellow-200 border-l-[4px] border-l-yellow-500 bg-white/90"
           >
             <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-full mb-2 bg-yellow-100 text-yellow-800 border border-yellow-300">
-              Joint Award
+              {winner.id}
             </span>
 
             <p className="text-xs text-muted-foreground leading-relaxed mb-3 font-medium">
