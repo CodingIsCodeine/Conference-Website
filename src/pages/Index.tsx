@@ -1121,6 +1121,19 @@ const CONFERENCE_GALLERY: GallerySection[] = [
       { src: "images/galleries/conference/day-2/13.jpg", caption: "" },
       { src: "images/galleries/conference/day-2/14.jpg", caption: "" },
       { src: "images/galleries/conference/day-2/15.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/16.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/17.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/18.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/19.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/20.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/21.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/22.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/23.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/24.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/25.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/26.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/27.jpg", caption: "" },
+      { src: "images/galleries/conference/day-2/28.jpg", caption: "" },
     ],
   },
 ];
@@ -1202,7 +1215,7 @@ const ConferenceGallery = () => {
             >
               {s.label}
               <span className={`ml-2 text-xs ${activeTab ? "text-primary-foreground/80" : "text-muted-foreground/70"}`}>
-                {s.images.length}
+                {/* {s.images.length} */}
               </span>
             </button>
           );
