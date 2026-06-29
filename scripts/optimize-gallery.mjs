@@ -1,0 +1,151 @@
+#!/usr/bin/env node
+/**
+ * Conference gallery image optimization pipeline.
+ *
+ * Reads camera originals from   gallery-originals/<section>/
+ * Writes optimized WebP to       public/images/galleries/conference/<section>/<name>.webp
+ * Writes thumbnail WebP to       public/images/galleries/conference/<section>/thumbs/<name>.webp
+ * Generates a typed manifest at  src/data/galleryManifest.ts
+ *
+ * Originals are never modified. Re-run after adding/removing photos:
+ *     npm run optimize:gallery
+ *
+ * Quality is tuned for conference photography: full images stay visually
+ * indistinguishable from the originals at on-screen sizes, while download
+ * weight drops by ~95%.
+ */
+import sharp from "sharp";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const SRC_ROOT = path.join(ROOT, "gallery-originals");
+const OUT_ROOT = path.join(ROOT, "public", "images", "galleries", "conference");
+const MANIFEST = path.join(ROOT, "src", "data", "galleryManifest.ts");
+
+// Section folders -> display labels (also defines order in the gallery).
+const SECTIONS = [
+  { id: "pre-conference", label: "Pre-Conference" },
+  { id: "day-1", label: "Day 1" },
+  { id: "day-2", label: "Day 2" },
+];
+
+// Full image: large enough for high-DPI displays at the gallery's max width
+// (~896px CSS -> ~1792px @2x). 2048px longest edge covers that with headroom.
+const FULL = { maxDim: 2048, quality: 82 };
+// Thumbnail strip cells are ~96px (×3 DPR ≈ 288px); 400px keeps them crisp.
+const THUMB = { maxDim: 400, quality: 72 };
+
+const isImage = (f) => /\.(jpe?g|png|tiff?|webp)$/i.test(f);
+const naturalSort = (a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" });
+const kb = (n) => (n / 1024).toFixed(0);
+const mb = (n) => (n / 1048576).toFixed(2);
+
+// Optional caption sidecar so captions survive regeneration.
+// gallery-originals/captions.json -> { "day-1/01": "Inauguration", ... }
+let captions = {};
+const capPath = path.join(SRC_ROOT, "captions.json");
+if (fs.existsSync(capPath)) {
+  try {
+    captions = JSON.parse(fs.readFileSync(capPath, "utf8"));
+  } catch (e) {
+    console.warn(`! Could not parse ${capPath}: ${e.message}`);
+  }
+}
+
+async function run() {
+  if (!fs.existsSync(SRC_ROOT)) {
+    console.error(`No originals folder found at ${SRC_ROOT}. Nothing to do.`);
+    process.exit(1);
+  }
+
+  let origTotal = 0;
+  let outTotal = 0;
+  let count = 0;
+  const sections = [];
+
+  for (const { id, label } of SECTIONS) {
+    const srcDir = path.join(SRC_ROOT, id);
+    const outDir = path.join(OUT_ROOT, id);
+    const thumbDir = path.join(outDir, "thumbs");
+
+    if (!fs.existsSync(srcDir)) {
+      console.warn(`(skip) no originals folder for "${id}"`);
+      sections.push({ id, label, images: [] });
+      continue;
+    }
+
+    // Clean previously generated WebP so deleted photos don't linger.
+    if (fs.existsSync(outDir)) {
+      for (const f of fs.readdirSync(outDir)) {
+        if (f.toLowerCase().endsWith(".webp")) fs.rmSync(path.join(outDir, f));
+      }
+    }
+    fs.rmSync(thumbDir, { recursive: true, force: true });
+    fs.mkdirSync(thumbDir, { recursive: true });
+
+    const files = fs.readdirSync(srcDir).filter(isImage).sort(naturalSort);
+    const images = [];
+
+    for (const file of files) {
+      const base = path.parse(file).name; // "01"
+      const srcPath = path.join(srcDir, file);
+      origTotal += fs.statSync(srcPath).size;
+
+      // Full optimized image (EXIF orientation baked in, never enlarged).
+      const fullBuf = await sharp(srcPath, { failOn: "none" })
+        .rotate()
+        .resize({ width: FULL.maxDim, height: FULL.maxDim, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: FULL.quality, effort: 5 })
+        .toBuffer();
+      const meta = await sharp(fullBuf).metadata();
+      fs.writeFileSync(path.join(outDir, `${base}.webp`), fullBuf);
+
+      // Thumbnail.
+      const thumbBuf = await sharp(srcPath, { failOn: "none" })
+        .rotate()
+        .resize({ width: THUMB.maxDim, height: THUMB.maxDim, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: THUMB.quality, effort: 5 })
+        .toBuffer();
+      fs.writeFileSync(path.join(thumbDir, `${base}.webp`), thumbBuf);
+
+      outTotal += fullBuf.length + thumbBuf.length;
+      count += 1;
+
+      const rel = `/images/galleries/conference/${id}`;
+      images.push({
+        src: `${rel}/${base}.webp`,
+        thumb: `${rel}/thumbs/${base}.webp`,
+        width: meta.width,
+        height: meta.height,
+        caption: captions[`${id}/${base}`] ?? "",
+      });
+    }
+
+    sections.push({ id, label, images });
+    console.log(`  ${label.padEnd(16)} ${images.length} photos`);
+  }
+
+  // Write the typed manifest the gallery imports.
+  const out =
+    `// AUTO-GENERATED by scripts/optimize-gallery.mjs — do not edit by hand.\n` +
+    `// Run \`npm run optimize:gallery\` after adding/removing photos in gallery-originals/.\n\n` +
+    `export type GalleryImage = {\n` +
+    `  src: string;\n  thumb: string;\n  width: number;\n  height: number;\n  caption?: string;\n};\n\n` +
+    `export type GallerySection = { id: string; label: string; images: GalleryImage[] };\n\n` +
+    `export const CONFERENCE_GALLERY: GallerySection[] = ${JSON.stringify(sections, null, 2)};\n`;
+  fs.mkdirSync(path.dirname(MANIFEST), { recursive: true });
+  fs.writeFileSync(MANIFEST, out);
+
+  console.log("");
+  console.log(`  manifest: ${path.relative(ROOT, MANIFEST)}`);
+  console.log(`  originals: ${count} files, ${mb(origTotal)} MB`);
+  console.log(`  optimized: ${count * 2} files, ${mb(outTotal)} MB  (-${(100 * (origTotal - outTotal) / origTotal).toFixed(1)}%)`);
+  console.log(`  avg/photo: ${kb(outTotal / Math.max(count, 1))} KB (full + thumb)`);
+}
+
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

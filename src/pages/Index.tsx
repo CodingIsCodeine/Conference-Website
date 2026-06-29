@@ -11,6 +11,7 @@ import mediaPartnerLogo from "@/assets/icn_logo.png";
 import cabeqLogo from "@/assets/cabeq.png";
 import proceedingsLogo from "@/assets/proceedings.png";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { CONFERENCE_GALLERY } from "@/data/galleryManifest";
 
 
 const Index = () => {
@@ -1025,127 +1026,26 @@ const Index = () => {
 };
 
 
-/* ------------------------------------------------------------------ */
-/* Conference Gallery — tabbed (Pre-Conference / Day 1 / Day 2)         */
-/*                                                                      */
-/* 👉 PLACEHOLDERS: drop 15 photos per section at the paths below.      */
-/*    Folders: public/images/galleries/conference/{pre-conference,      */
-/*    day-1, day-2}/  — edit `src` and add a `caption` if you like.     */
-/*    Until a photo exists, that slot shows a styled placeholder tile.  */
-/* ------------------------------------------------------------------ */
-type GalleryImage = { src: string; caption?: string };
-type GallerySection = { id: string; label: string; images: GalleryImage[] };
 
-const CONFERENCE_GALLERY: GallerySection[] = [
-  {
-    id: "pre-conference",
-    label: "Pre-Conference",
-    images: [
-      { src: "/images/galleries/conference/pre-conference/01.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/02.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/03.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/04.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/05.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/06.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/07.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/08.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/09.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/10.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/11.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/12.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/13.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/14.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/15.JPG", caption: "" },
-      { src: "/images/galleries/conference/pre-conference/16.JPG", caption: "" },
-    ],
-  },
-  {
-    id: "day-1",
-    label: "Day 1",
-    images: [
-      { src: "/images/galleries/conference/day-1/01.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/02.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/03.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/04.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/05.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/06.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/07.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/08.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/09.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/10.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/11.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/12.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/13.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/14.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/15.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/16.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/17.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/18.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/19.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/20.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/21.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/22.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/23.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/24.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/25.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/26.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/27.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/28.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/29.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/30.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/31.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/32.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/33.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/34.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/35.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/36.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-1/37.JPG", caption: "" },
-    ],
-  },
-  {
-    id: "day-2",
-    label: "Day 2",
-    images: [
-      { src: "/images/galleries/conference/day-2/01.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/02.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/03.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/04.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/05.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/06.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/07.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/08.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/09.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/10.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/11.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/12.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/13.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/14.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/15.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/16.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/17.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/18.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/19.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/20.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/21.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/22.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/23.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/24.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/25.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/26.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/27.JPG", caption: "" },
-      { src: "/images/galleries/conference/day-2/28.JPG", caption: "" },
-    ],
-  },
-];
-
+/* ------------------------------------------------------------------ */
+/* Conference Gallery — tabbed (Pre-Conference / Day 1 / Day 2).        */
+/* Images come from the auto-generated manifest (src/data/galleryManifest)*/
+/* produced by `npm run optimize:gallery`: optimized full WebP for the    */
+/* viewer, tiny WebP thumbnails for the strip and the blurred backdrop.   */
+/* ------------------------------------------------------------------ */
 const ConferenceGallery = () => {
   const [sectionIdx, setSectionIdx] = useState(0);
   const [current, setCurrent] = useState(0);
   const [errored, setErrored] = useState<Record<string, boolean>>({});
   const [paused, setPaused] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const stripRef = useRef<HTMLDivElement>(null);
   const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const prefersReducedMotion =
+    typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
   const section = CONFERENCE_GALLERY[sectionIdx];
   const images = section.images;
@@ -1180,6 +1080,27 @@ const ConferenceGallery = () => {
       strip.scrollTo({ left: thumb.offsetLeft - strip.clientWidth / 2 + thumb.clientWidth / 2, behavior: "smooth" });
     }
   }, [current, sectionIdx]);
+
+  // Fade the featured image in on change WITHOUT remounting the <img> (which
+  // would discard the decoded bitmap and re-trigger work). Drop opacity, then
+  // onLoad restores it; the complete-check avoids a stuck-hidden image when the
+  // source is already cached or preloaded.
+  useEffect(() => {
+    const el = imgRef.current;
+    // react-dom 18.3 has no typed `fetchPriority` prop; set it on the element
+    // directly so the featured photo is fetched ahead of the thumbnails.
+    if (el) el.setAttribute("fetchpriority", "high");
+    setLoaded(!!(el && el.complete && el.naturalWidth > 0));
+  }, [current, sectionIdx]);
+
+  // Preload the neighbouring photos so prev/next navigation feels instant.
+  useEffect(() => {
+    if (!total) return;
+    [current + 1, current - 1].forEach((n) => {
+      const img = new window.Image();
+      img.src = images[(n + total) % total].src;
+    });
+  }, [current, total, images]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -1246,16 +1167,20 @@ const ConferenceGallery = () => {
             {/* Blurred backdrop fills the letterbox bars (the photo is never cropped). */}
             <div
               className="absolute inset-0 scale-110 bg-cover bg-center blur-xl"
-              style={{ backgroundImage: `url("${activeImg.src}")` }}
+              style={{ backgroundImage: `url("${activeImg.thumb}")` }}
               aria-hidden="true"
             />
             <div className="absolute inset-0 bg-white/40" aria-hidden="true" />
             <img
-              key={keyOf(current)}
+              ref={imgRef}
               src={activeImg.src}
               alt={activeImg.caption || `${section.label} photo ${current + 1}`}
+              decoding="async"
+              onLoad={() => setLoaded(true)}
               onError={() => markErrored(current)}
-              className="gallery-fade relative z-[1] w-full h-full object-contain"
+              className={`relative z-[1] w-full h-full object-contain ${
+                prefersReducedMotion ? "" : "transition-opacity duration-500"
+              } ${loaded ? "opacity-100" : "opacity-0"}`}
             />
           </>
         )}
@@ -1268,9 +1193,9 @@ const ConferenceGallery = () => {
         )}
 
         {/* Counter */}
-        <div className="absolute top-3 right-3 z-[2] rounded-full bg-black/40 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
+        {/* <div className="absolute top-3 right-3 z-[2] rounded-full bg-black/40 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
           {current + 1} / {total}
-        </div>
+        </div> */}
 
         {/* Prev / Next */}
         <button
@@ -1312,9 +1237,10 @@ const ConferenceGallery = () => {
                 </span>
               ) : (
                 <img
-                  src={img.src}
+                  src={img.thumb}
                   alt=""
                   loading="lazy"
+                  decoding="async"
                   onError={() => markErrored(i)}
                   className="w-full h-full object-cover"
                 />

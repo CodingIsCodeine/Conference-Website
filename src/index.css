@@ -294,24 +294,15 @@ html, body {
   }
 }
 
-/* Conference gallery: gentle fade when the featured photo changes. */
-@keyframes galleryFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.gallery-fade {
-  animation: galleryFade 0.5s ease-out;
-}
-
 /* Respect users who prefer reduced motion: pause continuous decorative
-   animations (gradient flow, pulsing glows, marquee/ticker, gallery fade).
-   Content and hover affordances remain fully functional. */
+   animations (gradient flow, pulsing glows, marquee/ticker). Content and hover
+   affordances remain fully functional. The gallery's featured-image fade is a
+   short opacity transition that the component skips when reduced motion is on. */
 @media (prefers-reduced-motion: reduce) {
   .animate-soft-pulse,
   .animate-pulse,
   .animate-footer-ticker,
   .animate-marquee,
-  .gallery-fade,
   [style*="gradientFlow"] {
     animation: none !important;
   }

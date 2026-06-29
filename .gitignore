@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Conference gallery: camera originals are large and kept locally only.
+# Optimized WebP copies are generated into public/ by `npm run optimize:gallery`.
+gallery-originals/*
+!gallery-originals/README.md
+
 # Editor / local tooling directories and files
 .claude/
 .vscode/*
