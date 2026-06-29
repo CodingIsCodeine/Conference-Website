@@ -16,13 +16,6 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
     "id": "pre-conference",
     "label": "Pre-Conference",
     "images": [
-      // {
-      //   "src": "/images/galleries/conference/pre-conference/01.webp",
-      //   "thumb": "/images/galleries/conference/pre-conference/thumbs/01.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
       {
         "src": "/images/galleries/conference/pre-conference/02.webp",
         "thumb": "/images/galleries/conference/pre-conference/thumbs/02.webp",
@@ -169,13 +162,6 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
         "height": 1365,
         "caption": ""
       },
-      // {
-      //   "src": "/images/galleries/conference/day-1/06.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/06.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
       {
         "src": "/images/galleries/conference/day-1/07.webp",
         "thumb": "/images/galleries/conference/day-1/thumbs/07.webp",
@@ -183,20 +169,6 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
         "height": 1365,
         "caption": ""
       },
-      // {
-      //   "src": "/images/galleries/conference/day-1/08.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/08.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
-      // {
-      //   "src": "/images/galleries/conference/day-1/09.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/09.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
       {
         "src": "/images/galleries/conference/day-1/10.webp",
         "thumb": "/images/galleries/conference/day-1/thumbs/10.webp",
@@ -225,20 +197,6 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
         "height": 1365,
         "caption": ""
       },
-      // {
-      //   "src": "/images/galleries/conference/day-1/14.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/14.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
-      // {
-      //   "src": "/images/galleries/conference/day-1/15.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/15.webp",
-      //   "width": 1365,
-      //   "height": 2048,
-      //   "caption": ""
-      // },
       {
         "src": "/images/galleries/conference/day-1/16.webp",
         "thumb": "/images/galleries/conference/day-1/thumbs/16.webp",
@@ -379,13 +337,6 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
         "height": 1365,
         "caption": ""
       },
-      // {
-      //   "src": "/images/galleries/conference/day-1/36.webp",
-      //   "thumb": "/images/galleries/conference/day-1/thumbs/36.webp",
-      //   "width": 2048,
-      //   "height": 1365,
-      //   "caption": ""
-      // },
       {
         "src": "/images/galleries/conference/day-1/37.webp",
         "thumb": "/images/galleries/conference/day-1/thumbs/37.webp",
@@ -591,6 +542,34 @@ export const CONFERENCE_GALLERY: GallerySection[] = [
       {
         "src": "/images/galleries/conference/day-2/28.webp",
         "thumb": "/images/galleries/conference/day-2/thumbs/28.webp",
+        "width": 2048,
+        "height": 1365,
+        "caption": ""
+      },
+      {
+        "src": "/images/galleries/conference/day-2/29.webp",
+        "thumb": "/images/galleries/conference/day-2/thumbs/29.webp",
+        "width": 2048,
+        "height": 1365,
+        "caption": ""
+      },
+      {
+        "src": "/images/galleries/conference/day-2/30.webp",
+        "thumb": "/images/galleries/conference/day-2/thumbs/30.webp",
+        "width": 2048,
+        "height": 1365,
+        "caption": ""
+      },
+      {
+        "src": "/images/galleries/conference/day-2/31.webp",
+        "thumb": "/images/galleries/conference/day-2/thumbs/31.webp",
+        "width": 2048,
+        "height": 1365,
+        "caption": ""
+      },
+      {
+        "src": "/images/galleries/conference/day-2/32.webp",
+        "thumb": "/images/galleries/conference/day-2/thumbs/32.webp",
         "width": 2048,
         "height": 1365,
         "caption": ""
