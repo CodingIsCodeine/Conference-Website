@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Ticker from "@/components/Ticker";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 /* -------------------------------------------------
    TIER COLOR CONFIG (AUTO-SCALING)
@@ -33,18 +34,25 @@ const featuredSponsors = [
   {
     name: "Sahajanand Medical Technologies Limited",
     tier: "Gold",
-    logo: "/images/smt.png",
+    logo: "/images/sponsors/smt.png",
     website: "https://smtpl.com/",
   },
   {
     name: "Meril Life Sciences Private Limited",
     tier: "Gold",
-    logo: "/images/meril.jpeg",
+    logo: "/images/sponsors/meril.jpeg",
     website: "https://www.merillife.com/",
   },
 ];
 
 const Sponsors = () => {
+  usePageMeta({
+    title: "Sponsors & Exhibitors | GCESDIP 2.0 — SVNIT Surat",
+    description:
+      "Sponsorship tiers, deliverables, and exhibition opportunities for GCESDIP 2.0 at SVNIT Surat.",
+    path: "/sponsors",
+  });
+
   const sponsorshipTiers = [
     {
       tier: "Platinum",

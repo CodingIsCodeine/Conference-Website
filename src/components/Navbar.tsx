@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NavLink } from "@/components/NavLink";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -7,6 +7,26 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
+
+  // Close the "More" dropdown on Escape or a click outside it.
+  useEffect(() => {
+    if (!moreOpen) return;
+    const handlePointer = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMoreOpen(false);
+    };
+    document.addEventListener("mousedown", handlePointer);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handlePointer);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [moreOpen]);
 
   // MAIN LINKS (visible)
   const mainLinks = [
@@ -33,7 +53,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4 shrink-0">
             <div className="h-[68px] w-[68px] flex items-center justify-center rounded-full bg-white p-[4px] overflow-hidden translate-y-[-1px] ring-2 ring-white">
               <img
-                src="/images/gcesdiplogo.png"
+                src="/images/logos/gcesdiplogo.png"
                 alt="GCESDIP Logo"
                 className="object-contain h-full w-full translate-y-[-3px] translate-x-[-0px]"
               />
@@ -59,16 +79,19 @@ const Navbar = () => {
             ))}
 
             {/* MORE DROPDOWN */}
-            <div className="relative">
+            <div className="relative" ref={moreRef}>
               <button
                 onClick={() => setMoreOpen(!moreOpen)}
+                aria-haspopup="true"
+                aria-expanded={moreOpen}
+                aria-controls="more-menu"
                 className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-md flex items-center gap-1"
               >
                 More <ChevronDown size={16} />
               </button>
 
               {moreOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-academic-dark border border-white/10 rounded-md shadow-lg py-2 z-50">
+                <div id="more-menu" className="absolute right-0 mt-2 w-56 bg-academic-dark border border-white/10 rounded-md shadow-lg py-2 z-50">
                   {moreLinks.map((link) => (
                     <NavLink
                       key={link.to}

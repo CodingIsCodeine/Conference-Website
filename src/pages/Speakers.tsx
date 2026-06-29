@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Ticker from "@/components/Ticker";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 interface Member {
   name: string;
@@ -13,16 +14,22 @@ interface Member {
   link?: string;
 }
 
-const Committee = () => {
+const Speakers = () => {
+  usePageMeta({
+    title: "Speakers | GCESDIP 2.0 — SVNIT Surat",
+    description:
+      "Plenary and keynote speakers for GCESDIP 2.0, the international green chemistry and engineering conference at SVNIT Surat.",
+    path: "/speakers",
+  });
 
-  // -------------------- NEW SPEAKER LISTS --------------------
+  // -------------------- SPEAKER LISTS --------------------
 
   const plenarySpeaker: Member[] = [
     {
       name: "Prof. A. B. Pandit",
       title: "Vice Chancellor, ICT Mumbai",
       initials: "AP",
-      image: "/images/pandit.png",
+      image: "/images/dignitaries/pandit.png",
       link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=em"
     },
     {
@@ -37,7 +44,7 @@ const Committee = () => {
       name: "Prof. K.K. Pant", 
       title: "Director, IIT Roorkee", 
       initials: "KP", 
-      image: "/images/pant.png", 
+      image: "/images/dignitaries/pant.png", 
       link: "https://web.iitd.ac.in/~kkpant/biosketch.html"
 
     },
@@ -45,7 +52,7 @@ const Committee = () => {
       name: "Prof. Neeraj Rai", 
       title: "Mississippi University, USA", 
       initials: "NR", 
-      image: "/images/rai.png", 
+      image: "/images/dignitaries/rai.png", 
       link: "https://www.che.msstate.edu/people/faculty/neeraj-rai/" },
 
   ];
@@ -55,28 +62,28 @@ const Committee = () => {
       name: "Dr. S. Sridhar",
       title: "CSIR-IICT Hyderabad",
       initials: "SS",
-      image: "/images/sridhar.png",
+      image: "/images/dignitaries/sridhar.png",
       link: "https://www.linkedin.com/in/dr-s-sridhar-iict-7601011/"
     },
     { 
       name: "Prof. Parameswar K. Iyer", 
       title: "IIT Guwahati", 
       initials: "PI", 
-      image: "/images/iyer.png", 
+      image: "/images/dignitaries/iyer.png", 
       link: "https://www.iitg.ac.in/chemistry/fac/pki/profile.html" 
     },
     { 
       name: "Prof. Parag R. Gogate", 
       title: "ICT Mumbai", 
       initials: "PG", 
-      image: "/images/parag.png", 
+      image: "/images/dignitaries/parag.png", 
       link: "https://www.ictmumbai.edu.in/emp_profiledetail.aspx?nDeptID=gq" 
     },
     {
       name: "Dr. Gaurav Sharma",
       title: "IIT Roorkee",
       initials: "GS",
-      image: "/images/gaurav.png",
+      image: "/images/dignitaries/gaurav.png",
       link: "https://www.iitr.ac.in/~CH/goravfch"
     },
     {
@@ -210,19 +217,8 @@ const Committee = () => {
       </main>
 
       <Footer />
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
-        }
-        .animate-marquee {
-          display: inline-block;
-          animation: marquee 20s linear infinite;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default Committee;
+export default Speakers;

@@ -1,4 +1,5 @@
 import { Mail, MapPin, Link as Chain } from "lucide-react";
+import { Link } from "react-router-dom";
 import FooterSponsorsTicker from "@/components/FooterSponsorsTicker";
 
 const Footer = () => {
@@ -20,9 +21,16 @@ const Footer = () => {
             </h4>
 
             <div className="flex flex-col items-center space-y-3 text-sm text-white/80">
-              <a href="#" className="hover:text-primary">Abstract Submission</a>
-              <a href="#" className="hover:text-primary">Register Now</a>
-              <a href="#" className="hover:text-primary">Download Brochure</a>
+              <Link to="/abstract" className="hover:text-primary">Abstract Submission</Link>
+              <Link to="/registration" className="hover:text-primary">Register Now</Link>
+              <a
+                href="/images/brochure_final.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary"
+              >
+                Download Brochure
+              </a>
             </div>
           </div>
 
@@ -45,6 +53,7 @@ const Footer = () => {
               <a
                 href="https://maps.google.com/?q=SVNIT+Surat"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center text-primary"
               >
                 <MapPin className="h-4 w-4 mr-1" /> View on Map
@@ -94,7 +103,7 @@ const Footer = () => {
               Supported by
             </p>
             <img
-              src="/images/royal.jpeg"
+              src="/images/logos/royal.jpeg"
               alt="RSC Logo"
               className="h-24 object-contain bg-white rounded-sm px-3 py-1"
             />

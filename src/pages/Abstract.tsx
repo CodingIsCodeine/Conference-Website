@@ -4,9 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Award, BookOpen, Newspaper, Trophy } from "lucide-react";
 import Ticker from "@/components/Ticker";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 
 const Abstract = () => {
+  usePageMeta({
+    title: "Abstract Submission | GCESDIP 2.0 — SVNIT Surat",
+    description:
+      "Abstract submission guidelines, conference themes, awards, and journal partners for GCESDIP 2.0 at SVNIT Surat.",
+    path: "/abstract",
+  });
+
   const topics = [
     "Process Intensification Techniques",
     "Sustainable approaches in Pharmaceutical and Chemical Industries",
@@ -164,7 +172,7 @@ const Abstract = () => {
                 </p>
 
                 <img 
-                  src="/images/royal.jpeg" 
+                  src="/images/logos/royal.jpeg" 
                   alt="Royal Society of Chemistry Logo" 
                   className="h-32 object-contain mx-auto"
                 />

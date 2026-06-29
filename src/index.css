@@ -286,8 +286,23 @@ html, body {
 }
 
 @keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 60%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
+/* Respect users who prefer reduced motion: pause continuous decorative
+   animations (gradient flow, pulsing glows, marquee/ticker). Content and
+   hover affordances remain fully functional. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-soft-pulse,
+  .animate-pulse,
+  .animate-footer-ticker,
+  .animate-marquee,
+  [style*="gradientFlow"] {
+    animation: none !important;
+  }
+}

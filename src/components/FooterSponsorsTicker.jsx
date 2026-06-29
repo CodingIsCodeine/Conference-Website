@@ -36,11 +36,11 @@ const mediaPartnerLink = "https://www.indianchemicalnews.com/";
 const sponsors = [
   {
     name: "Sahajanand Medical Technologies Limited",
-    logo: "/images/smt2.png",
+    logo: "/images/sponsors/smt2.png",
   },
   {
     name: "Meril Life Sciences Private Limited",
-    logo: "/images/meril2.jpeg",
+    logo: "/images/sponsors/meril2.jpeg",
   },
 ];
 

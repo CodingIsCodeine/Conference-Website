@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/tooltip";
 import React from "react";
 import Ticker from "@/components/Ticker";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 
 type Person = {
@@ -22,18 +23,64 @@ type Person = {
   imageSrc?: string;
 };
 
+const ScholarCard = ({ person }: { person: Person }) => {
+  const [open, setOpen] = React.useState(false);
+
+  // On touch devices the tooltip is toggled on tap instead of hover.
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
+  return (
+    <TooltipProvider delayDuration={150} skipDelayDuration={0}>
+      <Tooltip open={isMobile ? open : undefined} onOpenChange={setOpen}>
+        <TooltipTrigger
+          asChild
+          onClick={() => {
+            if (isMobile) setOpen((prev) => !prev);
+          }}
+        >
+          <Card
+            tabIndex={0}
+            className="shadow-card hover:shadow-hover transition-smooth cursor-pointer hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            <CardContent className="p-6 text-center">
+              <Avatar className="h-40 w-40 mx-auto mb-3 border-2 border-primary">
+                <AvatarImage src={person.imageSrc} alt={person.name} />
+                <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
+                  {person.initials}
+                </AvatarFallback>
+              </Avatar>
+              <h4 className="text-base font-semibold mb-1">{person.name}</h4>
+              <p className="text-xs text-muted-foreground">{person.title}</p>
+            </CardContent>
+          </Card>
+        </TooltipTrigger>
+        <TooltipContent side="top" className="text-sm text-center">
+          <p className="max-w-xs">{person.description ?? "Student/Scholar — short bio or role."}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  );
+};
+
 const Organizing = () => {
+  usePageMeta({
+    title: "Organizing Committee | GCESDIP 2.0 — SVNIT Surat",
+    description:
+      "Patrons, chairpersons, organizing secretaries, and student coordinators of GCESDIP 2.0 at SVNIT Surat.",
+    path: "/organising",
+  });
+
   // --- DATA ---
   const chiefPatrons: Person[] = [
     { name: "Prof.(Dr.) Anupam Shukla", title: "Director, SVNIT, Surat", initials: "AS", hasCv: false, cvLink: "/assets/cvs/akv.pdf", imageSrc: "/images/dignitaries/anupam.png" },
-    { name: "Prof.(Dr.) A. B. Pandit", title: "Vice Chancellor, ICT Mumbai", initials: "ABP", hasCv: false, cvLink: "/assets/cvs/blr.pdf", imageSrc: "/images/pandit.png" },
-    { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: false, cvLink: "/assets/cvs/csn.pdf", imageSrc: "/images/gaur.png" },
+    { name: "Prof.(Dr.) A. B. Pandit", title: "Vice Chancellor, ICT Mumbai", initials: "ABP", hasCv: false, cvLink: "/assets/cvs/blr.pdf", imageSrc: "/images/dignitaries/pandit.png" },
+    { name: "Prof.(Dr.) Manoj Singh Gaur", title: "Director, IIT Jammu", initials: "MSG", hasCv: false, cvLink: "/assets/cvs/csn.pdf", imageSrc: "/images/dignitaries/gaur.png" },
   ];
 
   const patron: Person = { name: "Dr. V. N. Lad", title: "Professor & Head, DoChE, SVNIT, Surat", initials: "VNL", hasCv: false, imageSrc: "/images/dignitaries/laad.png" };
 
   const chairmen: Person[] = [
-    { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/jigisha.png" },
+    { name: "Dr. Jigisha K. Parikh", title: "Professor, DoChE, SVNIT, Surat ", initials: "JKP", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/jkp.pdf", imageSrc: "/images/dignitaries/jigisha.png" },
     { name: "Dr. Meghal A. Desai", title: "Professor, DoChE, SVNIT, Surat ", initials: "MAD", hasCv: true, cvLink: "https://svnit.ac.in/facup/CV_Meghal_Website_July2025.pdf", imageSrc: "/images/dignitaries/desai.png" },
   ];
 
@@ -42,7 +89,7 @@ const Organizing = () => {
     { name: "Dr. G. C. Jadeja", title: "Associate Professor, DoChE, SVNIT, Surat ", initials: "GCJ", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/GC%20Jadeja.pdf", imageSrc: "/images/dignitaries/jadeja.png" },
     { name: "Dr. Sarita Kalla", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/Resume_SVNIT.pdf", imageSrc: "/images/dignitaries/kalla.png" },
     { name: "Dr. S. K. Sundar ", title: "Assistant Professor, DoChE, SVNIT, Surat ", initials: "SSK", hasCv: true, cvLink: "https://www.svnit.ac.in/facup/SUNDARSK_CV.pdf", imageSrc: "/images/dignitaries/sundar.png" },
-    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, ChE, IIT Jammu ", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/nimdeo.png" },
+    { name: "Dr. Yogesh Nimdeo", title: "Assistant Professor, ChE, IIT Jammu ", initials: "YN", hasCv: true, cvLink: "https://www.iitjammu.ac.in/chemical-engineering/faculty.html?faculty=~yogeshmadhukarraonimdeo#prod-curriculum", imageSrc: "/images/dignitaries/nimdeo.png" },
   ];
 
   const phdScholars: Person[] = [
@@ -54,7 +101,7 @@ const Organizing = () => {
     { name: "Mr. Aamir Vhora", title: "", initials: "AV", imageSrc: "/images/dignitaries/amir.png", description:"Developing Advanced membrane separation systems through innovative membrane fabrication integrated with biomaterial nanoparticles to enhance selectivity, permeability, and sustainability"},
     { name: "Ms. Shalinee Gupta", title: "", initials: "SG", imageSrc: "/images/dignitaries/shalinee.png", description: "Advance membrane separation process, Nanobubbles technology"},
     { name: "Mr. Sachin Thorat", title: "", initials: "ST", imageSrc: "/images/dignitaries/sachin.png", description: "Nano- drug delivery systems, Membrane synthesis and engineering, membrane assisted crystallization, liquid extraction, Mathematical modeling and simulation"},
-    { name: "Mr. Nishant Chaudhary", title: "", initials: "NC", imageSrc: "/images/nishant.png", description: ""},
+    { name: "Mr. Nishant Chaudhary", title: "", initials: "NC", imageSrc: "/images/dignitaries/nishant.png", description: ""},
   ];
 
   const mtechStudents: Person[] = [
@@ -66,9 +113,9 @@ const Organizing = () => {
 
   const btechStudents: Person[] = [
     { name: "Mr. Hriday K. Samdani", title: "", initials: "HKS", imageSrc: "/images/dignitaries/hriday.png", description: "AIML Enthusiast, AI in Drug Discovery and Development" },
-    { name: "Ms. Diya Sharma", title: "", initials: "DS", imageSrc: "/images/diya.png", description: "Antisolvent crystallization and its application in improving the solubility and solid-state properties of pharmaceutical drugs" },
-    { name: "Ms. Vedica Mahendian", title: "", initials: "VM", imageSrc: "/images/Vedica.png", description: "Nanotechnology and applications of engineering in the pharmaceutical sector, sustainable energy and waste valorization." },
-    { name: "Ms. Akshita Jain", title: "", initials: "AJ", imageSrc: "/images/akshita.png", description: "Nanotechnology, Drug Delivery, Microbial Fuel Cells,Process Economics, Public speaking, Event logistics." },
+    { name: "Ms. Diya Sharma", title: "", initials: "DS", imageSrc: "/images/dignitaries/diya.png", description: "Antisolvent crystallization and its application in improving the solubility and solid-state properties of pharmaceutical drugs" },
+    { name: "Ms. Vedica Mahendian", title: "", initials: "VM", imageSrc: "/images/dignitaries/Vedica.png", description: "Nanotechnology and applications of engineering in the pharmaceutical sector, sustainable energy and waste valorization." },
+    { name: "Ms. Akshita Jain", title: "", initials: "AJ", imageSrc: "/images/dignitaries/akshita.png", description: "Nanotechnology, Drug Delivery, Microbial Fuel Cells,Process Economics, Public speaking, Event logistics." },
   ];
 
   // --- RENDER HELPERS ---
@@ -125,43 +172,6 @@ const Organizing = () => {
     );
   };
 
-const renderScholar = (person: Person) => {
-  const [open, setOpen] = React.useState(false);
-
-  // Detect mobile screen width
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
-  return (
-    <TooltipProvider delayDuration={150} skipDelayDuration={0} key={person.name}>
-      <Tooltip open={isMobile ? open : undefined} onOpenChange={setOpen}>
-        <TooltipTrigger
-          asChild
-          onClick={() => {
-            // Toggle tooltip manually on tap for mobile
-            if (isMobile) setOpen((prev) => !prev);
-          }}
-        >
-          <Card className="shadow-card hover:shadow-hover transition-smooth cursor-pointer hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(0,0,0,0.2)] duration-300">
-            <CardContent className="p-6 text-center">
-              <Avatar className="h-40 w-40 mx-auto mb-3 border-2 border-primary">
-                <AvatarImage src={person.imageSrc} alt={person.name} />
-                <AvatarFallback className="bg-secondary text-secondary-foreground text-lg">
-                  {person.initials}
-                </AvatarFallback>
-              </Avatar>
-              <h4 className="text-base font-semibold mb-1">{person.name}</h4>
-              <p className="text-xs text-muted-foreground">{person.title}</p>
-            </CardContent>
-          </Card>
-        </TooltipTrigger>
-        <TooltipContent side="top" className="text-sm text-center">
-          <p className="max-w-xs">{person.description ?? "Student/Scholar — short bio or role."}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
-};
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -213,7 +223,9 @@ const renderScholar = (person: Person) => {
             <div className="mb-12">
               <h3 className="text-xl font-semibold text-center mb-6">PhD Research Scholars</h3>
               <div className="flex flex-wrap justify-center gap-4">
-                {phdScholars.map(renderScholar)}
+                {phdScholars.map((person) => (
+                  <ScholarCard key={person.name} person={person} />
+                ))}
               </div>
             </div>
 
@@ -221,7 +233,9 @@ const renderScholar = (person: Person) => {
             <div className="mb-12">
               <h3 className="text-xl font-semibold text-center mb-6">M.Tech Students</h3>
               <div className="flex flex-wrap justify-center gap-4">
-                {mtechStudents.map(renderScholar)}
+                {mtechStudents.map((person) => (
+                  <ScholarCard key={person.name} person={person} />
+                ))}
               </div>
             </div>
 
@@ -229,7 +243,9 @@ const renderScholar = (person: Person) => {
             <div className="mb-12">
               <h3 className="text-xl font-semibold text-center mb-6">B.Tech Students</h3>
               <div className="flex flex-wrap justify-center gap-4">
-                {btechStudents.map(renderScholar)}
+                {btechStudents.map((person) => (
+                  <ScholarCard key={person.name} person={person} />
+                ))}
               </div>
             </div>
 

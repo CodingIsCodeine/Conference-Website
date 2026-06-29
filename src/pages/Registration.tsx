@@ -6,10 +6,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle2, Home } from "lucide-react";
 import Ticker from "@/components/Ticker";
-import { Mail, MapPin, Link as Chain } from "lucide-react";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 
 const Registration = () => {
+  usePageMeta({
+    title: "Registration | GCESDIP 2.0 — SVNIT Surat",
+    description:
+      "Registration fees, payment details, and accommodation information for GCESDIP 2.0 at SVNIT Surat.",
+    path: "/registration",
+  });
+
   const registrationFees = [
     { category: "UG Students", regular: "Rs. 2,950" },
     { category: "PG/PhD/Postdoc/Research Fellows", regular: "Rs. 4,130" },
@@ -166,7 +173,7 @@ const Registration = () => {
 
                 <div className="flex justify-center mt-6">
                   <img
-                    src="/images/qrcode.png"
+                    src="/images/misc/qrcode.png"
                     alt="QR Code for Payment"
                     className="w-48 h-48 object-contain border rounded-lg shadow-md"
                   />
@@ -227,7 +234,7 @@ const Registration = () => {
                 ------------------------------ */}
                 <div className="w-full flex justify-center mt-4">
                   <img
-                    src="/images/location.png"
+                    src="/images/misc/location.png"
                     alt="Guest House"
                     className="w-full max-w-2xl rounded-lg shadow-md object-contain"
                   />

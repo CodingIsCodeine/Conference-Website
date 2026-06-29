@@ -80,6 +80,16 @@ const ImageCarousel = ({
         aria-label="Image carousel"
         onKeyDown={handleKeyDown}
       >
+        {/* Blurred backdrop of the current image fills the letterbox bars so
+            mismatched aspect ratios don't leave flat gray space. A single
+            layer keeps paint cheap; the images themselves are never cropped. */}
+        <div
+          className="absolute inset-0 scale-110 bg-cover bg-center blur-xl"
+          style={{ backgroundImage: `url("${srcs[currentIndex]}")` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-white/30" aria-hidden="true" />
+
         {/* Slides */}
         {srcs.map((src, i) => (
           <img

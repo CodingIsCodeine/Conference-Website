@@ -10,9 +10,17 @@ import jmpLogo from "@/assets/jmp-logo.png";
 import mediaPartnerLogo from "@/assets/icn_logo.png";
 import cabeqLogo from "@/assets/cabeq.png";
 import proceedingsLogo from "@/assets/proceedings.png";
+import { usePageMeta } from "@/hooks/usePageMeta";
 
 
 const Index = () => {
+  usePageMeta({
+    title: "GCESDIP 2.0 — Green Chemistry Conference | SVNIT Surat",
+    description:
+      "2nd International Conference on Green Chemistry and Engineering towards Sustainable Development — An Industrial Perspective, hosted by SVNIT Surat on 17th–18th April 2026.",
+    path: "/",
+  });
+
   const [showHeroText, setShowHeroText] = useState(true);
   const [showWorkshop, setShowWorkshop] = useState(false);
   const [showLogos, setShowLogos] = useState(false);
@@ -23,8 +31,8 @@ const Index = () => {
   const [showAwards, setShowAwards] = useState(false);
 
   const goldSponsors = [
-    { name: "Sahajanand Medical Technologies Limited", logo: "/images/smt.png" },
-    { name: "Meril Life Sciences Private Limited", logo: "/images/meril.jpeg" },
+    { name: "Sahajanand Medical Technologies Limited", logo: "/images/sponsors/smt.png" },
+    { name: "Meril Life Sciences Private Limited", logo: "/images/sponsors/meril.jpeg" },
   ];
 
   useEffect(() => {
@@ -322,10 +330,10 @@ const Index = () => {
           <div className="pt-2">
             <ImageCarousel
               images={[
-                "/images/dept-6.jpg",
-                "/images/dept-4.jpg",
-                "/images/dept-7.png",
-                "/images/dept-8.jpg",
+                "/images/galleries/department/dept-6.jpg",
+                "/images/galleries/department/dept-4.jpg",
+                "/images/galleries/department/dept-7.png",
+                "/images/galleries/department/dept-8.jpg",
               ]}
               interval={3500}
               className="mt-4"
@@ -355,7 +363,7 @@ const Index = () => {
 
           {/* Slide 0 — Conference */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-            showHeroText ? "opacity-100 trancyan-y-0" : "opacity-0 -trancyan-y-8"
+            showHeroText ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"
           }`}>
             <div className="container mx-auto px-4 text-center">
               <p className="text-xl md:text-2xl font-semibold mb-4">
@@ -370,7 +378,7 @@ const Index = () => {
 
           {/* Slide 1 — Workshop */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-            showWorkshop ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-6"
+            showWorkshop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}>
             <div className="container mx-auto px-4 text-center max-w-4xl -mt-8">
               <p className="text-sm md:text-base uppercase tracking-widest text-white/80 mb-4">
@@ -393,28 +401,28 @@ const Index = () => {
 
           {/* Slide 2 — Organized by / Logos */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
-            showLogos ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showLogos ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center -mt-10">
               <h2 className="text-2xl font-bold mb-6">Organized by</h2>
-              <img src="/images/svnit.png" className="mx-auto h-36 mb-10" />
+              <img src="/images/logos/svnit.png" alt="SVNIT Surat logo" className="mx-auto h-36 mb-10" />
               <h3 className="text-xl font-semibold mb-6">In association with</h3>
               <div className="flex justify-center gap-10">
-                <img src="/images/ict.png" className="h-36" />
-                <img src="/images/dignitaries/jammu.jpg" className="h-32 rounded-sm" />
+                <img src="/images/logos/ict.png" alt="ICT Mumbai logo" className="h-36" />
+                <img src="/images/logos/jammu.jpg" alt="IIT Jammu logo" className="h-32 rounded-sm" />
               </div>
             </div>
           </div>
 
           {/* Slide 3 — ANRF Sponsor */}
           <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
-            showAnrf ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showAnrf ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
               Sponsored by
             </p>
             <img
-              src="/images/anrf.jpg"
+              src="/images/logos/anrf.jpg"
               alt="ANRF Logo"
               className="h-20 md:h-28 object-contain mb-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm"
             />
@@ -425,7 +433,7 @@ const Index = () => {
 
           {/* Slide 4 — Gold Sponsors */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showGoldSponsor ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showGoldSponsor ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center relative w-full max-w-5xl mx-auto px-6">
               <div className="absolute inset-0 -z-10 flex items-center justify-center">
@@ -461,7 +469,7 @@ const Index = () => {
 
           {/* Slide 5 — Media Partner */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showMediaPartner ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showMediaPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center">
               <p className="uppercase tracking-widest mb-6 text-sky-200 font-semibold">
@@ -483,7 +491,7 @@ const Index = () => {
 
           {/* Slide 6 — Journal Partners */}
           <div className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
-            showJournalPartner ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showJournalPartner ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <div className="text-center">
               <p className="uppercase tracking-widest mb-6 text-emerald-200 font-semibold">
@@ -506,13 +514,13 @@ const Index = () => {
 
           {/* Slide 7 — Awards Supported by */}
           <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${
-            showAwards ? "opacity-100 trancyan-y-0" : "opacity-0 trancyan-y-8"
+            showAwards ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}>
             <p className="text-lg md:text-xl font-semibold mb-4 text-white drop-shadow-lg">
               Awards Supported by
             </p>
             <img
-              src="/images/royal.jpeg"
+              src="/images/logos/royal.jpeg"
               alt="RCS Logo"
               className="h-20 md:h-28 object-contain mb-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm"
             />
@@ -581,10 +589,11 @@ const Index = () => {
   className="py-20 relative overflow-hidden"
   style={{
     background: "linear-gradient(120deg, #eef2f7, #d1fae5, #a7f3d0, #fef9c3, #fde68a, #d1fae5)",
-    backgroundSize: "220% 220%",
-    animation: "gradientFlow 8s linear infinite"
+    backgroundSize: "300% 300%",
+    animation: "gradientFlow 6s linear infinite"
   }}
->
+> 
+
   {/* SOFT OVERLAY (reduces harshness + adds premium feel) */}
   <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px] pointer-events-none" />
 
@@ -1018,188 +1027,20 @@ const Index = () => {
   );
 };
 
-// /* ------------------------------------------------------------------ */
-// /* CONFERENCE GALLERY — full-width featured carousel with thumbnails   */
-// /* ------------------------------------------------------------------ */
-
-// /**
-//  * Replace the src values below with your actual conference photo paths.
-//  * Supports any mix of portrait, landscape, or square images — no cropping.
-//  * Suggested folder: /images/conf-gallery/
-//  */
-// const GALLERY_IMAGES = [
-//   { src: "/images/conf-gallery/conf-1.jpg",  caption: "Inauguration Ceremony" },
-//   { src: "/images/conf-gallery/conf-2.jpg",  caption: "Keynote Address" },
-//   { src: "/images/conf-gallery/conf-3.jpg",  caption: "Preconference Workshop — DOE with JMP" },
-//   { src: "/images/conf-gallery/conf-4.jpg",  caption: "Oral Presentation Session" },
-//   { src: "/images/conf-gallery/conf-5.jpg",  caption: "Poster Presentations" },
-//   { src: "/images/conf-gallery/conf-6.jpg",  caption: "RSC Award Ceremony" },
-//   { src: "/images/conf-gallery/conf-7.jpg",  caption: "Panel Discussion" },
-//   { src: "/images/conf-gallery/conf-8.jpg",  caption: "Networking & Interactions" },
-//   { src: "/images/conf-gallery/conf-9.jpg",  caption: "Closing Ceremony" },
-//   { src: "/images/conf-gallery/conf-10.jpg", caption: "Group Photograph" },
-// ];
-
-// const ConferenceGallery = () => {
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const [isPlaying, setIsPlaying] = useState(true);
-//   const touchStartX = useRef(null);
-//   const total = GALLERY_IMAGES.length;
-
-//   useEffect(() => {
-//     if (!isPlaying) return;
-//     const id = setInterval(() => setActiveIndex((i) => (i + 1) % total), 4000);
-//     return () => clearInterval(id);
-//   }, [isPlaying, total]);
-
-//   const goTo = (i) => {
-//     setActiveIndex(i);
-//     setIsPlaying(false);
-//   };
-
-//   const goToPrev = () => {
-//     setActiveIndex((i) => (i - 1 + total) % total);
-//     setIsPlaying(false);
-//   };
-
-//   const goToNext = () => {
-//     setActiveIndex((i) => (i + 1) % total);
-//     setIsPlaying(false);
-//   };
-
-//   const handleTouchStart = (e) => (touchStartX.current = e.touches[0].clientX);
-//   const handleTouchEnd = (e) => {
-//     if (touchStartX.current === null) return;
-//     const delta = e.changedTouches[0].clientX - touchStartX.current;
-//     if (Math.abs(delta) > 50) delta > 0 ? goToPrev() : goToNext();
-//     touchStartX.current = null;
-//   };
-
-//   const handleKeyDown = (e) => {
-//     if (e.key === "ArrowLeft") goToPrev();
-//     if (e.key === "ArrowRight") goToNext();
-//   };
-
-//   const current = GALLERY_IMAGES[activeIndex];
-
-//   return (
-//     <div className="max-w-5xl mx-auto">
-
-//       {/* Featured image */}
-//       <div
-//         className="relative w-full rounded-2xl overflow-hidden bg-gray-900 shadow-xl"
-//         style={{ minHeight: "360px", maxHeight: "520px" }}
-//         onTouchStart={handleTouchStart}
-//         onTouchEnd={handleTouchEnd}
-//         tabIndex={0}
-//         onKeyDown={handleKeyDown}
-//         role="region"
-//         aria-label="Conference gallery"
-//       >
-//         {GALLERY_IMAGES.map((img, i) => (
-//           <img
-//             key={i}
-//             src={img.src}
-//             alt={img.caption}
-//             className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${
-//               i === activeIndex ? "opacity-100" : "opacity-0 pointer-events-none"
-//             }`}
-//             loading={i === activeIndex ? "eager" : "lazy"}
-//             decoding="async"
-//           />
-//         ))}
-
-//         {/* Caption bar */}
-//         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-6 pb-4 pt-10 pointer-events-none">
-//           <p className="text-white text-sm md:text-base font-medium drop-shadow">
-//             {current.caption}
-//           </p>
-//           <p className="text-white/60 text-xs mt-0.5">
-//             {activeIndex + 1} / {total}
-//           </p>
-//         </div>
-
-//         {/* Prev */}
-//         <button
-//           onClick={goToPrev}
-//           className="absolute left-3 top-1/2 -trancyan-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
-//           aria-label="Previous photo"
-//         >
-//           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-//             <path d="M15 6L9 12L15 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         {/* Next */}
-//         <button
-//           onClick={goToNext}
-//           className="absolute right-3 top-1/2 -trancyan-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
-//           aria-label="Next photo"
-//         >
-//           <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-//             <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         {/* Play/Pause */}
-//         <button
-//           onClick={() => setIsPlaying((p) => !p)}
-//           className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-all focus:outline-none"
-//           aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
-//         >
-//           {isPlaying ? (
-//             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-//               <rect x="5" y="4" width="4" height="16" rx="1" />
-//               <rect x="15" y="4" width="4" height="16" rx="1" />
-//             </svg>
-//           ) : (
-//             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-//               <path d="M6 4l14 8-14 8V4z" />
-//             </svg>
-//           )}
-//         </button>
-//       </div>
-
-//       {/* Thumbnail strip */}
-//       <div className="mt-4 flex gap-2 overflow-x-auto pb-1 scrollbar-hide justify-center flex-wrap">
-//         {GALLERY_IMAGES.map((img, i) => (
-//           <button
-//             key={i}
-//             onClick={() => goTo(i)}
-//             className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-200 focus:outline-none ${
-//               i === activeIndex
-//                 ? "border-primary shadow-md scale-105"
-//                 : "border-transparent opacity-60 hover:opacity-90 hover:border-primary/40"
-//             }`}
-//             aria-label={`Go to photo ${i + 1}: ${img.caption}`}
-//           >
-//             <img
-//               src={img.src}
-//               alt={img.caption}
-//               className="w-full h-full object-cover"
-//               loading="lazy"
-//             />
-//           </button>
-//         ))}
-//       </div>
-
-//     </div>
-//   );
-// };
 
 /* ------------------------------------------------------------------ */
 /* SVNIT Image Carousel                                                 */
 /* ------------------------------------------------------------------ */
 const SVNITImageCarousel = () => {
   const images = [
-    { src: "/images/svnit-3.jpg" },
-    { src: "/images/svnit-5.jpg" },
-    { src: "/images/svnit-7.jpg" },
-    { src: "/images/svnit-8.jpg" },
-    { src: "/images/svnit-9.jpg" },
-    { src: "/images/svnit-10.jpg" },
-    { src: "/images/svnit-6.jpg" },
-    { src: "/images/svnit-11.jpg" },
+    { src: "/images/galleries/svnit/svnit-3.jpg" },
+    { src: "/images/galleries/svnit/svnit-5.jpg" },
+    { src: "/images/galleries/svnit/svnit-7.jpg" },
+    { src: "/images/galleries/svnit/svnit-8.jpg" },
+    { src: "/images/galleries/svnit/svnit-9.jpg" },
+    { src: "/images/galleries/svnit/svnit-10.jpg" },
+    { src: "/images/galleries/svnit/svnit-6.jpg" },
+    { src: "/images/galleries/svnit/svnit-11.jpg" },
   ];
   return <ImageCarousel images={images} />;
 };
@@ -1209,12 +1050,12 @@ const SVNITImageCarousel = () => {
 /* ------------------------------------------------------------------ */
 const SuratImageCarousel = () => {
   const images = [
-    { src: "/images/surat-2.jpg",  caption: "🌄 Saputara — Gujarat's Scenic Hill Station" },
-    { src: "/images/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
-    { src: "/images/surat-7.jpg",  caption: "🗿 Statue of Unity — The World's Tallest Statue" },
-    { src: "/images/surat-4.jpg",  caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views" },
-    { src: "/images/surat-6.jpg",  caption: "🏞️ Gopi Talav — A Serene Heritage Lake" },
-    { src: "/images/surat-5.jpg",  caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
+    { src: "/images/galleries/surat/surat-2.jpg",  caption: "🌄 Saputara — Gujarat's Scenic Hill Station" },
+    { src: "/images/galleries/surat/surat-3.jpeg", caption: "🏖️ Daman Beach — Calm Waters & Coastal Charm" },
+    { src: "/images/galleries/surat/surat-7.jpg",  caption: "🗿 Statue of Unity — The World's Tallest Statue" },
+    { src: "/images/galleries/surat/surat-4.jpg",  caption: "🌅 Dumas Beach — Tranquil Waves & Sunset Views" },
+    { src: "/images/galleries/surat/surat-6.jpg",  caption: "🏞️ Gopi Talav — A Serene Heritage Lake" },
+    { src: "/images/galleries/surat/surat-5.jpg",  caption: "💎 Surat Diamond Bourse — The Heart of Global Trade" },
   ];
   return <AutoCarousel images={images} />;
 };
@@ -1224,9 +1065,9 @@ const SuratImageCarousel = () => {
 /* ------------------------------------------------------------------ */
 const PreviousEditionCarousel = () => {
   const images = [
-    { src: "/images/conference-1.png", caption: "" },
-    { src: "/images/conference-2.png", caption: "" },
-    { src: "/images/conference-3.png", caption: "" },
+    { src: "/images/galleries/previous-edition/conference-1.png", caption: "" },
+    { src: "/images/galleries/previous-edition/conference-2.png", caption: "" },
+    { src: "/images/galleries/previous-edition/conference-3.png", caption: "" },
   ];
   return <AutoCarousel images={images} />;
 };
@@ -1265,6 +1106,15 @@ const AutoCarousel = ({ images }) => {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
+        {/* Blurred backdrop of the current image fills the letterbox bars
+            (single cheap layer; images are never cropped). */}
+        <div
+          className="absolute inset-0 scale-110 bg-cover bg-center blur-xl"
+          style={{ backgroundImage: `url("${images[currentIndex].src}")` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-white/30" aria-hidden="true" />
+
         {images.map((img, i) => (
           <img
             key={i}
@@ -1280,7 +1130,7 @@ const AutoCarousel = ({ images }) => {
         {/* Prev button */}
         <button
           onClick={goToPrev}
-          className="absolute left-2 top-1/2 -trancyan-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
           aria-label="Previous"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -1291,7 +1141,7 @@ const AutoCarousel = ({ images }) => {
         {/* Next button */}
         <button
           onClick={goToNext}
-          className="absolute right-2 top-1/2 -trancyan-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:bg-white transition-all focus:outline-none z-10"
           aria-label="Next"
         >
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -1300,7 +1150,7 @@ const AutoCarousel = ({ images }) => {
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-2 left-1/2 -trancyan-x-1/2 flex gap-1.5 z-10">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
           {images.map((_, i) => (
             <button
               key={i}
