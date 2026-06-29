@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import jmpLogo from "@/assets/jmp-logo.png";
 import mediaPartnerLogo from "@/assets/icn_logo.png";
 import cabeqLogo from "@/assets/cabeq.png";
@@ -44,100 +45,123 @@ const sponsors = [
   },
 ];
 
-const REPEAT_COUNT = 100; // 👈 ensures full width coverage on all screens
+// Repeats per set — enough to overflow the widest footer. Two identical sets
+// are rendered and the strip translates exactly -50% (one set), so the loop is
+// seamless: the second set sits where the first began at the reset point.
+const GROUPS_PER_SET = 8;
+
+const SponsorSet = ({ ariaHidden = false }) => (
+  <div className="flex shrink-0" aria-hidden={ariaHidden || undefined}>
+    {Array.from({ length: GROUPS_PER_SET }).map((_, idx) => (
+      <div key={idx} className="flex gap-10 items-center px-6">
+        {sponsors.map((s, i) => (
+          <img
+            key={`${idx}-${i}`}
+            src={s.logo}
+            alt={s.name}
+            className="h-10 flex items-center justify-center bg-white rounded py-0.4 opacity-80 hover:opacity-100 transition-opacity"
+          />
+        ))}
+      </div>
+    ))}
+  </div>
+);
 
 const FooterSponsorsTicker = () => {
   return (
-    <a
-      href="/sponsors"
-      className="block cursor-pointer hover:opacity-95 transition-opacity"
-      aria-label="View all sponsors"
-    >
-      <div className="relative overflow-hidden  space-y-10">
+    <div className="relative overflow-hidden space-y-10">
 
-        {/* ---------------- PARTNERS ---------------- */}
-<div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-center mb-6">
-          {/* Knowledge Partner */}
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-widest text-white/60">
-              Knowledge Partner
-            </p>
-            <div className="flex justify-center">
-              {knowledgePartners.map((kp, i) => (
-                <a
-                  key={i}
-                  href={knowledgePartnerLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
-                    <img
-                      src={kp.logo}
-                      alt={kp.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
+      {/* ---------------- PARTNERS (each logo links to its own site) ---------------- */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 text-center mb-6">
+        {/* Knowledge Partner */}
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-widest text-white/60">
+            Knowledge Partner
+          </p>
+          <div className="flex justify-center">
+            {knowledgePartners.map((kp, i) => (
+              <a
+                key={i}
+                href={knowledgePartnerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                  <img
+                    src={kp.logo}
+                    alt={kp.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </a>
+            ))}
           </div>
-
-          {/* Media Partner */}
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-widest text-white/60">
-              Media Partner
-            </p>
-            <div className="flex justify-center">
-              {mediaPartners.map((mp, i) => (
-                <a
-                  key={i}
-                  href={mediaPartnerLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
-                    <img
-                      src={mp.logo}
-                      alt={mp.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Journal Partner */}
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-widest text-white/60">
-              Journal Partner
-            </p>
-            <div className="flex justify-center gap-4">
-              {journalPartners.map((jp, i) => (
-                <a
-                  key={i}
-                  href={jp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block"
-                >
-                  <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
-                    <img
-                      src={jp.logo}
-                      alt={jp.name}
-                      className="max-h-full max-w-full object-contain"
-                    />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
         </div>
 
-        {/* ---------------- SPONSORS TICKER ---------------- */}
+        {/* Media Partner */}
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-widest text-white/60">
+            Media Partner
+          </p>
+          <div className="flex justify-center">
+            {mediaPartners.map((mp, i) => (
+              <a
+                key={i}
+                href={mediaPartnerLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                  <img
+                    src={mp.logo}
+                    alt={mp.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Journal Partner */}
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-widest text-white/60">
+            Journal Partner
+          </p>
+          <div className="flex justify-center gap-4">
+            {journalPartners.map((jp, i) => (
+              <a
+                key={i}
+                href={jp.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <div className="h-16 w-40 bg-white rounded flex items-center justify-center p-2 hover:scale-105 transition-transform">
+                  <img
+                    src={jp.logo}
+                    alt={jp.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      {/* ---------------- GOLD SPONSORS TICKER (links to the sponsors page) ---------------- */}
+      {/* This block has no inner links, so wrapping it in a single <Link> is
+          valid (the previous design nested these <a>s inside an outer <a>,
+          which React flagged as invalid DOM nesting). */}
+      <Link
+        to="/sponsors"
+        aria-label="View all sponsors"
+        className="block cursor-pointer hover:opacity-95 transition-opacity"
+      >
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-widest text-center text-white/60">
             Gold Sponsors
@@ -145,24 +169,14 @@ const FooterSponsorsTicker = () => {
 
           <div className="relative overflow-hidden">
             <div className="flex w-max animate-footer-ticker">
-              {Array.from({ length: REPEAT_COUNT }).map((_, idx) => (
-                <div key={idx} className="flex gap-10 items-center px-6">
-                  {sponsors.map((s, i) => (
-                    <img
-                      key={`${idx}-${i}`}
-                      src={s.logo}
-                      alt={s.name}
-                      className="h-10 flex items-center justify-center bg-white rounded py-0.4 opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                  ))}
-                </div>
-              ))}
+              <SponsorSet />
+              <SponsorSet ariaHidden />
             </div>
           </div>
         </div>
+      </Link>
 
-      </div>
-    </a>
+    </div>
   );
 };
 

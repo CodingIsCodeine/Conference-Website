@@ -233,19 +233,22 @@ All colors MUST be HSL.
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
 }
 
+/* The strip renders two identical sets of logos; translating exactly one set
+   (-50%) lands the second set where the first began, so the loop is seamless
+   (no gap, no empty space, no pause). */
 @keyframes footerTicker {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 .animate-footer-ticker {
   display: flex;
   width: max-content;
-  animation: footerTicker 550s linear infinite;
+  animation: footerTicker 40s linear infinite;
 }
 
 .proceedings-link {

@@ -591,7 +591,10 @@ const Index = () => {
   style={{
     background: "linear-gradient(120deg, #eef2f7, #d1fae5, #a7f3d0, #fef9c3, #fde68a, #d1fae5)",
     backgroundSize: "300% 300%",
-    animation: "gradientFlow 6s linear infinite"
+    // `alternate` pans the gradient forward then reverses back to the exact
+    // start, so the loop never hard-resets (no jump/blank frame); ease-in-out
+    // smooths the turn so it reads as one continuous flow.
+    animation: "gradientFlow 6s ease-in-out infinite alternate"
   }}
 > 
 
@@ -1050,7 +1053,10 @@ const ConferenceGallery = () => {
   const section = CONFERENCE_GALLERY[sectionIdx];
   const images = section.images;
   const total = images.length;
-  const activeImg = images[current];
+  // Guard the one render that can occur after a section change but before the
+  // reset effect runs, when `current` may still hold the previous (larger)
+  // section's index. Without this, images[current] is undefined and crashes.
+  const activeImg = images[current] ?? images[0];
 
   const keyOf = (i: number) => `${section.id}:${i}`;
   const isErrored = (i: number) => !!errored[keyOf(i)];
@@ -1064,13 +1070,25 @@ const ConferenceGallery = () => {
     setCurrent(0);
   }, [sectionIdx]);
 
-  // Gentle auto-advance — pauses on hover and is disabled for reduced motion.
+  // Auto-advance every 4.5s. At the end of a section it rolls over to the FIRST
+  // photo of the next section (Pre-Conference → Day 1 → Day 2 → Pre-Conference…)
+  // and loops forever. A per-step timeout (re-armed whenever current/section
+  // changes) keeps values fresh without stale closures or nested setState.
+  // Paused on hover and disabled for reduced motion. Manual prev/next/swipe and
+  // the section tabs are unaffected.
   useEffect(() => {
-    if (paused) return;
-    if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-    const id = setInterval(() => setCurrent((i) => (i + 1) % total), 4500);
-    return () => clearInterval(id);
-  }, [paused, total, sectionIdx]);
+    if (paused || prefersReducedMotion) return;
+    const t = setTimeout(() => {
+      if (current + 1 < total) {
+        setCurrent(current + 1);
+      } else {
+        // last photo of the section → advance to the next section; the
+        // section-change effect above resets `current` to its first photo.
+        setSectionIdx((s) => (s + 1) % CONFERENCE_GALLERY.length);
+      }
+    }, 4500);
+    return () => clearTimeout(t);
+  }, [current, total, sectionIdx, paused, prefersReducedMotion]);
 
   // Keep the active thumbnail centered within the strip (never scrolls the page).
   useEffect(() => {
