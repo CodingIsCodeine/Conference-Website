@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Calendar, FileText, Award, Users } from "lucide-react";
+import { Calendar, FileText, Award, Users, Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import ImageCarousel from "@/components/ui/ImageCarousel";
 import jmpLogo from "@/assets/jmp-logo.png";
@@ -771,9 +771,6 @@ const Index = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
                 Conference Gallery
               </h2>
-              <h6 className="text-xl md:text-xl mb-3">
-                (Coming Soon...)
-              </h6>
               <p className="text-muted-foreground text-sm uppercase tracking-widest mb-1">
                 GCESDIP 2.0 · April 16–18, 2026 · SVNIT, Surat
               </p>
@@ -783,7 +780,7 @@ const Index = () => {
               <div className="mt-5 mx-auto w-16 h-1 rounded-full bg-primary/30" />
             </div>
 
-            {/* <ConferenceGallery /> */}
+            <ConferenceGallery />
 
           </div>
         </section>
@@ -1027,6 +1024,272 @@ const Index = () => {
   );
 };
 
+
+/* ------------------------------------------------------------------ */
+/* Conference Gallery — tabbed (Pre-Conference / Day 1 / Day 2)         */
+/*                                                                      */
+/* 👉 PLACEHOLDERS: drop 15 photos per section at the paths below.      */
+/*    Folders: public/images/galleries/conference/{pre-conference,      */
+/*    day-1, day-2}/  — edit `src` and add a `caption` if you like.     */
+/*    Until a photo exists, that slot shows a styled placeholder tile.  */
+/* ------------------------------------------------------------------ */
+type GalleryImage = { src: string; caption?: string };
+type GallerySection = { id: string; label: string; images: GalleryImage[] };
+
+const CONFERENCE_GALLERY: GallerySection[] = [
+  {
+    id: "pre-conference",
+    label: "Pre-Conference",
+    images: [
+      { src: "/images/galleries/conference/pre-conference/01.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/02.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/03.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/04.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/05.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/06.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/07.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/08.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/09.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/10.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/11.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/12.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/13.jpg", caption: "" },
+      { src: "/images/galleries/conference/pre-conference/14.jpg", caption: "" },
+      // { src: "/images/galleries/conference/pre-conference/15.jpg", caption: "" },
+    ],
+  },
+  {
+    id: "day-1",
+    label: "Day 1",
+    images: [
+      { src: "/images/galleries/conference/day-1/01.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/02.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/03.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/04.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/05.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/06.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/07.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/08.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/09.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/10.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/11.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/12.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/13.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-1/14.jpg", caption: "" },
+      // { src: "/images/galleries/conference/day-1/15.jpg", caption: "" },
+    ],
+  },
+  {
+    id: "day-2",
+    label: "Day 2",
+    images: [
+      { src: "/images/galleries/conference/day-2/01.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/02.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/03.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/04.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/05.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/06.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/07.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/08.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/09.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/10.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/11.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/12.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/13.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/14.jpg", caption: "" },
+      { src: "/images/galleries/conference/day-2/15.jpg", caption: "" },
+    ],
+  },
+];
+
+const ConferenceGallery = () => {
+  const [sectionIdx, setSectionIdx] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [errored, setErrored] = useState<Record<string, boolean>>({});
+  const [paused, setPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const stripRef = useRef<HTMLDivElement>(null);
+  const thumbRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const section = CONFERENCE_GALLERY[sectionIdx];
+  const images = section.images;
+  const total = images.length;
+  const activeImg = images[current];
+
+  const keyOf = (i: number) => `${section.id}:${i}`;
+  const isErrored = (i: number) => !!errored[keyOf(i)];
+  const markErrored = (i: number) => setErrored((e) => ({ ...e, [keyOf(i)]: true }));
+
+  const goPrev = () => setCurrent((i) => (i - 1 + total) % total);
+  const goNext = () => setCurrent((i) => (i + 1) % total);
+
+  // Reset to the first photo when switching sections.
+  useEffect(() => {
+    setCurrent(0);
+  }, [sectionIdx]);
+
+  // Gentle auto-advance — pauses on hover and is disabled for reduced motion.
+  useEffect(() => {
+    if (paused) return;
+    if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setCurrent((i) => (i + 1) % total), 4500);
+    return () => clearInterval(id);
+  }, [paused, total, sectionIdx]);
+
+  // Keep the active thumbnail centered within the strip (never scrolls the page).
+  useEffect(() => {
+    const strip = stripRef.current;
+    const thumb = thumbRefs.current[current];
+    if (strip && thumb) {
+      strip.scrollTo({ left: thumb.offsetLeft - strip.clientWidth / 2 + thumb.clientWidth / 2, behavior: "smooth" });
+    }
+  }, [current, sectionIdx]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 50) dx > 0 ? goPrev() : goNext();
+    touchStartX.current = null;
+  };
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") goPrev();
+    if (e.key === "ArrowRight") goNext();
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {/* Section tabs */}
+      <div role="tablist" aria-label="Gallery sections" className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+        {CONFERENCE_GALLERY.map((s, i) => {
+          const activeTab = i === sectionIdx;
+          return (
+            <button
+              key={s.id}
+              role="tab"
+              aria-selected={activeTab}
+              onClick={() => setSectionIdx(i)}
+              className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 border focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                activeTab
+                  ? "bg-primary text-primary-foreground border-primary shadow-card"
+                  : "bg-card text-muted-foreground border-border hover:text-primary hover:border-primary/40"
+              }`}
+            >
+              {s.label}
+              <span className={`ml-2 text-xs ${activeTab ? "text-primary-foreground/80" : "text-muted-foreground/70"}`}>
+                {s.images.length}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Featured viewer */}
+      <div
+        className="relative w-full overflow-hidden rounded-2xl shadow-card bg-gray-50 select-none h-[300px] sm:h-[380px] lg:h-[460px]"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onKeyDown={onKeyDown}
+        tabIndex={0}
+        role="region"
+        aria-roledescription="carousel"
+        aria-label={`${section.label} photos`}
+      >
+        {isErrored(current) ? (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-secondary/60 via-muted to-secondary/40 text-muted-foreground">
+            <Camera className="h-10 w-10 opacity-40" />
+            <p className="text-sm font-medium">{section.label} · Photo {current + 1}</p>
+            <p className="text-xs opacity-70">Photo coming soon</p>
+          </div>
+        ) : (
+          <>
+            {/* Blurred backdrop fills the letterbox bars (the photo is never cropped). */}
+            <div
+              className="absolute inset-0 scale-110 bg-cover bg-center blur-xl"
+              style={{ backgroundImage: `url("${activeImg.src}")` }}
+              aria-hidden="true"
+            />
+            <div className="absolute inset-0 bg-white/40" aria-hidden="true" />
+            <img
+              key={keyOf(current)}
+              src={activeImg.src}
+              alt={activeImg.caption || `${section.label} photo ${current + 1}`}
+              onError={() => markErrored(current)}
+              className="gallery-fade relative z-[1] w-full h-full object-contain"
+            />
+          </>
+        )}
+
+        {/* Caption */}
+        {activeImg.caption && !isErrored(current) && (
+          <div className="absolute bottom-0 inset-x-0 z-[2] bg-gradient-to-t from-black/55 to-transparent px-5 pt-10 pb-4 pointer-events-none">
+            <p className="text-white text-sm md:text-base font-medium drop-shadow">{activeImg.caption}</p>
+          </div>
+        )}
+
+        {/* Counter */}
+        <div className="absolute top-3 right-3 z-[2] rounded-full bg-black/40 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white">
+          {current + 1} / {total}
+        </div>
+
+        {/* Prev / Next */}
+        <button
+          onClick={goPrev}
+          aria-label="Previous photo"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-[2] grid place-items-center w-9 h-9 rounded-full bg-white/85 text-gray-700 shadow-sm hover:bg-white hover:scale-105 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          onClick={goNext}
+          aria-label="Next photo"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-[2] grid place-items-center w-9 h-9 rounded-full bg-white/85 text-gray-700 shadow-sm hover:bg-white hover:scale-105 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+      </div>
+
+      {/* Thumbnail strip */}
+      <div ref={stripRef} className="mt-4 flex gap-2 overflow-x-auto pb-2">
+        {images.map((img, i) => {
+          const activeThumb = i === current;
+          return (
+            <button
+              key={keyOf(i)}
+              ref={(el) => {
+                thumbRefs.current[i] = el;
+              }}
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to photo ${i + 1}`}
+              aria-current={activeThumb ? "true" : undefined}
+              className={`relative flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                activeThumb ? "border-primary shadow-card scale-[1.03]" : "border-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              {isErrored(i) ? (
+                <span className="absolute inset-0 grid place-items-center bg-gradient-to-br from-secondary/60 to-muted text-muted-foreground">
+                  <Camera className="h-4 w-4 opacity-50" />
+                </span>
+              ) : (
+                <img
+                  src={img.src}
+                  alt=""
+                  loading="lazy"
+                  onError={() => markErrored(i)}
+                  className="w-full h-full object-cover"
+                />
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 /* ------------------------------------------------------------------ */
 /* SVNIT Image Carousel                                                 */
